@@ -29,7 +29,7 @@ Route::get('/blog/author/{username}', 'PagesController@blogAuthor')->name('blog.
 Route::get('/contact', 'PagesController@contact')->name('contact');
 Route::post('/contact', 'PagesController@messageContact')->name('contact.message');
 
-// xample halaman
+// xample halaman review demo
 Route::get('/about', 'FrontController@about')->name('about');
 
 Route::get('/properties/detail', 'FrontController@properties')->name('properties');
@@ -41,7 +41,13 @@ Route::get('/news/grid', 'FrontController@newsGrid')->name('newsGrid');
 Route::get('/news/list', 'FrontController@newsList')->name('newsList');
 
 Route::get('/contact', 'FrontController@contact')->name('contact');
+
 Route::get('/booking', 'FrontController@booking')->name('booking');
+Route::get('/dashboard/profile', 'FrontController@dashboardProfile')->name('dashboardProfile');
+Route::get('/dashboard/messages', 'FrontController@dashboardMessages')->name('dashboardMessages');
+Route::get('/dashboard/booking/list', 'FrontController@dashboardBookingList')->name('dashboardBookingList');
+// End xample halaman review demo
+
 
 // User Login
 Auth::routes();

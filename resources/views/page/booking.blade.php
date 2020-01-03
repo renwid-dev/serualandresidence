@@ -1,9 +1,10 @@
 @extends('frontland.layouts.appBooking')
-
+	    <!-- Header -->
+		@include('frontland/userDashboard/partials/header')
+		<!-- End Header -->
     @section('content')
 
-    <!-- Bo   <div class="row">oking frontend -->
-    
+    <!-- Booking frontend -->
     <div class="dashboard">
 	    <div class="container-fluid-boxed">
 	        <div class="content-area">
@@ -148,8 +149,6 @@
 	        </div>
 	    </div>
 	</div>
-
-	          
     <!-- End booking frontend -->
 
 @endsection

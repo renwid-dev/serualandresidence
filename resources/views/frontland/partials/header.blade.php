@@ -9,11 +9,11 @@
                 </div>
                 <div class="top-right clearfix">
                     <ul class="clearfix">
-                        <li><a href="#">Login</a></li>
+                        <li><a href="{{url('login')}}">Login</a></li>
                         <!-- <li><a href="#">Register</a></li> -->
                     </ul>
                     <div class="btn-box">
-                        <a href="#" class="theme-btn btn-style-two">Register</a>
+                        <a href="{{url('register')}}" class="theme-btn btn-style-two">Register</a>
                     </div>
                 </div>
             </div>

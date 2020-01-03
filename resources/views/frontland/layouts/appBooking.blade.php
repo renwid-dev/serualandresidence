@@ -3,12 +3,13 @@
 
 <head>
 <meta charset="utf-8">
-<title>Serua Land Residence | @yield('title')</title>
+<title>Serua Land Residence</title>
 <!-- Stylesheets -->
 <link href="{{ asset('frontland/admin/css/bootstrap.css') }}" rel="stylesheet">
 <link href="{{ asset('frontland/admin/css/style.css') }}" rel="stylesheet">
 <link href="{{ asset('frontland/admin/css/responsive.css') }}" rel="stylesheet">
 
+<link id="theme-color-file" href="{{ asset('frontland/css/color-themes/orange-theme.css') }}" rel="stylesheet">
 <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
 <link rel="icon" href="images/favicon.png" type="image/x-icon">
 <!-- Responsive -->
@@ -21,9 +22,9 @@
 <body>
 
 <div class="page-wrapper">
-
-     @yield('content')
-
+    <!-- Content -->
+    @yield('content')
+    <!-- End Content -->
 </div>
     
 <script src="{{ asset('frontland/admin/js/jquery.js') }}"></script> 
@@ -35,5 +36,4 @@
 <script src="{{ asset('frontland/admin/js/appear.js') }}"></script>
 <script src="{{ asset('frontland/admin/js/script.js') }}"></script>
 </body>
-
 </html>
