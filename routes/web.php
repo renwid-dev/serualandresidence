@@ -46,12 +46,13 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin','middleware'=>['auth','admi
     Route::resource('categories','CategoryController');
     Route::resource('posts','PostController');
     Route::resource('features','FeatureController');
-    Route::resource('properties','PropertyController'); 
+    Route::resource('properties','PropertyController');
     Route::post('properties/gallery/delete','PropertyController@galleryImageDelete')->name('gallery-delete');
 
     Route::resource('sliders','SliderController');
     Route::resource('services','ServiceController');
     Route::resource('testimonials','TestimonialController');
+    Route::resource('booking','BookingController');
 
     Route::get('galleries/album','GalleryController@album')->name('album');
     Route::post('galleries/album/store','GalleryController@albumStore')->name('album.store');

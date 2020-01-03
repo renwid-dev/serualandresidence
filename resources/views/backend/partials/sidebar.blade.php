@@ -5,7 +5,7 @@
             <ul class="list">
 
                 <li class="header">MAIN NAVIGATION</li>
-                
+
                 <li class="{{ Request::is('admin/dashboard') ? 'active' : '' }}">
                     <a href="{{ route('admin.dashboard') }}">
                         <i class="material-icons">dashboard</i>
@@ -45,6 +45,13 @@
                     </a>
                 </li>
 
+                <li class="{{ Request::is('admin/booking*') ? 'active' : '' }}">
+                    <a href="{{ route('admin.booking.index') }}">
+                        <i class="material-icons">shopping_cart</i>
+                        <span>Booking</span>
+                    </a>
+                </li>
+
                 <li class="header">Blog</li>
                 <li class="{{ Request::is('admin/categories*') ? 'active' : '' }}">
                     <a href="{{ route('admin.categories.index') }}">
@@ -72,7 +79,7 @@
                         <span>Gallery</span>
                     </a>
                 </li>
- 
+
                 <li class="{{ Request::is('admin/settings*') ? 'active' : '' }}">
                     <a href="javascript:void(0);" class="menu-toggle">
                         <i class="material-icons">settings</i>
@@ -101,10 +108,10 @@
                         </li>
                     </ul>
                 </li>
-                
+
 
             </ul>
         </div>
         <!-- #Menu -->
-        
+
     </aside>
