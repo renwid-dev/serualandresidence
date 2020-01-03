@@ -16,7 +16,7 @@
                             <div class="breadcrumb-nav">
                                 <ul>
                                     <li><a href="{{url('/')}}">Index</a></li>
-                                    <li class="active">Submit Property</li>
+                                    <li class="active">My Profile</li>
                                 </ul>
                             </div>
                         </div>
@@ -32,7 +32,7 @@
                                         <div class="col-lg-4 col-md-12 col-sm-12">
                                             <!-- Edit profile photo -->
                                             <div class="edit-profile-photo">
-                                                <img src="images/resource/avatar.jpg" alt="profile-photo">
+                                                <img src="{{ asset('frontland/admin/images/resource/avatar.jpg') }}" alt="profile-photo">
                                                 <div class="change-photo-btn">
                                                     <div class="photoUpload">
                                                         <span><i class="la la-cloud-upload"></i></span>
