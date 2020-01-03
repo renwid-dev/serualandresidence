@@ -1,7 +1,7 @@
 @extends('frontland.layouts.appL')
 
 @section('content')
-<br><br>
+<br><br><br>
     <div class="row">
         <div class="col s12 m6 offset-m3">
             <div class="card">

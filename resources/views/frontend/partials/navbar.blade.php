@@ -3,11 +3,11 @@
         <div class="container">
             <div class="nav-wrapper">
 
-                <a href="{{ route('home') }}" class="brand-logo">
+                <a href="{{ route('home') }}">
                     @if(isset($navbarsettings[0]) && $navbarsettings[0]['name'])
                         {{ $navbarsettings[0]['name'] }}
                     @else
-                        Real State
+                        Serua Land Residence
                     @endif
                     <i class="material-icons left">location_city</i>
                 </a>

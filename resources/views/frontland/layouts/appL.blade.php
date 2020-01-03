@@ -27,7 +27,7 @@
         
         
         {{-- MAIN CONTENT --}}
-        <div class="main">
+        <div style="background-image: url({{ asset('frontland/images/main-slider/image-2.jpg') }}); border-bottom-width: 405px;border-bottom-style: solid;">
             @yield('content')
         </div>
 
