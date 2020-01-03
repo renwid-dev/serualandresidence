@@ -31,10 +31,17 @@ Route::post('/contact', 'PagesController@messageContact')->name('contact.message
 
 // xample halaman
 Route::get('/about', 'FrontController@about')->name('about');
-Route::get('/properties', 'FrontController@properties')->name('properties');
-Route::get('/news', 'FrontController@news')->name('news');
-Route::get('/contact', 'FrontController@contact')->name('contact');
 
+Route::get('/properties/detail', 'FrontController@properties')->name('properties');
+Route::get('/properties/grid', 'FrontController@propertiesGrid')->name('propertiesGrid');
+Route::get('/properties/list', 'FrontController@propertiesList')->name('propertiesList');
+
+Route::get('/news/detail', 'FrontController@news')->name('news');
+Route::get('/news/grid', 'FrontController@newsGrid')->name('newsGrid');
+Route::get('/news/list', 'FrontController@newsList')->name('newsList');
+
+Route::get('/contact', 'FrontController@contact')->name('contact');
+Route::get('/booking', 'FrontController@booking')->name('booking');
 
 // User Login
 Auth::routes();

@@ -466,4 +466,4 @@
 
     @include('frontland/partials/footer')
 
-@endcontent
+@endsection

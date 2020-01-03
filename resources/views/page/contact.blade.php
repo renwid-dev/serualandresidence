@@ -1,6 +1,6 @@
 @extends('frontland.layouts.app')
 
-@section('conten')
+@section('content')
 
       <!-- Contact Section -->
       <section class="contact-section style-two">
@@ -17,7 +17,7 @@
 
                         <!-- Contact Form -->
                         <div class="contact-form">
-                            <form method="post" action="https://expert-themes.com/html/ourland/sendemail.php" id="contact-form">
+                            <form method="post" action="#" id="contact-form">
                                 <div class="form-group">
                                     <input type="text" name="username" placeholder="Name" required>
                                 </div>
@@ -88,12 +88,11 @@
                                     <li><a href="#"><span class="la la-facebook-f"></span></a></li>
                                     <li><a href="#"><span class="la la-twitter"></span></a></li>
                                     <li><a href="#"><span class="la la-google-plus"></span></a></li>
-                                    <li><a href="#"><span class="la la-dribbble"></span></a></li>
-                                    <li><a href="#"><span class="la la-pinterest"></span></a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
+                    
                 </div>
             </div> 
         </div>
@@ -120,4 +119,4 @@
 
     @include('frontland/partials/footer')
 
-@endcontent
+@endsection

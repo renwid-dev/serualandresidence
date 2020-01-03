@@ -20,14 +20,35 @@ class FrontController extends Controller
     {
         return view('page.properties.detail');
     }
+    public function propertiesGrid()
+    {
+        return view('page.properties.grid');
+    }
+    public function propertiesList()
+    {
+        return view('page.properties.list');
+    }
 
     public function news()
     {
         return view('page.blog.detail');
     }
+    public function newsGrid()
+    {
+        return view('page.blog.grid');
+    }
+    public function newsList()
+    {
+        return view('page.blog.list');
+    }
 
     public function contact()
     {
         return view('page.contact');
+    }
+
+    public function booking()
+    {
+        return view('page.booking');
     }
 }

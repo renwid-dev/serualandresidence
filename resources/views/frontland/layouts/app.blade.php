@@ -2,8 +2,8 @@
 <html lang="{{ app()->getLocale() }}">
 
 <!-- Mirrored from expert-themes.com/html/ourland/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 25 Dec 2019 06:27:30 GMT -->
-<head>
-<meta charset="utf-8">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
 <title>Serua Land Residence | @yield('title')</title>
 <!-- Stylesheets -->
 <link href="{{ asset('frontland/css/bootstrap.css') }}" rel="stylesheet">
@@ -66,6 +66,12 @@
 <script src="{{ asset('frontland/js/script.js') }}"></script>
 <!-- Color Setting -->
 <script src="{{ asset('frontland/js/color-settings.js') }}"></script>
+<script src="{{ asset('frontland/js/popper.min.js') }}"></script>
+<script src="{{ asset('frontland/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('frontland/js/validate.js') }}"></script>
+<script src="{{ asset('frontland/js/map-script.js') }}"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJyIBI88fFMi5YJ8khAsPX7ouMsIZPorc"></script>
+
 
 </body>
 

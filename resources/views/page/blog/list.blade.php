@@ -1,6 +1,6 @@
 @extends('frontland.layouts.app')
 
-@section('contect')
+@section('content')
 
     <!-- Sidebar Page Container -->
     <div class="sidebar-page-container">
@@ -13,7 +13,7 @@
                         <div class="news-block-three">
                             <div class="row">
                                 <div class="image-box col-xl-6 col-lg-12 col-md-6 col-sm-12">
-                                    <figure class="image"><a href="blog-detail.html"><img src="images/resource/news-1.jpg" alt=""></a></figure>
+                                    <figure class="image"><a href="{{ url('news/detail') }}"><img src="images/resource/news-1.jpg" alt=""></a></figure>
                                 </div>
                                 <div class="content-box col-xl-6 col-lg-12 col-md-6 col-sm-12">
                                     <div class="inner-box">
@@ -21,10 +21,10 @@
                                             <li>by <span>Anoma</span></li>
                                             <li>JANUARY 14, 2019</li>
                                         </ul>
-                                        <h3><a href="blog-detail.html">Dazzling retreat resort with the roof Modern Design</a></h3>
+                                        <h3><a href="{{ url('news/detail') }}">Dazzling retreat resort with the roof Modern Design</a></h3>
                                         <div class="text">Objectively innovate empowered manufactured products whereas parallel platforms. Holisticly predominate testing procedures for reliable supply chains. Dramatically engage top-line web services vis-a-vis cutting-edge.</div>
                                         <div class="btn-box">
-                                            <a href="blog-detail.html" class="theme-btn btn-style-one">Read More</a>
+                                            <a href="{{ url('news/detail') }}" class="theme-btn btn-style-one">Read More</a>
                                         </div>
                                     </div>
                                 </div>
@@ -35,7 +35,7 @@
                         <div class="news-block-three">
                             <div class="row">
                                 <div class="image-box col-xl-6 col-lg-12 col-md-6 col-sm-12">
-                                    <figure class="image"><a href="blog-detail.html"><img src="images/resource/news-8.jpg" alt=""></a></figure>
+                                    <figure class="image"><a href="{{ url('news/detail') }}"><img src="images/resource/news-8.jpg" alt=""></a></figure>
                                 </div>
                                 <div class="content-box col-xl-6 col-lg-12 col-md-6 col-sm-12">
                                     <div class="inner-box">
@@ -43,10 +43,10 @@
                                             <li>by <span>Anoma</span></li>
                                             <li>JANUARY 14, 2019</li>
                                         </ul>
-                                        <h3><a href="blog-detail.html">Dazzling retreat resort with the roof Modern Design</a></h3>
+                                        <h3><a href="{{ url('news/detail') }}">Dazzling retreat resort with the roof Modern Design</a></h3>
                                         <div class="text">Objectively innovate empowered manufactured products whereas parallel platforms. Holisticly predominate testing procedures for reliable supply chains. Dramatically engage top-line web services vis-a-vis cutting-edge.</div>
                                         <div class="btn-box">
-                                            <a href="blog-detail.html" class="theme-btn btn-style-one">Read More</a>
+                                            <a href="{{ url('news/detail') }}" class="theme-btn btn-style-one">Read More</a>
                                         </div>
                                     </div>
                                 </div>
@@ -57,7 +57,7 @@
                         <div class="news-block-three">
                             <div class="row">
                                 <div class="image-box col-xl-6 col-lg-12 col-md-6 col-sm-12">
-                                    <figure class="image"><a href="blog-detail.html"><img src="images/resource/news-9.jpg" alt=""></a></figure>
+                                    <figure class="image"><a href="{{ url('news/detail') }}"><img src="images/resource/news-9.jpg" alt=""></a></figure>
                                 </div>
                                 <div class="content-box col-xl-6 col-lg-12 col-md-6 col-sm-12">
                                     <div class="inner-box">
@@ -65,10 +65,10 @@
                                             <li>by <span>Anoma</span></li>
                                             <li>JANUARY 14, 2019</li>
                                         </ul>
-                                        <h3><a href="blog-detail.html">Dazzling retreat resort with the roof Modern Design</a></h3>
+                                        <h3><a href="{{ url('news/detail') }}">Dazzling retreat resort with the roof Modern Design</a></h3>
                                         <div class="text">Objectively innovate empowered manufactured products whereas parallel platforms. Holisticly predominate testing procedures for reliable supply chains. Dramatically engage top-line web services vis-a-vis cutting-edge.</div>
                                         <div class="btn-box">
-                                            <a href="blog-detail.html" class="theme-btn btn-style-one">Read More</a>
+                                            <a href="{{ url('news/detail') }}" class="theme-btn btn-style-one">Read More</a>
                                         </div>
                                     </div>
                                 </div>
@@ -79,7 +79,7 @@
                         <div class="news-block-three">
                             <div class="row">
                                 <div class="image-box col-xl-6 col-lg-12 col-md-6 col-sm-12">
-                                    <figure class="image"><a href="blog-detail.html"><img src="images/resource/news-10.jpg" alt=""></a></figure>
+                                    <figure class="image"><a href="{{ url('news/detail') }}"><img src="images/resource/news-10.jpg" alt=""></a></figure>
                                 </div>
                                 <div class="content-box col-xl-6 col-lg-12 col-md-6 col-sm-12">
                                     <div class="inner-box">
@@ -87,10 +87,10 @@
                                             <li>by <span>Anoma</span></li>
                                             <li>JANUARY 14, 2019</li>
                                         </ul>
-                                        <h3><a href="blog-detail.html">Dazzling retreat resort with the roof Modern Design</a></h3>
+                                        <h3><a href="{{ url('news/detail') }}">Dazzling retreat resort with the roof Modern Design</a></h3>
                                         <div class="text">Objectively innovate empowered manufactured products whereas parallel platforms. Holisticly predominate testing procedures for reliable supply chains. Dramatically engage top-line web services vis-a-vis cutting-edge.</div>
                                         <div class="btn-box">
-                                            <a href="blog-detail.html" class="theme-btn btn-style-one">Read More</a>
+                                            <a href="{{ url('news/detail') }}" class="theme-btn btn-style-one">Read More</a>
                                         </div>
                                     </div>
                                 </div>
@@ -101,7 +101,7 @@
                         <div class="news-block-three">
                             <div class="row">
                                 <div class="image-box col-xl-6 col-lg-12 col-md-6 col-sm-12">
-                                    <figure class="image"><a href="blog-detail.html"><img src="images/resource/news-12.jpg" alt=""></a></figure>
+                                    <figure class="image"><a href="{{ url('news/detail') }}"><img src="images/resource/news-12.jpg" alt=""></a></figure>
                                 </div>
                                 <div class="content-box col-xl-6 col-lg-12 col-md-6 col-sm-12">
                                     <div class="inner-box">
@@ -109,10 +109,10 @@
                                             <li>by <span>Anoma</span></li>
                                             <li>JANUARY 14, 2019</li>
                                         </ul>
-                                        <h3><a href="blog-detail.html">Dazzling retreat resort with the roof Modern Design</a></h3>
+                                        <h3><a href="{{ url('news/detail') }}">Dazzling retreat resort with the roof Modern Design</a></h3>
                                         <div class="text">Objectively innovate empowered manufactured products whereas parallel platforms. Holisticly predominate testing procedures for reliable supply chains. Dramatically engage top-line web services vis-a-vis cutting-edge.</div>
                                         <div class="btn-box">
-                                            <a href="blog-detail.html" class="theme-btn btn-style-one">Read More</a>
+                                            <a href="{{ url('news/detail') }}" class="theme-btn btn-style-one">Read More</a>
                                         </div>
                                     </div>
                                 </div>
@@ -217,7 +217,7 @@
                                                 <label>Price Filter</label>
                                                 <div class="price-range-slider"></div>
                                                 <div class="input"><input type="text" class="price-amount" name="field-name" readonly></div>
-                                                <div class="title">US Doller</div>
+                                                <div class="title">Rp</div>
                                             </div>
                                         </div>
 
@@ -254,53 +254,53 @@
                                 <!-- Post -->
                                 <article class="post">
                                     <div class="post-thumb">
-                                        <a href="blog-detail.html">
+                                        <a href="{{ url('news/detail') }}">
                                             <img src="images/resource/property-thumb-1.jpg" alt="">
                                             <span class="status">Rent</span>
                                         </a>
                                     </div>
                                     <span class="location">Lundon, UK</span>
-                                    <h3><a href="blog-detail.html">Laxury Balles Villa</a></h3>
-                                    <div class="price">$ 760,000</div>
+                                    <h3><a href="{{ url('news/detail') }}">Laxury Balles Villa</a></h3>
+                                    <div class="price">Rp 760,000</div>
                                 </article>
 
                                 <!-- Post -->
                                 <article class="post">
                                     <div class="post-thumb">
-                                        <a href="blog-detail.html">
+                                        <a href="{{ url('news/detail') }}">
                                             <img src="images/resource/property-thumb-2.jpg" alt="">
                                             <span class="status">Rent</span>
                                         </a>
                                     </div>
                                     <span class="location">Lundon, UK</span>
-                                    <h3><a href="blog-detail.html">Laxury Balles Villa</a></h3>
-                                    <div class="price">$ 760,000</div>
+                                    <h3><a href="{{ url('news/detail') }}">Laxury Balles Villa</a></h3>
+                                    <div class="price">Rp 760,000</div>
                                 </article>
 
                                 <!-- Post -->
                                 <article class="post">
                                     <div class="post-thumb">
-                                        <a href="blog-detail.html">
+                                        <a href="{{ url('news/detail') }}">
                                             <img src="images/resource/property-thumb-3.jpg" alt="">
                                             <span class="status hot">hot</span>
                                         </a>
                                     </div>
                                     <span class="location">Lundon, UK</span>
-                                    <h3><a href="blog-detail.html">Laxury Balles Villa</a></h3>
-                                    <div class="price">$ 760,000</div>
+                                    <h3><a href="{{ url('news/detail') }}">Laxury Balles Villa</a></h3>
+                                    <div class="price">Rp 760,000</div>
                                 </article>
 
                                 <!-- Post -->
                                 <article class="post">
                                     <div class="post-thumb">
-                                        <a href="blog-detail.html">
+                                        <a href="{{ url('news/detail') }}">
                                             <img src="images/resource/property-thumb-4.jpg" alt="">
                                             <span class="status">Rent</span>
                                         </a>
                                     </div>
                                     <span class="location">Lundon, UK</span>
-                                    <h3><a href="blog-detail.html">Laxury Balles Villa</a></h3>
-                                    <div class="price">$ 760,000</div>
+                                    <h3><a href="{{ url('news/detail') }}">Laxury Balles Villa</a></h3>
+                                    <div class="price">Rp 760,000</div>
                                 </article>
                             </div>
                         </div>
@@ -311,27 +311,6 @@
     </div>
     <!-- End Sidebar Container -->
 
-
-    <!--Clients Section-->
-    <section class="clients-section style-three">
-        <div class="auto-container">
-            <div class="sponsors-outer">
-                <!--Sponsors Carousel-->
-                <ul class="sponsors-carousel owl-carousel owl-theme">
-                    <li class="slide-item"><figure class="image-box"><a href="#"><img src="images/clients/1.png" alt=""></a></figure></li>
-                    <li class="slide-item"><figure class="image-box"><a href="#"><img src="images/clients/2.png" alt=""></a></figure></li>
-                    <li class="slide-item"><figure class="image-box"><a href="#"><img src="images/clients/3.png" alt=""></a></figure></li>
-                    <li class="slide-item"><figure class="image-box"><a href="#"><img src="images/clients/4.png" alt=""></a></figure></li>
-                    <li class="slide-item"><figure class="image-box"><a href="#"><img src="images/clients/1.png" alt=""></a></figure></li>
-                    <li class="slide-item"><figure class="image-box"><a href="#"><img src="images/clients/2.png" alt=""></a></figure></li>
-                    <li class="slide-item"><figure class="image-box"><a href="#"><img src="images/clients/3.png" alt=""></a></figure></li>
-                    <li class="slide-item"><figure class="image-box"><a href="#"><img src="images/clients/4.png" alt=""></a></figure></li>
-                </ul>
-            </div>
-        </div>
-    </section>
-    <!--End Clients Section--> 
-
     @include('frontland/partials/footer')
 
-@endcontent
+@endsection

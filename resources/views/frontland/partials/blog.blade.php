@@ -53,7 +53,7 @@
                             <li>by <span>Admin</span></li>
                             <li>25 Desember 2019</li>
                         </ul>
-                        <h3><a href="{{route('news')}}">Modron apartment adjacent to CEO park</a></h3>
+                        <h3><a href="{{url('news/grid')}}">Modron apartment adjacent to CEO park</a></h3>
                     </div>
                 </div>
             </div>

@@ -1,24 +1,24 @@
 <!-- Main Header-->
 <header class="main-header header-style-three">
     <!--Header Top-->
-    <!-- <div class="header-top">
+    <div class="header-top">
         <div class="auto-container">
             <div class="inner-container clearfix">
                 <div class="top-left">
-                    <div class="text"><span>Welcome</span> to Ourland Real Estate - Making Business Better</div>
+                    <div class="text"><span>Welcome</span> to Serua Land Residence - Making Business Better</div>
                 </div>
                 <div class="top-right clearfix">
                     <ul class="clearfix">
                         <li><a href="#">Login</a></li>
-                        <li><a href="#">Register</a></li>
+                        <!-- <li><a href="#">Register</a></li> -->
                     </ul>
                     <div class="btn-box">
-                        <a href="admin/submit-property.html" class="theme-btn btn-style-two">Add Property</a>
+                        <a href="#" class="theme-btn btn-style-two">Register</a>
                     </div>
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
     <!-- End Header Top -->
 
         <!-- Header Upper -->
@@ -27,7 +27,7 @@
             <div class="clearfix">
                 
                 <div class="logo-outer">
-                    <div class="logo"><a href="index.html"><img src="{{asset('frontland/images/logo-1.png')}}" alt="" title=""></a></div>
+                    <div class="logo"><a href="{{url('/')}}"><img src="{{asset('frontland/images/logo-1.png')}}" alt="" title=""></a></div>
                 </div>
                 
                 <div class="upper-right clearfix">
@@ -83,12 +83,11 @@
                         
                         <div class="collapse navbar-collapse clearfix" id="navbarSupportedContent">
                             <ul class="navigation clearfix">
-                                <li class="current dropdown"><a href="{{ route('home') }}">Home</a></li>
-                                <li class="dropdown"><a href="#">About</a></li>
-                                <li class="dropdown"><a href="#">Agents</a></li>
-                                <li class="dropdown"><a href="{{ route('properties') }}">Properties</a></li>
-                                <li class="dropdown"><a href="{{ route('news') }}">Blog</a></li>
-                                <li><a href="{{ route('contact') }}">Contact</a></li>
+                                <li class="current dropdown"><a href="{{ url('/') }}">Home</a></li>
+                                <li class="dropdown"><a href="{{ url('/') }}">About</a></li>
+                                <li class="dropdown"><a href="{{ url('properties/grid') }}">Properties</a></li>
+                                <li class="dropdown"><a href="{{ url('news/grid') }}">Blog</a></li>
+                                <li><a href="{{ url('contact') }}">Contact</a></li>
                             </ul>              
                         </div>
                     </nav><!-- Main Menu End-->
@@ -96,7 +95,7 @@
                     <!-- Main Menu End-->
                     <div class="outer-box">
                         <div class="btn-box">
-                            <a href="#" class="theme-btn btn-style-four">Booking Now</a>
+                            <a href="{{ route('booking') }}" class="theme-btn btn-style-four">Booking Now</a>
                         </div>
 
                         <!--Search Box-->
@@ -106,7 +105,7 @@
                                 <ul class="dropdown-menu pull-right search-panel" aria-labelledby="dropdownMenu3">
                                     <li class="panel-outer">
                                         <div class="form-container">
-                                            <form method="post" action="{{ route('search')}}">
+                                            <form method="post" action="{{ url('properties/grid') }}">
                                                 <div class="form-group">
                                                     <input type="search" name="field-name" value="" placeholder="Search Here" required>
                                                     <button type="submit" class="search-btn"><span class="la la-search"></span></button>
@@ -130,7 +129,7 @@
         <div class="auto-container clearfix">
             <!--Logo-->
             <div class="logo pull-left">
-                <a href="index.html" title=""><img src="{{asset('frontland/images/logo-1.png')}}" alt="" title=""></a>
+                <a href="{{ url('/') }}" title=""><img src="{{asset('frontland/images/logo-1.png')}}" alt="" title=""></a>
             </div>
             <!--Right Col-->
             <div class="pull-right">
@@ -138,12 +137,11 @@
                 <nav class="main-menu">
                     <div class="navbar-collapse show collapse clearfix">
                         <ul class="navigation clearfix">
-                            <li class="current dropdown"><a href="{{ route('home') }}">Home</a></li>
-                            <li class="dropdown"><a href="#">About</a></li>
-                            <li class="dropdown"><a href="#">Agents</a></li>
-                            <li class="dropdown"><a href="{{ route('properties') }}">Properties</a></li>
-                            <li class="dropdown"><a href="{{ route('news') }}">Blog</a></li>
-                            <li><a href="{{ route('contact') }}">Contact</a></li>
+                            <li class="current dropdown"><a href="{{ url('/') }}">Home</a></li>
+                            <li class="dropdown"><a href="{{ url('/') }}">About</a></li>
+                            <li class="dropdown"><a href="{{ url('properties/grid') }}">Properties</a></li>
+                            <li class="dropdown"><a href="{{ url('news/grid') }}">Blog</a></li>
+                            <li><a href="{{ url('contact') }}">Contact</a></li>
                         </ul> 
                     </div>
                 </nav><!-- Main Menu End-->

@@ -1,6 +1,6 @@
 @extends('frontland.layouts.app')
 
-@section('contect')
+@section('content')
 
       <!-- Sidebar Page Container -->
       <div class="sidebar-page-container">
@@ -16,8 +16,8 @@
                             </div>
 
                             <ul class="filter-options">
-                                <li class="active"><a href="property-list-view.html"><span class="la la-th-list"></span></a></li>
-                                <li><a href="property-grid-view.html"><span class="la la-th-large"></span></a></li>
+                                <li class="active"><a href="{{url('properties/list')}}"><span class="la la-th-list"></span></a></li>
+                                <li><a href="{{url('properties/grid')}}"><span class="la la-th-large"></span></a></li>
                             </ul>
                         </div>
 
@@ -27,11 +27,11 @@
                                 <div class="row clearfix">
                                     <div class="column col-xl-6 col-lg-12 col-md-12 col-sm-12">
                                         <div class="image-box">
-                                            <figure class="image"><img src="images/resource/property-1.jpg" alt=""></figure>
+                                            <figure class="image"><img src="{{ asset('frontland/images/resource/property-1.jpg') }}" alt=""></figure>
                                             <span class="for">FOR SALE</span>
                                             <span class="featured">FEATURED</span>
                                             <ul class="option-box">
-                                                <li><a href="images/resource/property-1.jpg" class="lightbox-image" data-fancybox="property"><i class="la la-camera"></i></a></li>
+                                                <li><a href="{{ asset('frontland/images/resource/property-1.jpg') }}" class="lightbox-image" data-fancybox="property"><i class="la la-camera"></i></a></li>
                                                 <li><a href="#"><i class="la la-heart"></i></a></li>
                                                 <li><a href="#"><i class="la la-retweet"></i></a></li>
                                             </ul>
@@ -44,12 +44,12 @@
                                     <div class="column col-xl-6 col-lg-12 col-md-12 col-sm-12">
                                         <div class="lower-content">
                                             <ul class="tags">
-                                                <li><a href="property-detail.html">Apartment</a>,</li>
-                                                <li><a href="property-detail.html">Bar</a>,</li>
-                                                <li><a href="property-detail.html">House</a>,</li>
+                                                <li><a href="{{ url('properties/detail') }}">Apartment</a>,</li>
+                                                <li><a href="{{ url('properties/detail') }}">Bar</a>,</li>
+                                                <li><a href="{{ url('properties/detail') }}">House</a>,</li>
                                             </ul>
-                                            <div class="thumb"><img src="images/resource/thumb-5.jpg" alt=""></div>
-                                            <h3><a href="property-detail.html">Single House Near Orland Park.</a></h3>
+                                            <div class="thumb"><img src="{{ asset('frontland/images/resource/thumb-5.jpg') }}" alt=""></div>
+                                            <h3><a href="{{ url('properties/detail') }}">Single House Near Orland Park.</a></h3>
                                             <div class="lucation"><i class="la la-map-marker"></i> Orland Park, IL 35785, Chicago, United State</div>
                                             <ul class="property-info clearfix">
                                                 <li><i class="flaticon-dimension"></i> 356 Sq-Ft</li>
@@ -58,8 +58,8 @@
                                                 <li><i class="flaticon-bathtub"></i> 3 Bathroom</li>
                                             </ul>
                                             <div class="property-price clearfix">
-                                                <div class="read-more"><a href="property-detail.html" class="theme-btn">More Detail</a></div>
-                                                <div class="price">$ 13,65,000</div>
+                                                <div class="read-more"><a href="{{ url('properties/detail') }}" class="theme-btn">More Detail</a></div>
+                                                <div class="price">Rp 13,65,000</div>
                                             </div>
                                         </div>
                                     </div>
@@ -73,11 +73,11 @@
                                 <div class="row clearfix">
                                     <div class="column col-xl-6 col-lg-12 col-md-12 col-sm-12">
                                         <div class="image-box">
-                                            <figure class="image"><img src="images/resource/property-2.jpg" alt=""></figure>
+                                            <figure class="image"><img src="{{ asset('frontland/images/resource/property-2.jpg') }}" alt=""></figure>
                                             <span class="for">FOR SALE</span>
                                             <span class="featured">FEATURED</span>
                                             <ul class="option-box">
-                                                <li><a href="images/resource/property-2.jpg" class="lightbox-image" data-fancybox="property"><i class="la la-camera"></i></a></li>
+                                                <li><a href="{{ asset('frontland/images/resource/property-2.jpg') }}" class="lightbox-image" data-fancybox="property"><i class="la la-camera"></i></a></li>
                                                 <li><a href="#"><i class="la la-heart"></i></a></li>
                                                 <li><a href="#"><i class="la la-retweet"></i></a></li>
                                             </ul>
@@ -90,12 +90,12 @@
                                     <div class="column col-xl-6 col-lg-12 col-md-12 col-sm-12">
                                         <div class="lower-content">
                                             <ul class="tags">
-                                                <li><a href="property-detail.html">Apartment</a>,</li>
-                                                <li><a href="property-detail.html">Bar</a>,</li>
-                                                <li><a href="property-detail.html">House</a>,</li>
+                                                <li><a href="{{ url('properties/detail') }}">Apartment</a>,</li>
+                                                <li><a href="{{ url('properties/detail') }}">Bar</a>,</li>
+                                                <li><a href="{{ url('properties/detail') }}">House</a>,</li>
                                             </ul>
-                                            <div class="thumb"><img src="images/resource/thumb-6.jpg" alt=""></div>
-                                            <h3><a href="property-detail.html">Apartment Morden 1243, W No.</a></h3>
+                                            <div class="thumb"><img src="{{ asset('frontland/images/resource/thumb-6.jpg') }}" alt=""></div>
+                                            <h3><a href="{{ url('properties/detail') }}">Apartment Morden 1243, W No.</a></h3>
                                             <div class="lucation"><i class="la la-map-marker"></i> Orland Park, IL 35785, Chicago, United State</div>
                                             <ul class="property-info clearfix">
                                                 <li><i class="flaticon-dimension"></i> 506 Sq-Ft</li>
@@ -104,8 +104,8 @@
                                                 <li><i class="flaticon-bathtub"></i> 3 Bathroom</li>
                                             </ul>
                                             <div class="property-price clearfix">
-                                                <div class="read-more"><a href="property-detail.html" class="theme-btn">More Detail</a></div>
-                                                <div class="price">$ 13,65,000</div>
+                                                <div class="read-more"><a href="{{ url('properties/detail') }}" class="theme-btn">More Detail</a></div>
+                                                <div class="price">Rp 13,65,000</div>
                                             </div>
                                         </div>
                                     </div>
@@ -119,11 +119,11 @@
                                 <div class="row clearfix">
                                     <div class="column col-xl-6 col-lg-12 col-md-12 col-sm-12">
                                         <div class="image-box">
-                                            <figure class="image"><img src="images/resource/property-3.jpg" alt=""></figure>
+                                            <figure class="image"><img src="{{ asset('frontland/images/resource/property-3.jpg') }}" alt=""></figure>
                                             <span class="for">FOR SALE</span>
                                             <span class="featured">FEATURED</span>
                                             <ul class="option-box">
-                                                <li><a href="images/resource/property-3.jpg" class="lightbox-image" data-fancybox="property"><i class="la la-camera"></i></a></li>
+                                                <li><a href="{{ asset('frontland/images/resource/property-3.jpg') }}" class="lightbox-image" data-fancybox="property"><i class="la la-camera"></i></a></li>
                                                 <li><a href="#"><i class="la la-heart"></i></a></li>
                                                 <li><a href="#"><i class="la la-retweet"></i></a></li>
                                             </ul>
@@ -136,12 +136,12 @@
                                     <div class="column col-xl-6 col-lg-12 col-md-12 col-sm-12">
                                         <div class="lower-content">
                                             <ul class="tags">
-                                                <li><a href="property-detail.html">Apartment</a>,</li>
-                                                <li><a href="property-detail.html">Bar</a>,</li>
-                                                <li><a href="property-detail.html">House</a>,</li>
+                                                <li><a href="{{ url('properties/detail') }}">Apartment</a>,</li>
+                                                <li><a href="{{ url('properties/detail') }}">Bar</a>,</li>
+                                                <li><a href="{{ url('properties/detail') }}">House</a>,</li>
                                             </ul>
-                                            <div class="thumb"><img src="images/resource/thumb-7.jpg" alt=""></div>
-                                            <h3><a href="property-detail.html">Great Home for Single fmaily.</a></h3>
+                                            <div class="thumb"><img src="{{ asset('frontland/images/resource/thumb-7.jpg') }}" alt=""></div>
+                                            <h3><a href="{{ url('properties/detail') }}">Great Home for Single fmaily.</a></h3>
                                             <div class="lucation"><i class="la la-map-marker"></i> Orland Park, IL 35785, Chicago, United State</div>
                                             <ul class="property-info clearfix">
                                                 <li><i class="flaticon-dimension"></i> 506 Sq-Ft</li>
@@ -150,8 +150,8 @@
                                                 <li><i class="flaticon-bathtub"></i> 3 Bathroom</li>
                                             </ul>
                                             <div class="property-price clearfix">
-                                                <div class="read-more"><a href="property-detail.html" class="theme-btn">More Detail</a></div>
-                                                <div class="price">$ 13,65,000</div>
+                                                <div class="read-more"><a href="{{ url('properties/detail') }}" class="theme-btn">More Detail</a></div>
+                                                <div class="price">Rp 13,65,000</div>
                                             </div>
                                         </div>
                                     </div>
@@ -165,11 +165,11 @@
                                 <div class="row clearfix">
                                     <div class="column col-xl-6 col-lg-12 col-md-12 col-sm-12">
                                         <div class="image-box">
-                                            <figure class="image"><img src="images/resource/property-4.jpg" alt=""></figure>
+                                            <figure class="image"><img src="{{ asset('frontland/images/resource/property-4.jpg') }}" alt=""></figure>
                                             <span class="for">FOR SALE</span>
                                             <span class="featured">FEATURED</span>
                                             <ul class="option-box">
-                                                <li><a href="images/resource/property-4.jpg" class="lightbox-image" data-fancybox="property"><i class="la la-camera"></i></a></li>
+                                                <li><a href="{{ asset('frontland/images/resource/property-4.jpg') }}" class="lightbox-image" data-fancybox="property"><i class="la la-camera"></i></a></li>
                                                 <li><a href="#"><i class="la la-heart"></i></a></li>
                                                 <li><a href="#"><i class="la la-retweet"></i></a></li>
                                             </ul>
@@ -182,12 +182,12 @@
                                     <div class="column col-xl-6 col-lg-12 col-md-12 col-sm-12">
                                         <div class="lower-content">
                                             <ul class="tags">
-                                                <li><a href="property-detail.html">Apartment</a>,</li>
-                                                <li><a href="property-detail.html">Bar</a>,</li>
-                                                <li><a href="property-detail.html">House</a>,</li>
+                                                <li><a href="{{ url('properties/detail') }}">Apartment</a>,</li>
+                                                <li><a href="{{ url('properties/detail') }}">Bar</a>,</li>
+                                                <li><a href="{{ url('properties/detail') }}">House</a>,</li>
                                             </ul>
-                                            <div class="thumb"><img src="images/resource/thumb-8.jpg" alt=""></div>
-                                            <h3><a href="property-detail.html">Single House Near Orland Park.</a></h3>
+                                            <div class="thumb"><img src="{{ asset('frontland/images/resource/thumb-8.jpg') }}" alt=""></div>
+                                            <h3><a href="{{ url('properties/detail') }}">Single House Near Orland Park.</a></h3>
                                             <div class="lucation"><i class="la la-map-marker"></i> Orland Park, IL 35785, Chicago, United State</div>
                                             <ul class="property-info clearfix">
                                                 <li><i class="flaticon-dimension"></i> 356 Sq-Ft</li>
@@ -196,8 +196,8 @@
                                                 <li><i class="flaticon-bathtub"></i> 3 Bathroom</li>
                                             </ul>
                                             <div class="property-price clearfix">
-                                                <div class="read-more"><a href="property-detail.html" class="theme-btn">More Detail</a></div>
-                                                <div class="price">$ 13,65,000</div>
+                                                <div class="read-more"><a href="{{ url('properties/detail') }}" class="theme-btn">More Detail</a></div>
+                                                <div class="price">Rp 13,65,000</div>
                                             </div>
                                         </div>
                                     </div>
@@ -211,11 +211,11 @@
                                 <div class="row clearfix">
                                     <div class="column col-xl-6 col-lg-12 col-md-12 col-sm-12">
                                         <div class="image-box">
-                                            <figure class="image"><img src="images/resource/property-5.jpg" alt=""></figure>
+                                            <figure class="image"><img src="{{ asset('frontland/images/resource/property-5.jpg') }}" alt=""></figure>
                                             <span class="for">FOR SALE</span>
                                             <span class="featured">FEATURED</span>
                                             <ul class="option-box">
-                                                <li><a href="images/resource/property-5.jpg" class="lightbox-image" data-fancybox="property"><i class="la la-camera"></i></a></li>
+                                                <li><a href="{{ asset('frontland/images/resource/property-5.jpg') }}" class="lightbox-image" data-fancybox="property"><i class="la la-camera"></i></a></li>
                                                 <li><a href="#"><i class="la la-heart"></i></a></li>
                                                 <li><a href="#"><i class="la la-retweet"></i></a></li>
                                             </ul>
@@ -228,12 +228,12 @@
                                     <div class="column col-xl-6 col-lg-12 col-md-12 col-sm-12">
                                         <div class="lower-content">
                                             <ul class="tags">
-                                                <li><a href="property-detail.html">Apartment</a>,</li>
-                                                <li><a href="property-detail.html">Bar</a>,</li>
-                                                <li><a href="property-detail.html">House</a>,</li>
+                                                <li><a href="{{ url('properties/detail') }}">Apartment</a>,</li>
+                                                <li><a href="{{ url('properties/detail') }}">Bar</a>,</li>
+                                                <li><a href="{{ url('properties/detail') }}">House</a>,</li>
                                             </ul>
-                                            <div class="thumb"><img src="images/resource/thumb-9.jpg" alt=""></div>
-                                            <h3><a href="property-detail.html">Apartment Morden 1243, W No.</a></h3>
+                                            <div class="thumb"><img src="{{ asset('frontland/images/resource/thumb-9.jpg') }}" alt=""></div>
+                                            <h3><a href="{{ url('properties/detail') }}">Apartment Morden 1243, W No.</a></h3>
                                             <div class="lucation"><i class="la la-map-marker"></i> Orland Park, IL 35785, Chicago, United State</div>
                                             <ul class="property-info clearfix">
                                                 <li><i class="flaticon-dimension"></i> 506 Sq-Ft</li>
@@ -242,8 +242,8 @@
                                                 <li><i class="flaticon-bathtub"></i> 3 Bathroom</li>
                                             </ul>
                                             <div class="property-price clearfix">
-                                                <div class="read-more"><a href="property-detail.html" class="theme-btn">More Detail</a></div>
-                                                <div class="price">$ 13,65,000</div>
+                                                <div class="read-more"><a href="{{ url('properties/detail') }}" class="theme-btn">More Detail</a></div>
+                                                <div class="price">Rp 13,65,000</div>
                                             </div>
                                         </div>
                                     </div>
@@ -349,7 +349,7 @@
                                                 <label>Price Filter</label>
                                                 <div class="price-range-slider"></div>
                                                 <div class="input"><input type="text" class="price-amount" name="field-name" readonly></div>
-                                                <div class="title">US Doller</div>
+                                                <div class="title">Rp</div>
                                             </div>
                                         </div>
 
@@ -386,53 +386,53 @@
                                 <!-- Post -->
                                 <article class="post">
                                     <div class="post-thumb">
-                                        <a href="blog-detail.html">
-                                            <img src="images/resource/property-thumb-1.jpg" alt="">
+                                        <a href="{{ url('news/detail') }}">
+                                            <img src="{{ asset('frontland/images/resource/property-thumb-1.jpg') }}" alt="">
                                             <span class="status">Rent</span>
                                         </a>
                                     </div>
                                     <span class="location">Lundon, UK</span>
-                                    <h3><a href="blog-detail.html">Laxury Balles Villa</a></h3>
-                                    <div class="price">$ 760,000</div>
+                                    <h3><a href="{{ url('news/detail') }}">Laxury Balles Villa</a></h3>
+                                    <div class="price">Rp 760,000</div>
                                 </article>
 
                                 <!-- Post -->
                                 <article class="post">
                                     <div class="post-thumb">
-                                        <a href="blog-detail.html">
-                                            <img src="images/resource/property-thumb-2.jpg" alt="">
+                                        <a href="{{ url('news/detail') }}">
+                                            <img src="{{ asset('frontland/images/resource/property-thumb-2.jpg') }}" alt="">
                                             <span class="status">Rent</span>
                                         </a>
                                     </div>
                                     <span class="location">Lundon, UK</span>
-                                    <h3><a href="blog-detail.html">Laxury Balles Villa</a></h3>
-                                    <div class="price">$ 760,000</div>
+                                    <h3><a href="{{ url('news/detail') }}">Laxury Balles Villa</a></h3>
+                                    <div class="price">Rp 760,000</div>
                                 </article>
 
                                 <!-- Post -->
                                 <article class="post">
                                     <div class="post-thumb">
-                                        <a href="blog-detail.html">
-                                            <img src="images/resource/property-thumb-3.jpg" alt="">
+                                        <a href="{{ url('news/detail') }}">
+                                            <img src="{{ asset('frontland/images/resource/property-thumb-3.jpg') }}" alt="">
                                             <span class="status hot">hot</span>
                                         </a>
                                     </div>
                                     <span class="location">Lundon, UK</span>
-                                    <h3><a href="blog-detail.html">Laxury Balles Villa</a></h3>
-                                    <div class="price">$ 760,000</div>
+                                    <h3><a href="{{ url('news/detail') }}">Laxury Balles Villa</a></h3>
+                                    <div class="price">Rp 760,000</div>
                                 </article>
 
                                 <!-- Post -->
                                 <article class="post">
                                     <div class="post-thumb">
-                                        <a href="blog-detail.html">
-                                            <img src="images/resource/property-thumb-4.jpg" alt="">
+                                        <a href="{{ url('news/detail') }}">
+                                            <img src="{{ asset('frontland/images/resource/property-thumb-4.jpg') }}" alt="">
                                             <span class="status">Rent</span>
                                         </a>
                                     </div>
                                     <span class="location">Lundon, UK</span>
-                                    <h3><a href="blog-detail.html">Laxury Balles Villa</a></h3>
-                                    <div class="price">$ 760,000</div>
+                                    <h3><a href="{{ url('news/detail') }}">Laxury Balles Villa</a></h3>
+                                    <div class="price">Rp 760,000</div>
                                 </article>
                             </div>
                         </div>
@@ -443,27 +443,6 @@
     </div>
     <!-- End Sidebar Container -->
 
-
-    <!--Clients Section-->
-    <section class="clients-section style-three">
-        <div class="auto-container">
-            <div class="sponsors-outer">
-                <!--Sponsors Carousel-->
-                <ul class="sponsors-carousel owl-carousel owl-theme">
-                    <li class="slide-item"><figure class="image-box"><a href="#"><img src="images/clients/1.png" alt=""></a></figure></li>
-                    <li class="slide-item"><figure class="image-box"><a href="#"><img src="images/clients/2.png" alt=""></a></figure></li>
-                    <li class="slide-item"><figure class="image-box"><a href="#"><img src="images/clients/3.png" alt=""></a></figure></li>
-                    <li class="slide-item"><figure class="image-box"><a href="#"><img src="images/clients/4.png" alt=""></a></figure></li>
-                    <li class="slide-item"><figure class="image-box"><a href="#"><img src="images/clients/1.png" alt=""></a></figure></li>
-                    <li class="slide-item"><figure class="image-box"><a href="#"><img src="images/clients/2.png" alt=""></a></figure></li>
-                    <li class="slide-item"><figure class="image-box"><a href="#"><img src="images/clients/3.png" alt=""></a></figure></li>
-                    <li class="slide-item"><figure class="image-box"><a href="#"><img src="images/clients/4.png" alt=""></a></figure></li>
-                </ul>
-            </div>
-        </div>
-    </section>
-    <!--End Clients Section--> 
-
     @include('frontland/partials/footer')
 
-@endcontent
+@endsection

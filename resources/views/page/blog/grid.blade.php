@@ -1,6 +1,6 @@
 @extends('frontland.layouts.app')
 
-@section('contect')
+@section('content')
 
     <!-- Sidebar Page Container -->
     <div class="sidebar-page-container">
@@ -14,14 +14,14 @@
                             <div class="news-block col-lg-6 col-md-6 col-sm-12">
                                 <div class="inner-box">
                                     <div class="image-box">
-                                        <figure class="image"><a href="blog-detail.html"><img src="images/resource/news-1.jpg" alt=""></a></figure>
+                                        <figure class="image"><a href="{{ url('news/detail') }}"><img src="{{ asset('frontland/images/resource/news-1.jpg') }}" alt=""></a></figure>
                                     </div>
                                     <div class="lower-content">
                                         <ul class="info">
                                             <li>by <span>Anoma</span></li>
                                             <li>JANUARY 14, 2019</li>
                                         </ul>
-                                        <h3><a href="blog-detail.html">Dazzling retreat resort with roof Modern Design</a></h3>
+                                        <h3><a href="{{ url('news/detail') }}">Dazzling retreat resort with roof Modern Design</a></h3>
                                     </div>
                                 </div>
                             </div>
@@ -30,14 +30,14 @@
                             <div class="news-block col-lg-6 col-md-6 col-sm-12">
                                 <div class="inner-box">
                                     <div class="image-box">
-                                        <figure class="image"><a href="blog-detail.html"><img src="images/resource/news-2.jpg" alt=""></a></figure>
+                                        <figure class="image"><a href="{{ url('news/detail') }}"><img src="{{ asset('frontland/images/resource/news-2.jpg') }}" alt=""></a></figure>
                                     </div>
                                     <div class="lower-content">
                                         <ul class="info">
                                             <li>by <span>Anoma</span></li>
                                             <li>JANUARY 14, 2019</li>
                                         </ul>
-                                        <h3><a href="blog-detail.html">Independent apartment with modern design</a></h3>
+                                        <h3><a href="{{ url('news/detail') }}">Independent apartment with modern design</a></h3>
                                     </div>
                                 </div>
                             </div>
@@ -46,14 +46,14 @@
                             <div class="news-block col-lg-6 col-md-6 col-sm-12">
                                 <div class="inner-box">
                                     <div class="image-box">
-                                        <figure class="image"><a href="blog-detail.html"><img src="images/resource/news-3.jpg" alt=""></a></figure>
+                                        <figure class="image"><a href="{{ url('news/detail') }}"><img src="{{ asset('frontland/images/resource/news-3.jpg') }}" alt=""></a></figure>
                                     </div>
                                     <div class="lower-content">
                                         <ul class="info">
                                             <li>by <span>Anoma</span></li>
                                             <li>JANUARY 14, 2019</li>
                                         </ul>
-                                        <h3><a href="blog-detail.html">Modron apartment adjacent to CEO park</a></h3>
+                                        <h3><a href="{{ url('news/detail') }}">Modron apartment adjacent to CEO park</a></h3>
                                     </div>
                                 </div>
                             </div>
@@ -62,14 +62,14 @@
                             <div class="news-block col-lg-6 col-md-6 col-sm-12">
                                 <div class="inner-box">
                                     <div class="image-box">
-                                        <figure class="image"><a href="blog-detail.html"><img src="images/resource/news-8.jpg" alt=""></a></figure>
+                                        <figure class="image"><a href="{{ url('news/detail') }}"><img src="{{ asset('frontland/images/resource/news-8.jpg') }}" alt=""></a></figure>
                                     </div>
                                     <div class="lower-content">
                                         <ul class="info">
                                             <li>by <span>Anoma</span></li>
                                             <li>JANUARY 14, 2019</li>
                                         </ul>
-                                        <h3><a href="blog-detail.html">Resources that we thought you may find useful </a></h3>
+                                        <h3><a href="{{ url('news/detail') }}">Resources that we thought you may find useful </a></h3>
                                     </div>
                                 </div>
                             </div>
@@ -78,14 +78,14 @@
                             <div class="news-block col-lg-6 col-md-6 col-sm-12">
                                 <div class="inner-box">
                                     <div class="image-box">
-                                        <figure class="image"><a href="blog-detail.html"><img src="images/resource/news-9.jpg" alt=""></a></figure>
+                                        <figure class="image"><a href="{{ url('news/detail') }}"><img src="{{ asset('frontland/images/resource/news-9.jpg') }}" alt=""></a></figure>
                                     </div>
                                     <div class="lower-content">
                                         <ul class="info">
                                             <li>by <span>Anoma</span></li>
                                             <li>JANUARY 14, 2019</li>
                                         </ul>
-                                        <h3><a href="blog-detail.html">Learn the truth about Real Estate industry</a></h3>
+                                        <h3><a href="{{ url('news/detail') }}">Learn the truth about Real Estate industry</a></h3>
                                     </div>
                                 </div>
                             </div>
@@ -94,14 +94,14 @@
                             <div class="news-block col-lg-6 col-md-6 col-sm-12">
                                 <div class="inner-box">
                                     <div class="image-box">
-                                        <figure class="image"><a href="blog-detail.html"><img src="images/resource/news-10.jpg" alt=""></a></figure>
+                                        <figure class="image"><a href="{{ url('news/detail') }}"><img src="{{ asset('frontland/images/resource/news-10.jpg') }}" alt=""></a></figure>
                                     </div>
                                     <div class="lower-content">
                                         <ul class="info">
                                             <li>by <span>Anoma</span></li>
                                             <li>JANUARY 14, 2019</li>
                                         </ul>
-                                        <h3><a href="blog-detail.html">Skills that you can learn in the Real Estate market</a></h3>
+                                        <h3><a href="{{ url('news/detail') }}">Skills that you can learn in the Real Estate market</a></h3>
                                     </div>
                                 </div>
                             </div>
@@ -205,7 +205,7 @@
                                                 <label>Price Filter</label>
                                                 <div class="price-range-slider"></div>
                                                 <div class="input"><input type="text" class="price-amount" name="field-name" readonly></div>
-                                                <div class="title">US Doller</div>
+                                                <div class="title">Rp</div>
                                             </div>
                                         </div>
 
@@ -242,53 +242,53 @@
                                 <!-- Post -->
                                 <article class="post">
                                     <div class="post-thumb">
-                                        <a href="blog-detail.html">
-                                            <img src="images/resource/property-thumb-1.jpg" alt="">
+                                        <a href="{{ url('news/detail') }}">
+                                            <img src="{{ asset('frontland/images/resource/property-thumb-1.jpg') }}" alt="">
                                             <span class="status">Rent</span>
                                         </a>
                                     </div>
                                     <span class="location">Lundon, UK</span>
-                                    <h3><a href="blog-detail.html">Laxury Balles Villa</a></h3>
-                                    <div class="price">$ 760,000</div>
+                                    <h3><a href="{{ url('news/detail') }}">Laxury Balles Villa</a></h3>
+                                    <div class="price">Rp 760,000</div>
                                 </article>
 
                                 <!-- Post -->
                                 <article class="post">
                                     <div class="post-thumb">
-                                        <a href="blog-detail.html">
-                                            <img src="images/resource/property-thumb-2.jpg" alt="">
+                                        <a href="{{ url('news/detail') }}">
+                                            <img src="{{ asset('frontland/images/resource/property-thumb-2.jpg') }}" alt="">
                                             <span class="status">Rent</span>
                                         </a>
                                     </div>
                                     <span class="location">Lundon, UK</span>
-                                    <h3><a href="blog-detail.html">Laxury Balles Villa</a></h3>
-                                    <div class="price">$ 760,000</div>
+                                    <h3><a href="{{ url('news/detail') }}">Laxury Balles Villa</a></h3>
+                                    <div class="price">Rp 760,000</div>
                                 </article>
 
                                 <!-- Post -->
                                 <article class="post">
                                     <div class="post-thumb">
-                                        <a href="blog-detail.html">
-                                            <img src="images/resource/property-thumb-3.jpg" alt="">
+                                        <a href="{{ url('news/detail') }}">
+                                            <img src="{{ asset('frontland/images/resource/property-thumb-3.jpg') }}" alt="">
                                             <span class="status hot">hot</span>
                                         </a>
                                     </div>
                                     <span class="location">Lundon, UK</span>
-                                    <h3><a href="blog-detail.html">Laxury Balles Villa</a></h3>
-                                    <div class="price">$ 760,000</div>
+                                    <h3><a href="{{ url('news/detail') }}">Laxury Balles Villa</a></h3>
+                                    <div class="price">Rp 760,000</div>
                                 </article>
 
                                 <!-- Post -->
                                 <article class="post">
                                     <div class="post-thumb">
-                                        <a href="blog-detail.html">
-                                            <img src="images/resource/property-thumb-4.jpg" alt="">
+                                        <a href="{{ url('news/detail') }}">
+                                            <img src="{{ asset('frontland/images/resource/property-thumb-4.jpg') }}" alt="">
                                             <span class="status">Rent</span>
                                         </a>
                                     </div>
                                     <span class="location">Lundon, UK</span>
-                                    <h3><a href="blog-detail.html">Laxury Balles Villa</a></h3>
-                                    <div class="price">$ 760,000</div>
+                                    <h3><a href="{{ url('news/detail') }}">Laxury Balles Villa</a></h3>
+                                    <div class="price">Rp 760,000</div>
                                 </article>
                             </div>
                         </div>
@@ -299,27 +299,6 @@
     </div>
     <!-- End Sidebar Container -->
 
-
-    <!--Clients Section-->
-    <section class="clients-section style-three">
-        <div class="auto-container">
-            <div class="sponsors-outer">
-                <!--Sponsors Carousel-->
-                <ul class="sponsors-carousel owl-carousel owl-theme">
-                    <li class="slide-item"><figure class="image-box"><a href="#"><img src="images/clients/1.png" alt=""></a></figure></li>
-                    <li class="slide-item"><figure class="image-box"><a href="#"><img src="images/clients/2.png" alt=""></a></figure></li>
-                    <li class="slide-item"><figure class="image-box"><a href="#"><img src="images/clients/3.png" alt=""></a></figure></li>
-                    <li class="slide-item"><figure class="image-box"><a href="#"><img src="images/clients/4.png" alt=""></a></figure></li>
-                    <li class="slide-item"><figure class="image-box"><a href="#"><img src="images/clients/1.png" alt=""></a></figure></li>
-                    <li class="slide-item"><figure class="image-box"><a href="#"><img src="images/clients/2.png" alt=""></a></figure></li>
-                    <li class="slide-item"><figure class="image-box"><a href="#"><img src="images/clients/3.png" alt=""></a></figure></li>
-                    <li class="slide-item"><figure class="image-box"><a href="#"><img src="images/clients/4.png" alt=""></a></figure></li>
-                </ul>
-            </div>
-        </div>
-    </section>
-    <!--End Clients Section--> 
-
     @include('frontland/partials/footer')
 
-@endcontent
+@endsection

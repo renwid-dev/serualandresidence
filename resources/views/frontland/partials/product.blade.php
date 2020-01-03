@@ -117,7 +117,7 @@
         </div>
 
         <div class="load-more-btn text-center">
-            <a href="{{route('properties')}}" class="theme-btn btn-style-two">Load More</a>
+            <a href="{{url('properties/grid')}}" class="theme-btn btn-style-two">Load More</a>
         </div>
     </div>
 </section>
