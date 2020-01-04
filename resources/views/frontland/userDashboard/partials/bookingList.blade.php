@@ -18,7 +18,8 @@
 	                            </div>
 	                        </div>
 	                    </div>
-	                </div>
+					</div>
+					
 	                <div class="row">
 	                    <div class="column col-lg-12">
 	                    	<div class="my-invoices">
