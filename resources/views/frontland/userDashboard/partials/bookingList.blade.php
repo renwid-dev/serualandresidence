@@ -51,8 +51,10 @@
 	                    					<div  class="column col-lg-3 col-md-6 col-sm-12">
                     							<h3>Payment Method</h3>
                     							<ul class="invoice-info">
-                    								<li>Visa ending 5453</li>
-                    								<li><a href="#">info@serualandresidence.com</a></li>
+                    								<li>Mandiri</li>
+                    								<li>534 343 144</li>
+													<li>Bank Central Asia</li>
+                    								<li>534 343 344</li>
                     							</ul>
                     						</div>
                     						<div  class="column col-lg-3 col-md-6 col-sm-12">
@@ -100,6 +102,32 @@
 	                    	</div>
 	                    </div>
 	                </div>
+
+					<div class="row">
+	                    <div class="column col-lg-12">
+	                    	<div class="properties-box">
+	                    		<div class="inner-container">
+	                    			<div class="property-submit-form">
+										<form method="POST" action="{{ route('booking') }}" enctype="multipart/form-data">
+										@csrf
+			                                <div class="title"><h3>Upload Recipt Payment</h3></div>
+			                                <div class="row">
+			                                	<!-- Form Group -->
+			                                    <div class="form-group col-lg-12">
+			                                        <div class="dropzone dropzone-design">
+														<input class="dz-default dz-message" type="file" name="receipt_image" required>
+				                                    </div>
+			                                    </div>
+                                            </div>
+                                            
+			                            </form>
+			                        </div>
+	                    		</div>
+	                    	</div>
+	                    </div>
+	                </div>
+
+
 	            </div>
 				<p class="copyright-text">© 2019 <a href="#">surualandresidence.com</a> All right reserved.</p>
 	        </div>

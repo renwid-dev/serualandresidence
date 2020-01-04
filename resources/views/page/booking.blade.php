@@ -52,7 +52,7 @@
 			                                    </div>
 
 			                                </div>
-											<input type="file" name="receipt_image" hidden>
+
 			                                <div class="title"><h3>Upload KTP</h3></div>
 			                                <div class="row">
 			                                	<!-- Form Group -->
