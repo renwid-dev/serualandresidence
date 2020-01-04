@@ -283,14 +283,14 @@
                     <div class="sidebar-widget search-properties">
                         <!-- Property Search Form -->
                         <div class="property-search-form style-three">
-                            <form method="post" action="https://expert-themes.com/html/ourland/index.html">
+                        
                                 <div class="row no-gutters">
                                     <!-- Form Group -->
                                     <div class="form-group">
-                                        <button type="submit" class="theme-btn btn-style-one">Booking Now</button>
+                                    <a href="{{url('booking')}}"><button type="submit" class="theme-btn btn-style-one"> Booking Now</button></a> 
                                     </div>
                                 </div>
-                            </form>
+                            
                         </div>
                         <!-- End Form -->
                     </div>
