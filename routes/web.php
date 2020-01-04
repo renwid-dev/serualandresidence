@@ -46,6 +46,8 @@ Route::get('/booking', 'FrontController@booking')->name('booking');
 Route::get('/dashboard/profile', 'FrontController@dashboardProfile')->name('dashboardProfile');
 Route::get('/dashboard/messages', 'FrontController@dashboardMessages')->name('dashboardMessages');
 Route::get('/dashboard/booking/list', 'FrontController@dashboardBookingList')->name('dashboardBookingList');
+
+Route::post('booking', 'BookingController@booking')->name('booking');
 // End xample halaman review demo
 
 

@@ -19,8 +19,8 @@ class Booking extends Model
     'married_card_image' 
    ];
 
-   public function bank()
-   {
-        return $this->belongsTo('App\Bank', 'bank_id');
-   }
+   // public function bank()
+   // {
+   //      return $this->belongsTo('App\Bank', 'bank_id');
+   // }
 }

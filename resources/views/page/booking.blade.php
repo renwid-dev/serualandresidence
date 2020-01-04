@@ -20,7 +20,8 @@
 	                    	<div class="properties-box">
 	                    		<div class="inner-container">
 	                    			<div class="property-submit-form">
-			                            <form method="post" action="#">
+										<form method="POST" action="{{ route('booking') }}" enctype="multipart/form-data">
+										@csrf
 			                            	<div class="title"><h3>Basic Info</h3></div>
 			                                <div class="row">
 			                                	<!-- Form Group -->
@@ -32,45 +33,32 @@
 			                                    <!-- Form Group -->
 			                                    <div class="form-group col-lg-3 col-md-6 col-sm-12">
 			                                        <label>Property Type</label>
-			                                        <select class="custom-select-box">
-		                                                <option>Property Type</option>
-		                                                <option>Residential</option>
-		                                                <option>Commercial</option>
-		                                                <option>Industrial</option>
-		                                                <option>Apartments</option>
-		                                            </select>
+			                                        <input type="text" name="text" placeholder="House" disabled>
 			                                    </div>
 
 			                                    <!-- Form Group -->
 			                                    <div class="form-group col-lg-3 col-md-6 col-sm-12">
-			                                        <label>country</label>
-			                                        <select class="custom-select-box">
-			                                            <option>Country</option>
-			                                            <option>California</option>
-			                                            <option>Florida</option>
-			                                            <option>Georgia</option>
-			                                            <option>New York</option>
-			                                            <option>Texas</option>
-			                                        </select>
+			                                        <label>Price</label>
+			                                        <input type="text" name="text" placeholder="Rp 40.0000.000" disabled>
 			                                    </div>
 
 			                                    <!-- Form Group -->
 			                                    <div class="form-group col-lg-3 col-md-6 col-sm-12">
-			                                        <label>Status</label>
-			                                        <select class="custom-select-box">
-			                                            <option>Rent</option>
-			                                            <option>Sale</option>
+			                                        <label>Bank Account</label>
+			                                        <select name="bank_id" class="custom-select-box">
+			                                            <option value="1">BCA</option>
+			                                            <option value="2">MANDIRI</option>
 			                                        </select>
 			                                    </div>
 
 			                                </div>
-
+											<input type="file" name="receipt_image" hidden>
 			                                <div class="title"><h3>Upload KTP</h3></div>
 			                                <div class="row">
 			                                	<!-- Form Group -->
 			                                    <div class="form-group col-lg-12">
-			                                        <div id="myDropZone" class="dropzone dropzone-design">
-				                                        <div class="dz-default dz-message"><span>Drop files here to upload</span></div>
+			                                        <div class="dropzone dropzone-design">
+														<input class="dz-default dz-message" type="file" name="id_card_image" required>
 				                                    </div>
 			                                    </div>
                                             </div>
@@ -79,18 +67,18 @@
 			                                <div class="row">
 			                                	<!-- Form Group -->
 			                                    <div class="form-group col-lg-12">
-			                                        <div id="myDropZone" class="dropzone dropzone-design">
-				                                        <div class="dz-default dz-message"><span>Drop files here to upload</span></div>
+			                                        <div class="dropzone dropzone-design">
+				                                        <input class="dz-default dz-message" type="file" name="npwp_card_image">
 				                                    </div>
 			                                    </div>
                                             </div>
                                             
-                                            <div class="title"><h3>Upload KK</h3></div>
+                                            <div class="title"><h3>Upload KARTU KELUARGA</h3></div>
 			                                <div class="row">
 			                                	<!-- Form Group -->
 			                                    <div class="form-group col-lg-12">
-			                                        <div id="myDropZone" class="dropzone dropzone-design">
-				                                        <div class="dz-default dz-message"><span>Drop files here to upload</span></div>
+			                                        <div class="dropzone dropzone-design">
+				                                       <input class="dz-default dz-message" type="file" name="family_card_image">
 				                                    </div>
 			                                    </div>
                                             </div>
@@ -99,8 +87,8 @@
 			                                <div class="row">
 			                                	<!-- Form Group -->
 			                                    <div class="form-group col-lg-12">
-			                                        <div id="myDropZone" class="dropzone dropzone-design">
-				                                        <div class="dz-default dz-message"><span>Drop files here to upload</span></div>
+			                                        <div class="dropzone dropzone-design">
+				                                        <input class="dz-default dz-message" type="file" name="married_card_image">
 				                                    </div>
 			                                    </div>
 			                                </div>
@@ -109,7 +97,7 @@
 			                                <div class="row">
 			                                	<!-- Form Group -->
 			                                    <div class="form-group col-lg-12">
-			                                    	<textarea name="detail" placeholder="Detail Address" required></textarea>
+			                                    	<textarea name="address" placeholder="Detail Address" required></textarea>
 			                                    </div>
 			                                </div>
 
@@ -118,7 +106,7 @@
 			                                	<!-- Form Group -->
 			                                    <div class="form-group col-lg-3 col-md-6 col-sm-12">
 			                                        <label>Name</label>
-			                                        <input type="text" name="name" placeholder="Name" required>
+			                                        <input type="text" name="full_name" placeholder="Name" required>
 			                                    </div>
 
 			                                    <!-- Form Group -->
@@ -130,7 +118,7 @@
 			                                    <!-- Form Group -->
 			                                    <div class="form-group col-lg-3 col-md-6 col-sm-12">
 			                                        <label>Phone</label>
-			                                        <input type="text" name="phone" placeholder="Phone" required>
+			                                        <input type="text" name="phone_number" placeholder="Phone" required>
 			                                    </div>
 
 			                                    <!-- Form Group -->
@@ -145,7 +133,7 @@
 	                    </div>
 	                </div>
 	            </div>
-	            <p class="copyright-text">© 2019 <a href="#">surualandresidence.com</a> All right reserved.</p>
+	            <p class="copyright-text">© 2019 <a href="{{url('/')}}">surualandresidence.com</a> All right reserved.</p>
 	        </div>
 	    </div>
 	</div>
