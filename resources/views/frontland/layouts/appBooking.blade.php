@@ -42,6 +42,7 @@
                 <li class="dropdown option-box">
                     <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> <img src="{{ asset('frontland/admin/images/resource/thumb-1.jpg') }}" alt="avatar" class="thumb">My Account</a>
                     <div class="dropdown-menu">
+                        <a class="dropdown-item" href="{{url('dashboard/user')}}">Dashboard</a>
                         <a class="dropdown-item" href="{{url('dashboard/messages')}}">Messages</a>
                         <a class="dropdown-item" href="{{url('dashboard/booking/list')}}">Bookings</a>
                         <a class="dropdown-item" href="{{url('dashboard/profile')}}">My profile</a>
@@ -66,6 +67,7 @@
     <div class="dashboard-inner">
         <div class="cross-icon"><span class="pe-7s-close-circle"></span></div>
         <ul class="navigation">
+            <li><a href="{{url('dashboard/user')}}"><i class="pe-7s-mail"></i> Dashboard</a></li>
             <li><a href="{{url('dashboard/messages')}}"><i class="pe-7s-mail"></i> Messages <span class="tag">6</span></a></li>
             <li class="active"><a href="{{url('dashboard/booking/list')}}"><i class="pe-7s-up-arrow"></i>Booking List</a></li>
             <li><a href="{{url('dashboard/profile')}}"><i class="pe-7s-user"></i>My Profile</a></li>

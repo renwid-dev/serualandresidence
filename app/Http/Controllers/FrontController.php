@@ -52,6 +52,10 @@ class FrontController extends Controller
         return view('page.booking');
     }
 
+    public function dashboard()
+    {
+        return view('frontland.userDashboard.partials.dashboard');
+    }
     public function dashboardProfile()
     {
         return view('frontland.userDashboard.partials.profile');

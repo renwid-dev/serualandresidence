@@ -43,6 +43,7 @@ Route::get('/news/list', 'FrontController@newsList')->name('newsList');
 Route::get('/contact', 'FrontController@contact')->name('contact');
 
 Route::get('/booking', 'FrontController@booking')->name('booking');
+Route::get('/dashboard/user', 'FrontController@dashboard')->name('dashboard');
 Route::get('/dashboard/profile', 'FrontController@dashboardProfile')->name('dashboardProfile');
 Route::get('/dashboard/messages', 'FrontController@dashboardMessages')->name('dashboardMessages');
 Route::get('/dashboard/booking/list', 'FrontController@dashboardBookingList')->name('dashboardBookingList');
