@@ -68,7 +68,9 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin','middleware'=>['auth','admi
     Route::resource('sliders','SliderController');
     Route::resource('services','ServiceController');
     Route::resource('testimonials','TestimonialController');
+
     Route::resource('booking','BookingController');
+    Route::get('booking/detail/{id}','BookingController@detail');
 
     Route::get('galleries/album','GalleryController@album')->name('album');
     Route::post('galleries/album/store','GalleryController@albumStore')->name('album.store');

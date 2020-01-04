@@ -4,18 +4,35 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
-use Illuminate\Support\Facades\Storage;
-use Intervention\Image\Facades\Image;
-use App\Testimonial;
-use Carbon\Carbon;
-use Toastr;
+use App\Booking;
 
 class BookingController extends Controller
 {
     public function index()
     {
-        $testimonials = Testimonial::latest()->get();
-        return view('admin.testimonials.index', compact('testimonials'));
+        $query = Booking::where('status', '!=', 'fail')
+                            ->latest()
+                            ->get();
+
+        $data['data'] = $query;
+        $data['title'] = 'Manage Booking';
+        return view('admin.booking.index', $data);
+    }
+
+    public function detail($id)
+    {
+        $query = Booking::select(
+                            'bookings.id',
+                            'bookings.booking_code',
+                            'booking_details.booking_date'
+                        )
+                        ->join('booking_details', 'booking_details.booking_id', '=', 'bookings.id')
+                        ->where('status', '!=', 'fail')
+                        ->where('bookings.id', $id)
+                        ->first();
+
+        $data['data'] = $query;
+        $data['title'] = 'Detail Data Booking';
+        return view('admin.booking.show', $data);
     }
 }

@@ -17,7 +17,7 @@ class BookingController extends Controller
             'full_name'              => '',
             'phone_number'           => '',
             'email'                  => '',
-            'bank_id'                => '',         
+            'bank_id'                => '',
             'address'                => '',
             'receipt_image'          => '',
             'id_card_image'          => '',
@@ -25,14 +25,16 @@ class BookingController extends Controller
             'family_card_image'      => '',
             'married_card_image'     => ''
         ]);
-        
+
+        $receipt = (!empty($request->receipt_image)) ? $request->receipt_image : '';
+
         Booking::create([
             'full_name'              => $request->full_name,
             'phone_number'           => $request->phone_number,
             'email'                  => $request->email,
-            'bank_id'                => $request->bank_id,         
+            'bank_id'                => $request->bank_id,
             'address'                => $request->address,
-            'receipt_image'          => $request->receipt_image,
+            'receipt_image'          => $receipt,
             'id_card_image'          => $request->id_card_image,
             'npwp_card_image'        => $request->npwp_card_image,
             'family_card_image'      => $request->family_card_image,
@@ -43,6 +45,6 @@ class BookingController extends Controller
             return response()->json(['message' => 'Message send successfully.']);
         }
         return redirect('dashboard/booking/list');
-       
+
     }
 }

@@ -3,61 +3,56 @@
 @push('styles')
     <link rel="stylesheet" href="{{ asset('backend/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css') }}">
 @endpush
-
 @section('content')
-
     <div class="block-header_"></div>
-
     <div class="row clearfix">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="card">
                 <div class="header bg-indigo">
                     <h2>
-                        SLIDER LIST
-                        <a href="{{route('admin.sliders.create')}}" class="btn waves-effect waves-light right headerightbtn">
-                            <i class="material-icons left">add</i>
-                            <span>CREATE </span>
-                        </a>
+                        {{ $title }}
                     </h2>
                 </div>
                 <div class="body">
                     <div class="table-responsive">
-                        <table class="table table-bordered table-striped table-hover dataTable js-exportable">
+                        <table class="table table-bordered table-striped table-hover dataTable">
                             <thead>
                                 <tr>
-                                    <th>SL.</th>
-                                    <th>Image</th>
-                                    <th>Title</th>
-                                    <th>Description</th>
+                                    <th>#</th>
+                                    <th>Booking Code</th>
+                                    <th>Booking Date</th>
+                                    <th>Product / Property</th>
+                                    <th>Status</th>
                                     <th width="100px">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach( $sliders as $key => $slider )
+                                @php $no = 1; @endphp
+                                @foreach( $data as $key )
                                 <tr>
-                                    <td>{{$key+1}}</td>
+                                    <td>{{$no++}}</td>
+                                    <td>{{$key['booking_code']}}</td>
+                                    <td>{{$key['booking_date']}}</td>
+                                    <td>{{$key['product_id']}}</td>
+                                    <td>{{$key['status']}}</td>
                                     <td>
-                                        @if(Storage::disk('public')->exists('slider/'.$slider->image))
-                                            <img src="{{Storage::url('slider/'.$slider->image)}}" alt="{{$slider->title}}" width="160" class="img-responsive img-rounded">
-                                        @endif
-                                    </td>
-                                    <td>{{$slider->title}}</td>
-                                    <td>{{$slider->description}}</td>
-                                    <td class="text-center">
-                                        <a href="{{route('admin.sliders.edit',$slider->id)}}" class="btn btn-info btn-sm waves-effect">
-                                            <i class="material-icons">edit</i>
-                                        </a>
-                                        <button type="button" class="btn btn-danger btn-sm waves-effect" onclick="deleteSlider({{$slider->id}})">
-                                            <i class="material-icons">delete</i>
+                                        <button type="button" onclick="window.location.href='{{url('/admin/booking/detail/'.$key['id'])}}'" class="btn btn-sm btn-warning waves-effect">
+                                            <i class="material-icons">visibility</i>
                                         </button>
-                                        <form action="{{route('admin.sliders.destroy',$slider->id)}}" method="POST" id="del-slider-{{$slider->id}}" style="display:none;">
-                                            @csrf
-                                            @method('DELETE')
-                                        </form>
                                     </td>
                                 </tr>
                                 @endforeach
                             </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Booking Code</th>
+                                    <th>Booking Date</th>
+                                    <th>Product / Property</th>
+                                    <th>Status</th>
+                                    <th width="100px">Action</th>
+                                </tr>
+                            </tfoot>
                         </table>
                     </div>
                 </div>
