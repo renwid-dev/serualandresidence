@@ -1,6 +1,4 @@
 @extends('frontland.layouts.appBooking')
-	    <!-- Header -->
-		@include('frontland/userDashboard/partials/header')
 		<!-- End Header -->
     @section('content')
 
