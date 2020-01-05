@@ -40,8 +40,6 @@ Route::get('/news/detail', 'FrontpageController@news')->name('news');
 Route::get('/news/grid', 'FrontpageController@newsGrid')->name('newsGrid');
 Route::get('/news/list', 'FrontpageController@newsList')->name('newsList');
 
-Route::get('/contact', 'FrontpageController@contact')->name('contact');
-
 Route::get('/booking', 'FrontpageController@booking')->name('booking');
 Route::get('/dashboard/user', 'FrontpageController@dashboard')->name('dashboard');
 Route::get('/dashboard/profile', 'FrontpageController@dashboardProfile')->name('dashboardProfile');
