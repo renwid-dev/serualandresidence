@@ -1,149 +1,122 @@
-@extends('frontend.layouts.app')
-
-@section('styles')
-
-@endsection
+@extends('frontland.layouts.app')
 
 @section('content')
 
-    <section class="section">
-        <div class="container">
+      <!-- Contact Section -->
+      <section class="contact-section style-two">
+        <div class="auto-container">
             <div class="row">
-
-                <div class="col s12 m8">
-                    <div class="contact-content">
-                        <h4 class="contact-title">Contact Us</h4>
-
-                        <form id="contact-us" action="" method="POST">
-                            @csrf
-                            <input type="hidden" name="mailto" value="{{ $contactsettings[0]['email'] ?? 'p4alam@gmail.com' }}">
-
-                            @auth
-                                <input type="hidden" name="user_id" value="{{ auth()->id() }}">
-                            @endauth
-
-                            @auth
-                                <div class="input-field col s12">
-                                    <i class="material-icons prefix">person</i>
-                                    <input id="name" name="name" type="text" class="validate" value="{{ auth()->user()->name }}" readonly>
-                                    <label for="name">Name</label>
-                                </div>
-                            @endauth
-                            @guest
-                                <div class="input-field col s12">
-                                    <i class="material-icons prefix">person</i>
-                                    <input id="name" name="name" type="text" class="validate">
-                                    <label for="name">Name</label>
-                                </div>
-                            @endguest
-
-                            @auth
-                                <div class="input-field col s12">
-                                    <i class="material-icons prefix">mail</i>
-                                    <input id="email" name="email" type="email" class="validate" value="{{ auth()->user()->email }}" readonly>
-                                    <label for="email">Email</label>
-                                </div>
-                            @endauth
-                            @guest
-                                <div class="input-field col s12">
-                                    <i class="material-icons prefix">mail</i>
-                                    <input id="email" name="email" type="email" class="validate">
-                                    <label for="email">Email</label>
-                                </div>
-                            @endguest
-
-                            <div class="input-field col s12">
-                                <i class="material-icons prefix">phone</i>
-                                <input id="phone" name="phone" type="number" class="validate">
-                                <label for="phone">Phone</label>
-                            </div>
-
-                            <div class="input-field col s12">
-                                <i class="material-icons prefix">mode_edit</i>
-                                <textarea id="message" name="message" class="materialize-textarea"></textarea>
-                                <label for="message">Message</label>
-                            </div>
-                            
-                            <button id="msgsubmitbtn" class="btn waves-effect waves-light indigo darken-4 btn-large" type="submit">
-                                <span>SEND</span>
-                                <i class="material-icons right">send</i>
-                            </button>
-
-                        </form>
-
-                    </div>
-                </div> <!-- /.col -->
-
-                <div class="col s12 m4">
-                    <div class="contact-sidebar">
-                        <div class="m-t-30">
-                            <i class="material-icons left">call</i>
-                            <h6 class="uppercase">Call us Now</h6>
-                            @if(isset($contactsettings[0]) && $contactsettings[0]['phone'])
-                                <h6 class="bold m-l-40">{{ $contactsettings[0]['phone'] }}</h6>
-                            @endif
+                <!-- Form Column -->
+                <div class="form-column col-lg-8 col-md-6 col-sm-12">
+                    <div class="inner-column">
+                        <div class="title-box">
+                            <span class="title">How To</span>
+                            <h2>Contact Us</h2>
+                            <div class="text">Don’t Hesitate to Contact with us for any kind of information</div>
                         </div>
-                        <div class="m-t-30">
-                            <i class="material-icons left">mail</i>
-                            <h6 class="uppercase">Email Address</h6>
-                            @if(isset($contactsettings[0]) && $contactsettings[0]['email'])
-                                <h6 class="bold m-l-40">{{ $contactsettings[0]['email'] }}</h6>
-                            @endif
-                        </div>
-                        <div class="m-t-30">
-                            <i class="material-icons left">map</i>
-                            <h6 class="uppercase">Address</h6>
-                            @if(isset($contactsettings[0]) && $contactsettings[0]['address'])
-                                <h6 class="bold m-l-40">{!! $contactsettings[0]['address'] !!}</h6>
-                            @endif
+
+                        <!-- Contact Form -->
+                        <div class="contact-form">
+                            <form method="post" action="#" id="contact-form">
+                                <div class="form-group">
+                                    <input type="text" name="username" placeholder="Name" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <input type="email" name="email" placeholder="Email" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="text" name="subject" placeholder="Subject" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <textarea name="message" placeholder="Massage"></textarea>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <button class="theme-btn btn-style-one" type="submit" name="submit-form">Send Now</button>
+                                </div> 
+                            </form>
                         </div>
                     </div>
                 </div>
 
+                <!-- Info Column -->
+                <div class="info-column col-lg-4 col-md-6 col-sm-12">
+                    <div class="inner-column">
+                        <!-- Info Box -->
+                        <div class="contact-info-box">
+                            <div class="inner-box">
+                                <span class="icon la la-phone"></span>
+                                <h4>Phones</h4>
+                                <ul>
+                                    <li>88 867 56 453</li>
+                                    <li>21 535 42 546</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Info Box -->
+                        <div class="contact-info-box">
+                            <div class="inner-box">
+                                <span class="icon la la-envelope-o"></span>
+                                <h4>Emails</h4>
+                                <ul>
+                                    <li>info@yousite.com</li>
+                                    <li>sale@yousite.com</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Info Box -->
+                        <div class="contact-info-box">
+                            <div class="inner-box">
+                                <span class="icon la la-globe"></span>
+                                <h4>Address</h4>
+                                <ul>
+                                    <li>123 Ipsum Ave, Lorem City, <br> Dolor Country, Thw World</li>
+                                </ul> 
+                            </div>
+                        </div>
+
+                        <!-- Info Box -->
+                        <div class="contact-info-box follow-us">
+                            <div class="inner-box">
+                                <h4>Follow Us:</h4>
+                                <ul class="social-icon-three">
+                                    <li><a href="#"><span class="la la-facebook-f"></span></a></li>
+                                    <li><a href="#"><span class="la la-twitter"></span></a></li>
+                                    <li><a href="#"><span class="la la-google-plus"></span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div> 
+        </div>
+    </section>
+    <!--End Contact Section -->
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="map-outer">
+            <!--Map Canvas-->
+            <div class="map-canvas"
+                data-zoom="12"
+                data-lat="-37.817085"
+                data-lng="144.955631"
+                data-type="roadmap"
+                data-hue="#ffc400"
+                data-title="Envato"
+                data-icon-path="images/icons/map-marker.png"
+                data-content="Melbourne VIC 3000, Australia<br><a href='mailto:info@youremail.com'>info@youremail.com</a>">
             </div>
         </div>
     </section>
+    <!-- End Map Section -->
 
-@endsection
+    @include('frontland/partials/footer')
 
-@section('scripts')
-    <script>
-        $('textarea#message').characterCounter();
-
-        $(function(){
-            $(document).on('submit','#contact-us',function(e){
-                e.preventDefault();
-
-                var data = $(this).serialize();
-                var url = "{{ route('contact.message') }}";
-                var btn = $('#msgsubmitbtn');
-
-                $.ajax({
-                    type: 'POST',
-                    url: url,
-                    data: data,
-                    beforeSend: function() {
-                        $(btn).addClass('disabled');
-                        $(btn).empty().append('<span>LOADING...</span><i class="material-icons right">rotate_right</i>');
-                    },
-                    success: function(data) {
-                        if (data.message) {
-                            M.toast({html: data.message, classes:'green darken-4'})
-                        }
-                    },
-                    error: function(xhr) {
-                        M.toast({html: 'ERROR: Failed to send message!', classes: 'red darken-4'})
-                    },
-                    complete: function() {
-                        $('form#contact-us')[0].reset();
-                        $(btn).removeClass('disabled');
-                        $(btn).empty().append('<span>SEND</span><i class="material-icons right">send</i>');
-                    },
-                    dataType: 'json'
-                });
-
-            })
-        })
-
-    </script>
 @endsection

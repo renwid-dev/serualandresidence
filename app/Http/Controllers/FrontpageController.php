@@ -14,13 +14,13 @@ class FrontpageController extends Controller
     
     public function index()
     {
-        // $sliders        = Slider::latest()->get();
-        // $properties     = Property::latest()->where('featured',1)->with('rating')->withCount('comments')->take(6)->get();
-        // $services       = Service::orderBy('service_order')->get();
-        // $testimonials   = Testimonial::latest()->get();
-        // $posts          = Post::latest()->where('status',1)->take(6)->get();
+        $sliders        = Slider::latest()->get();
+        $properties     = Property::latest()->where('featured',1)->take(3)->get();
+        $services       = Service::orderBy('service_order')->get();
+        $testimonials   = Testimonial::latest()->get();
+        $posts          = Post::latest()->where('status',1)->take(3)->get();
 
-        // return view('frontend.index', compact('sliders','properties','services','testimonials','posts'));
+        return view('frontland.index', compact('sliders','properties','services','testimonials','posts'));
         return view('frontland.index');
     }
 
@@ -73,5 +73,65 @@ class FrontpageController extends Controller
 
     //     return view('pages.search', compact('properties'));
     // }
+    
+    public function propertiesGrid()
+    {
+        return view('page.properties.grid');
+    }
+
+    public function propertiesList()
+    {
+        return view('page.properties.list');
+    }
+
+    public function about()
+    {
+        return view('page.about');
+    }
+
+    public function agent()
+    {
+        return view('page.agents');
+    }
+
+    public function news()
+    {
+        return view('page.blog.detail');
+    }
+    public function newsGrid()
+    {
+        return view('page.blog.grid');
+    }
+    public function newsList()
+    {
+        return view('page.blog.list');
+    }
+
+    public function contact()
+    {
+        return view('page.contact');
+    }
+
+    public function booking()
+    {
+        return view('pages.booking');
+    }
+
+    public function dashboard()
+    {
+        return view('frontland.userDashboard.partials.dashboard');
+    }
+    public function dashboardProfile()
+    {
+        return view('frontland.userDashboard.partials.profile');
+    }
+    public function dashboardMessages()
+    {
+        return view('frontland.userDashboard.partials.messages');
+    }
+    public function dashboardBookingList()
+    {
+        return view('frontland.userDashboard.partials.bookingList');
+    }
 
 }

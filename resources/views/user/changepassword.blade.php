@@ -1,10 +1,3 @@
-@extends('frontend.layouts.app')
-
-@section('styles')
-
-@endsection
-
-@section('content')
 
     <section class="section">
         <div class="container">
@@ -55,9 +48,3 @@
             </div>
         </div>
     </section>
-
-@endsection
-
-@section('scripts')
-
-@endsection

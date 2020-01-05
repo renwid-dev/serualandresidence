@@ -21,6 +21,7 @@ use DB;
 
 class PagesController extends Controller
 {
+    //PROPERTY PAGE
     public function properties()
     {
         $cities     = Property::select('city','city_slug')->distinct('city_slug')->get();
@@ -50,7 +51,7 @@ class PagesController extends Controller
 
         $cities = Property::select('city','city_slug')->distinct('city_slug')->get();
 
-        return view('pages.properties.single', compact('property','rating','relatedproperty','videoembed','cities'));
+        return view('pages.properties.detail', compact('property','rating','relatedproperty','videoembed','cities'));
     }
 
 

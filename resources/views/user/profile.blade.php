@@ -1,84 +1,137 @@
-@extends('frontend.layouts.app')
-
-@section('styles')
-
-@endsection
+@extends('frontland.layouts.appBooking')
 
 @section('content')
 
-    <section class="section">
-        <div class="container">
-            <div class="row">
-
-                <div class="col s12 m3">
-                    <div class="agent-sidebar">
-                        @include('user.sidebar')
+    <!-- Dasboard Profile -->
+<div class="dashboard">
+    <div class="container-fluid">
+        <div class="content-area">
+            <div class="dashboard-content">
+                <div class="dashboard-header clearfix">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12"><h4>Hi , {{ $profile->name }}</h4></div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="breadcrumb-nav">
+                                <ul>
+                                    <li><a href="{{url('/')}}">Index</a></li>
+                                    <li class="active">My Profile</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="column col-lg-12">
+                        <div class="properties-box">
+                            <div class="inner-container">
+                                <div class="title"><h3>Profile Details</h3></div>
+                                <div class="profile-form">
+                                    <div class="row">
+                                        <div class="col-lg-4 col-md-12 col-sm-12">
+                                        <form method="post" action="{{route('user.profile.update')}}" enctype="multipart/form-data">
+                                            @csrf
+                                            <!-- Edit profile photo -->
+                                            <div class="edit-profile-photo">
+                                                <img src="{{ asset('frontland/admin/images/resource/avatar.jpg') }}" alt="profile-photo">
+                                                <div class="change-photo-btn">
+                                                    <div class="photoUpload">
+                                                        <span><i class="la la-cloud-upload"></i></span>
+                                                        <input type="file" name="image" class="upload">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
 
-                <div class="col s12 m9">
-                    <div class="agent-content">
-                        <h4 class="agent-title">PROFILE</h4>
+                                        <div class="col-lg-8 col-md-12 col-sm-12">
+                                            
+                                                <div class="row">
+                                                    <!-- Form Group -->
+                                                    <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                                                        <label>Your Name</label>
+                                                        <input type="text" name="name" placeholder="{{ $profile->name }}" required>
+                                                    </div>
 
-                        <form action="{{route('user.profile.update')}}" method="POST" enctype="multipart/form-data">
-                            @csrf
+                                                    <!-- Form Group -->
+                                                    <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                                                        <label>Your Full Name</label>
+                                                        <input type="text" name="username" placeholder="{{ $profile->username }}" required>
+                                                    </div>
 
-                            <div class="row">
-                                <div class="input-field col s6">
-                                    <i class="material-icons prefix">person</i>
-                                    <input id="name" name="name" type="text" value="{{ $profile->name }}" class="validate">
-                                    <label for="name">Name</label>
-                                </div>
-                                <div class="input-field col s6">
-                                    <i class="material-icons prefix">assignment_ind</i>
-                                    <input id="username" name="username" type="text" value="{{ $profile->username or null }}" class="validate">
-                                    <label for="username">Username</label>
-                                </div>
-                            </div>
-                            
-                            <div class="row">
-                                <div class="input-field col s6">
-                                    <i class="material-icons prefix">email</i>
-                                    <input id="email" name="email" type="email" value="{{ $profile->email }}" class="validate">
-                                    <label for="username">Email</label>
-                                </div>
-                                <div class="file-field input-field col s6">
-                                    <div class="btn indigo">
-                                        <span>Image</span>
-                                        <input type="file" name="image">
+                                                    <!-- Form Group -->
+                                                    <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                                                        <label>Phone Number</label>
+                                                        <input type="text" name="phone" placeholder="Phone" required>
+                                                    </div>
+
+                                                    <!-- Form Group -->
+                                                    <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                                                        <label>Your Email</label>
+                                                        <input type="email" name="email" placeholder="{{ $profile->email }}"  disabled>
+                                                    </div>
+
+                                                    <!-- Form Group -->
+                                                    <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                                                        <label>About You</label>
+                                                        <textarea name="about-you" placeholder="Personal Info">{{ $profile->about or null }}</textarea>
+                                                    </div>
+
+                                                    <!-- Form Group -->
+                                                    <div class="form-group text-right col-lg-12 col-md-12 col-sm-12">
+                                                        <button type="submit" class="theme-btn btn-style-one">Update Profile</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
                                     </div>
-                                    <div class="file-path-wrapper">
-                                        <input class="file-path validate" type="text">
-                                    </div>
                                 </div>
                             </div>
-
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <i class="material-icons prefix">mode_edit</i>
-                                    <textarea id="about" name="about" class="materialize-textarea">{{ $profile->about or null }}</textarea>
-                                    <label for="about">About</label>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col s12">
-                                    <button class="btn waves-effect waves-light btn-large indigo darken-4" type="submit">
-                                        Submit
-                                        <i class="material-icons right">send</i>
-                                    </button>
-                                </div>
-                            </div>
-
-                        </form>
-
-
+                        </div>
                     </div>
-                </div> <!-- /.col -->
 
+                    <div class="column col-lg-12 col-md-12">
+                        <div class="properties-box">
+                            <div class="inner-container">
+                                <div class="title"><h3>Change Password</h3></div>
+                                <div class="profile-form">
+                                    <form method="post" action="{{route('user.changepassword.update')}}">
+                                        @csrf
+                                        <div class="row">
+                                            <!-- Form Group -->
+                                            <div class="form-group col-lg-12">
+                                                <label>Current Password</label>
+                                                <input type="text" name="currentpassword" placeholder="Current Password" required>
+                                            </div>
+
+                                            <!-- Form Group -->
+                                            <div class="form-group col-lg-12">
+                                                <label>New Password</label>
+                                                <input type="text" name="newpassword" placeholder="New Password" required>
+                                            </div>
+
+                                            <!-- Form Group -->
+                                            <div class="form-group col-lg-12">
+                                                <label>Confirm New Password</label>
+                                                <input type="text" name="newpassword_confirmation" placeholder="Confirm New Password" required>
+                                            </div>
+
+                                            <!-- Form Group -->
+                                            <div class="form-group col-lg-12">
+                                                <button type="submit" class="theme-btn btn-style-one">Update Password</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
             </div>
+            <p class="copyright-text">© 2019 <a href="#">surualandresidence.com</a> All right reserved.</p>
         </div>
-    </section>
+    </div>
+</div>
+<!-- End Dasboard Profile -->
 
 @endsection
 

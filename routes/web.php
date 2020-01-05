@@ -30,23 +30,23 @@ Route::get('/contact', 'PagesController@contact')->name('contact');
 Route::post('/contact', 'PagesController@messageContact')->name('contact.message');
 
 // xample halaman review demo
-Route::get('/about', 'FrontController@about')->name('about');
+Route::get('/about', 'FrontpageController@about')->name('about');
 
-Route::get('/properties/detail', 'FrontController@properties')->name('properties');
-Route::get('/properties/grid', 'FrontController@propertiesGrid')->name('propertiesGrid');
-Route::get('/properties/list', 'FrontController@propertiesList')->name('propertiesList');
+Route::get('/properties/detail', 'FrontpageController@properties')->name('properties');
+Route::get('/properties/grid', 'FrontpageController@propertiesGrid')->name('propertiesGrid');
+Route::get('/properties/list', 'FrontpageController@propertiesList')->name('propertiesList');
 
-Route::get('/news/detail', 'FrontController@news')->name('news');
-Route::get('/news/grid', 'FrontController@newsGrid')->name('newsGrid');
-Route::get('/news/list', 'FrontController@newsList')->name('newsList');
+Route::get('/news/detail', 'FrontpageController@news')->name('news');
+Route::get('/news/grid', 'FrontpageController@newsGrid')->name('newsGrid');
+Route::get('/news/list', 'FrontpageController@newsList')->name('newsList');
 
-Route::get('/contact', 'FrontController@contact')->name('contact');
+Route::get('/contact', 'FrontpageController@contact')->name('contact');
 
-Route::get('/booking', 'FrontController@booking')->name('booking');
-Route::get('/dashboard/user', 'FrontController@dashboard')->name('dashboard');
-Route::get('/dashboard/profile', 'FrontController@dashboardProfile')->name('dashboardProfile');
-Route::get('/dashboard/messages', 'FrontController@dashboardMessages')->name('dashboardMessages');
-Route::get('/dashboard/booking/list', 'FrontController@dashboardBookingList')->name('dashboardBookingList');
+Route::get('/booking', 'FrontpageController@booking')->name('booking');
+Route::get('/dashboard/user', 'FrontpageController@dashboard')->name('dashboard');
+Route::get('/dashboard/profile', 'FrontpageController@dashboardProfile')->name('dashboardProfile');
+Route::get('/dashboard/messages', 'FrontpageController@dashboardMessages')->name('dashboardMessages');
+Route::get('/dashboard/booking/list', 'FrontpageController@dashboardBookingList')->name('dashboardBookingList');
 
 Route::post('booking', 'BookingController@booking')->name('booking');
 // End xample halaman review demo
