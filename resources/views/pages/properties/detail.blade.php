@@ -24,6 +24,7 @@
                 </div>
             </div>
         </div>
+        
         <div class="row clearfix">
             <!--Content Side-->
             <div class="content-side col-lg-8 col-md-12 col-sm-12">
@@ -58,9 +59,6 @@
                         </ul>
                     </div>
                     @endif
-                    <!-- Property Features -->
-                    
-                    </div> -->
 
                     <!-- Flooring & Video -->
                     <div class="flooring-tabs tabs-box">
@@ -219,6 +217,7 @@
                     </div>
                 </aside>
             </div>
+
         </div>
     </div>
 </div>

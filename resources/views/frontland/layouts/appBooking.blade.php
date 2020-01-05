@@ -46,7 +46,16 @@
                         <a class="dropdown-item" href="{{url('dashboard/messages')}}">Messages</a>
                         <a class="dropdown-item" href="{{url('dashboard/booking/list')}}">Bookings</a>
                         <a class="dropdown-item" href="{{url('dashboard/profile')}}">My profile</a>
-                        <a class="dropdown-item" href="{{url('/')}}">Log out</a>
+                        @guest
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        @endguest
                     </div>
                 </li>
                 <li class="submit-property">
@@ -71,7 +80,18 @@
             <li><a href="{{url('dashboard/messages')}}"><i class="pe-7s-mail"></i> Messages <span class="tag">6</span></a></li>
             <li class="active"><a href="{{url('dashboard/booking/list')}}"><i class="pe-7s-up-arrow"></i>Booking List</a></li>
             <li><a href="{{url('dashboard/profile')}}"><i class="pe-7s-user"></i>My Profile</a></li>
-            <li><a href="{{url('/')}}"><i class="pe-7s-back-2"></i>Logout</a></li>
+            <li>
+            @guest
+                <a class="dropdown-item" href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">
+                    {{ __('Logout') }}
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
+            @endguest
+            </li>
         </ul>
     </div>
 </section>
