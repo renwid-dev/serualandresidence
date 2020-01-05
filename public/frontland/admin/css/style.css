@@ -15,7 +15,7 @@
 12. Profile Form
 **********************************************/
 
-/*** 
+/***
 
 ====================================================================
 			Fonts
@@ -32,7 +32,7 @@
 @import url('pe-icon-7-stroke.css');
 @import url('jquery-ui.css');
 
-/*** 
+/***
 
 ====================================================================
 	Reset
@@ -48,7 +48,7 @@
 	font-size: 100%;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Global Settings
@@ -57,7 +57,7 @@
  ***/
 
 body {
-	
+
 	font-size:14px;
 	color:#777777;
 	line-height: 2em;
@@ -92,7 +92,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 textarea{
-	overflow:hidden;	
+	overflow:hidden;
 	resize: none;
 }
 
@@ -133,7 +133,7 @@ p,.text{
 ul,li{
 	list-style:none;
 	padding:0px;
-	margin:0px;	
+	margin:0px;
 }
 
 .theme-btn{
@@ -342,26 +342,26 @@ ul,li{
 	float: left;
 }
 
-.preloader{ 
-	position:fixed; 
-	left:0px; 
-	top:0px; 
-	width:100%; 
-	height:100%; 
-	z-index:999999; 
-	background-color:#ffffff; 
-	background-position:center center; 
-	background-repeat:no-repeat; 
+.preloader{
+	position:fixed;
+	left:0px;
+	top:0px;
+	width:100%;
+	height:100%;
+	z-index:999999;
+	background-color:#ffffff;
+	background-position:center center;
+	background-repeat:no-repeat;
 	background-image:url(../images/preloader.svg);
 }
 
 img{
 	display:inline-block;
 	max-width:100%;
-	height:auto;	
+	height:auto;
 }
 
-/*** 
+/***
 
 ====================================================================
 			Main Header
@@ -421,8 +421,8 @@ img{
     transform: translate(0) !important;
 }
 
-.dropdown-item.active, 
-.dropdown-item:hover, 
+.dropdown-item.active,
+.dropdown-item:hover,
 .dropdown-item:active{
 	background-color: #00c0ff;
 	color: #ffffff;
@@ -446,7 +446,7 @@ img{
 	padding: 10px 20px;
 	font-size: 14px;
 	text-transform: capitalize;
-} 
+}
 
 .main-header .upper-right .submit-property a i{
 	float: right;
@@ -470,7 +470,7 @@ img{
 	width:34px;
 	height:20px;
 	margin:0 auto;
-	cursor:pointer;	
+	cursor:pointer;
 }
 
 .main-header .nav-toggler .toggler-btn.active{
@@ -607,7 +607,7 @@ img{
 	-moz-transition:all 0.5s ease;
 	-webkit-transition:all 0.5s ease;
 	-ms-transition:all 0.5s ease;
-	-o-transition:all 0.5s ease;	
+	-o-transition:all 0.5s ease;
 }
 
 .side-content-visible .form-back-drop{
@@ -639,7 +639,7 @@ img{
 }
 
 .hidden-bar .navigation > li:last-child{
-	border-bottom:none;	
+	border-bottom:none;
 }
 
 .hidden-bar .navigation > li > a{
@@ -1278,7 +1278,7 @@ img{
 
 .property-block .action-list{
 	position: relative;
-	float: right;	
+	float: right;
 	padding-top: 25px;
 	padding-right: 40px;
 }
@@ -1401,7 +1401,7 @@ img{
 	color: #ffffff;
 }
 
-/*** 
+/***
 
 ====================================================================
 		Property Search Section
@@ -1580,7 +1580,7 @@ img{
 
 .check-box input[type="checkbox"]:checked + label:after {
 	max-width: 20px;
-	opacity: 1;	
+	opacity: 1;
 }
 
 .property-submit-form .ui-button .ui-icon{
@@ -1612,9 +1612,9 @@ img{
 }
 
 .ui-state-active,
-.ui-widget-content .ui-state-active, 
-.ui-widget-header .ui-state-active, 
-a.ui-button:active, .ui-button:active, 
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active,
+a.ui-button:active, .ui-button:active,
 .ui-button.ui-state-active:hover{
 	background-color: #00c0ff;
 	border-color: #00c0ff;
@@ -1630,7 +1630,7 @@ a.ui-button:active, .ui-button:active,
 }
 
 .ui-menu .ui-menu-item:last-child{
-	border:none;	
+	border:none;
 }
 
 .ui-menu .ui-menu-item-wrapper{
@@ -1664,7 +1664,7 @@ a.ui-button:active, .ui-button:active,
 	padding: 0;
 }
 
-.dropzone .dz-preview .dz-success-mark, 
+.dropzone .dz-preview .dz-success-mark,
 .dropzone .dz-preview.dz-error:hover .dz-error-message{
 	display: none !important;
 }
@@ -1717,7 +1717,7 @@ a.ui-button:active, .ui-button:active,
     line-height: 117px;
 }
 
-/*** 
+/***
 
 ====================================================================
 		Profile Form
@@ -1857,4 +1857,3 @@ a.ui-button:active, .ui-button:active,
     opacity: 0;
     filter: alpha(opacity=0);
 }
-

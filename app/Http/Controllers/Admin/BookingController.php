@@ -10,9 +10,9 @@ class BookingController extends Controller
 {
     public function index()
     {
-        $query = Booking::where('status', '!=', 'fail')
-                            ->latest()
-                            ->get();
+        $query = Booking::join('booking_details', 'booking_details.booking_id', '=', 'bookings.id')
+                        ->where('status', '!=', 'fail')
+                        ->get();
 
         $data['data'] = $query;
         $data['title'] = 'Manage Booking';
