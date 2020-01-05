@@ -1,4 +1,6 @@
+@extends('frontend.layouts.app')
 
+@section('content')
     <section class="section">
         <div class="container">
             <div class="row">
@@ -48,3 +50,4 @@
             </div>
         </div>
     </section>
+@endsection

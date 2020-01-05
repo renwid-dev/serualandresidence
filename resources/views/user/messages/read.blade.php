@@ -1,7 +1,4 @@
-@extends('frontend.layouts.app')
-
-@section('styles')
-@endsection
+@extends('frontland.layouts.appBooking')
 
 @section('content')
 
@@ -55,9 +52,5 @@
             </div>
         </div>
     </section>
-
-@endsection
-
-@section('scripts')
 
 @endsection

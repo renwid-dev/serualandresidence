@@ -2,17 +2,18 @@
 
 namespace App\Http\Controllers\User;
 
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Storage;
-use Intervention\Image\Facades\Image;
-use Carbon\Carbon;
-use App\Comment;
-use App\Message;
-use App\User;
 use Auth;
 use Hash;
 use Toastr;
+use App\User;
+use App\Booking;
+use App\Comment;
+use App\Message;
+use Carbon\Carbon;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\Storage;
 
 class DashboardController extends Controller
 {
@@ -26,6 +27,15 @@ class DashboardController extends Controller
         $commentcount = Comment::where('user_id',Auth::id())->count();
 
         return view('user.dashboard',compact('comments','commentcount'));
+    }
+
+    public function booking()
+    {
+        // $booking = Booking::where('users','users.user_id', '=', 'bookings.user_id')
+        //                    ->paginate(10);
+        Booking::all();
+
+        return view('user.bookingList');
     }
 
     public function profile()

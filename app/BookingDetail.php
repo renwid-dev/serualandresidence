@@ -17,4 +17,8 @@ class BookingDetail extends Model
    {
         return $this->belongsTo('App\Booking', 'booking_id');
    }
+   public function user()
+   {
+      return $this->belongsTo(User::class);
+   }
 }

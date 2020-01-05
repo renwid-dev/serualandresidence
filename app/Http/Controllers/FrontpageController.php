@@ -76,12 +76,12 @@ class FrontpageController extends Controller
     
     public function propertiesGrid()
     {
-        return view('page.properties.grid');
+        return view('pages.properties.grid');
     }
 
     public function propertiesList()
     {
-        return view('page.properties.list');
+        return view('pages.properties.list');
     }
 
     public function about()
@@ -96,20 +96,15 @@ class FrontpageController extends Controller
 
     public function news()
     {
-        return view('page.blog.detail');
+        return view('pages.blog.detail');
     }
     public function newsGrid()
     {
-        return view('page.blog.grid');
+        return view('pages.blog.grid');
     }
     public function newsList()
     {
-        return view('page.blog.list');
-    }
-
-    public function contact()
-    {
-        return view('page.contact');
+        return view('pages.blog.list');
     }
 
     public function booking()

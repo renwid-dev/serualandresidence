@@ -1,6 +1,7 @@
 @extends('frontland.layouts.appBooking')
 
 @section('content')
+
 <div class="dashboard">
     <div class="container-fluid">
         <div class="content-area">
@@ -113,7 +114,6 @@
         </div>
     </div>
 </div>
-
    
     <!-- <div class="box-content">
         @foreach($comments as $key => $comment)
@@ -129,5 +129,4 @@
         {{ $comments->links() }}
     </div> -->
                           
-
 @endsection

@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <!-- Dasboard Profile -->
+<!-- Dasboard Profile -->
 <div class="dashboard">
     <div class="container-fluid">
         <div class="content-area">

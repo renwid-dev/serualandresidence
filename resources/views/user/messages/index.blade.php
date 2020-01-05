@@ -1,19 +1,10 @@
-@extends('frontend.layouts.app')
-
-@section('styles')
-@endsection
+@extends('frontland.layouts.appBooking')
 
 @section('content')
 
     <section class="section">
         <div class="container">
             <div class="row">
-
-                <div class="col s12 m3">
-                    <div class="agent-sidebar">
-                        @include('user.sidebar')
-                    </div>
-                </div>
 
                 <div class="col s12 m9">
 

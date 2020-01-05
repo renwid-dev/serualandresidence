@@ -121,6 +121,7 @@ Route::group(['prefix'=>'agent','namespace'=>'Agent','middleware'=>['auth','agen
 Route::group(['prefix'=>'user','namespace'=>'User','middleware'=>['auth','user'],'as'=>'user.'], function(){
 
     Route::get('dashboard','DashboardController@index')->name('dashboard');
+    Route::get('booking/list','DashboardController@booking')->name('booking.list');
     Route::get('profile','DashboardController@profile')->name('profile');
     Route::post('profile','DashboardController@profileUpdate')->name('profile.update');
     Route::get('changepassword','DashboardController@changePassword')->name('changepassword');

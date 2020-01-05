@@ -49,7 +49,7 @@ class BookingController extends Controller
             DB::rollBack();
             return $e->getMessage();
         }
-        return redirect('dashboard/booking/list');
+        return redirect('user/booking/list');
 
     }
 
