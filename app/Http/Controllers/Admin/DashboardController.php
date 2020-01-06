@@ -33,7 +33,7 @@ class DashboardController extends Controller
 
         $properties    = Property::latest()->with('user')->take(5)->get();
         $posts         = Post::latest()->withCount('comments')->take(5)->get();
-        $users         = User::with('role')->get();
+        $users         = User::with('role')->take(5)->get();
         $comments      = Comment::with('users')->take(5)->get();
 
         return view('admin.dashboard', compact(
@@ -196,7 +196,6 @@ class DashboardController extends Controller
     public function messageSend(Request $request)
     {
         $request->validate([
-            'agent_id'  => 'required',
             'user_id'   => 'required',
             'name'      => 'required',
             'email'     => 'required',

@@ -40,7 +40,7 @@
         <div class="upper-right">
             <ul class="clearfix">
                 <li class="dropdown option-box">
-                    <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> <img src="{{ asset('frontland/admin/images/resource/thumb-1.jpg') }}" alt="avatar" class="thumb">My Account</a>
+                    <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> <img src="{{ Storage::url('users/'.$profile->image) }}" class="thumb">My Account</a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="{{url('user/dashboard')}}">Dashboard</a>
                         <a class="dropdown-item" href="{{url('user/message')}}">Messages</a>

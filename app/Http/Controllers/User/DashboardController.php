@@ -20,10 +20,11 @@ class DashboardController extends Controller
 {
     public function index()
     {
+        $profile       = Auth::user();
         $messages      = Message::latest()->where('user_id', Auth::id())->take(5)->get();
         $messagetotal  = Message::latest()->where('user_id', Auth::id())->count();
 
-        return view('user.dashboard',compact('messages','messagetotal'));
+        return view('user.dashboard',compact('profile','messages','messagetotal'));
     }
 
     public function booking()
