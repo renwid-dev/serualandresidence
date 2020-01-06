@@ -3,11 +3,13 @@
 namespace App\Http\Controllers\User;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
+use App\Mail\Contact;
 use Carbon\Carbon;
-use App\Comment;
+use App\Property;
 use App\Message;
 use App\User;
 use Auth;
@@ -17,15 +19,18 @@ use Toastr;
 class DashboardController extends Controller
 {
     public function index()
-    {   
-        $comments = Comment::latest()
-                           ->with('commentable')
-                           ->where('user_id',Auth::id())
-                           ->paginate(10);
+    {
+        $messages      = Message::latest()->where('user_id', Auth::id())->take(5)->get();
+        $messagetotal  = Message::latest()->where('user_id', Auth::id())->count();
 
-        $commentcount = Comment::where('user_id',Auth::id())->count();
+        return view('user.dashboard',compact('messages','messagetotal'));
+    }
 
-        return view('user.dashboard',compact('comments','commentcount'));
+    public function booking()
+    {
+        $booking = Auth::user();
+
+        return view('user.booking',compact('booking'));
     }
 
     public function profile()
@@ -42,10 +47,11 @@ class DashboardController extends Controller
             'username'  => 'required',
             'email'     => 'required|email',
             'image'     => 'image|mimes:jpeg,jpg,png',
-            'about'     => 'max:250'
+            'about'     => 'max:250',
+            'phone'     => 'max:13'
         ]);
 
-        $user = User::find(Auth::id());
+        $user = User::find(Auth::id()); 
 
         $image = $request->file('image');
         $slug  = str_slug($request->name);
@@ -63,19 +69,22 @@ class DashboardController extends Controller
             $userimage = Image::make($image)->save();
             Storage::disk('public')->put('users/'.$imagename, $userimage);
         }
-
+        
         $user->name = $request->name;
         $user->username = $request->username;
         $user->email = $request->email;
         $user->image = $imagename;
         $user->about = $request->about;
-
+        $user->phone = $request->phone;
+        
+        // dd($user);
         $user->save();
 
         return back();
     }
 
 
+    
     public function changePassword()
     {
         return view('user.changepassword');
@@ -109,10 +118,11 @@ class DashboardController extends Controller
     }
 
 
+
     // MESSAGE
     public function message()
     {
-        $messages = Message::latest()->where('agent_id', Auth::id())->paginate(10);
+        $messages = Message::latest()->where('user_id', Auth::id())->paginate(10);
 
         return view('user.messages.index',compact('messages'));
     }
@@ -134,7 +144,7 @@ class DashboardController extends Controller
     public function messageSend(Request $request)
     {
         $request->validate([
-            'agent_id'  => 'required',
+            'admin_id'  => 'required',
             'user_id'   => 'required',
             'name'      => 'required',
             'email'     => 'required',
@@ -173,6 +183,19 @@ class DashboardController extends Controller
         $message->delete();
 
         Toastr::success('message', 'Message deleted successfully.');
+        return back();
+    }
+
+
+    public function contactMail(Request $request)
+    {
+        $message  = $request->message;
+        $name     = $request->name;
+        $mailfrom = $request->mailfrom;
+
+        Mail::to($request->email)->send(new Contact($message,$name,$mailfrom));
+
+        Toastr::success('message', 'Mail send successfully.');
         return back();
     }
 

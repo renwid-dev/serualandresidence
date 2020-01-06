@@ -40,7 +40,6 @@ Route::get('/news/detail', 'FrontpageController@news')->name('news');
 Route::get('/news/grid', 'FrontpageController@newsGrid')->name('newsGrid');
 Route::get('/news/list', 'FrontpageController@newsList')->name('newsList');
 
-Route::get('/booking', 'FrontpageController@booking')->name('booking');
 Route::get('/dashboard/user', 'FrontpageController@dashboard')->name('dashboard');
 Route::get('/dashboard/profile', 'FrontpageController@dashboardProfile')->name('dashboardProfile');
 Route::get('/dashboard/messages', 'FrontpageController@dashboardMessages')->name('dashboardMessages');
@@ -95,9 +94,11 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin','middleware'=>['auth','admi
 });
 
 // Agent Login
-Route::group(['prefix'=>'agent','namespace'=>'Agent','middleware'=>['auth','agent'],'as'=>'agent.'], function(){
+Route::group(['prefix'=>'user','namespace'=>'User','middleware'=>['auth','user'],'as'=>'user.'], function(){
 
     Route::get('dashboard','DashboardController@index')->name('dashboard');
+    Route::get('booking','DashboardController@booking')->name('booking');
+    Route::get('booking/list','DashboardController@booking')->name('booking.list');
     Route::get('profile','DashboardController@profile')->name('profile');
     Route::post('profile','DashboardController@profileUpdate')->name('profile.update');
     Route::get('changepassword','DashboardController@changePassword')->name('changepassword');
@@ -112,23 +113,5 @@ Route::group(['prefix'=>'agent','namespace'=>'Agent','middleware'=>['auth','agen
     Route::post('message/readunread','DashboardController@messageReadUnread')->name('message.readunread');
     Route::delete('message/delete/{id}','DashboardController@messageDelete')->name('messages.destroy');
     Route::post('message/mail', 'DashboardController@contactMail')->name('message.mail');
-
-});
-
-// User CLient Login
-Route::group(['prefix'=>'user','namespace'=>'User','middleware'=>['auth','user'],'as'=>'user.'], function(){
-
-    Route::get('dashboard','DashboardController@index')->name('dashboard');
-    Route::get('profile','DashboardController@profile')->name('profile');
-    Route::post('profile','DashboardController@profileUpdate')->name('profile.update');
-    Route::get('changepassword','DashboardController@changePassword')->name('changepassword');
-    Route::post('changepassword','DashboardController@changePasswordUpdate')->name('changepassword.update');
-
-    Route::get('message','DashboardController@message')->name('message');
-    Route::get('message/read/{id}','DashboardController@messageRead')->name('message.read');
-    Route::get('message/replay/{id}','DashboardController@messageReplay')->name('message.replay');
-    Route::post('message/replay','DashboardController@messageSend')->name('message.send');
-    Route::post('message/readunread','DashboardController@messageReadUnread')->name('message.readunread');
-    Route::delete('message/delete/{id}','DashboardController@messageDelete')->name('messages.destroy');
 
 });

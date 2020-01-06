@@ -41,11 +41,8 @@ class ResetPasswordController extends Controller
 
         }elseif(Auth::check() && Auth::user()->role->id == 2 ){
 
-            $this->redirectTo = route('agent.dashboard');
-            
-        }else{
-
             $this->redirectTo = route('user.dashboard');
+            
         }
 
         $this->middleware('guest');

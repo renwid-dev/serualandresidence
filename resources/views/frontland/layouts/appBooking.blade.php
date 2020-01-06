@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="{{ app()->getLocale() }}">
 <head>
 <meta charset="utf-8">
-<title>Serua Land Residence</title>
+<meta name="csrf-token" content="{{ csrf_token() }}">
+<title>Serua Land Residence @yield('title')</title>
 <!-- Stylesheets -->
 <link href="{{ asset('frontland/admin/css/bootstrap.css') }}" rel="stylesheet">
 <link href="{{ asset('frontland/admin/css/style.css') }}" rel="stylesheet">
@@ -42,20 +42,18 @@
                 <li class="dropdown option-box">
                     <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> <img src="{{ asset('frontland/admin/images/resource/thumb-1.jpg') }}" alt="avatar" class="thumb">My Account</a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="{{url('dashboard/user')}}">Dashboard</a>
-                        <a class="dropdown-item" href="{{url('dashboard/messages')}}">Messages</a>
-                        <a class="dropdown-item" href="{{url('dashboard/booking/list')}}">Bookings</a>
-                        <a class="dropdown-item" href="{{url('dashboard/profile')}}">My profile</a>
-                        @guest
-                            <a class="dropdown-item" href="{{ route('logout') }}"
-                                onclick="event.preventDefault();
-                                                document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
-                            </a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                @csrf
-                            </form>
-                        @endguest
+                        <a class="dropdown-item" href="{{url('user/dashboard')}}">Dashboard</a>
+                        <a class="dropdown-item" href="{{url('user/message')}}">Messages</a>
+                        <a class="dropdown-item" href="{{url('user/booking/list')}}">Bookings</a>
+                        <a class="dropdown-item" href="{{url('user/profile')}}">My profile</a>
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
                     </div>
                 </li>
                 <li class="submit-property">
@@ -76,12 +74,11 @@
     <div class="dashboard-inner">
         <div class="cross-icon"><span class="pe-7s-close-circle"></span></div>
         <ul class="navigation">
-            <li><a href="{{url('dashboard/user')}}"><i class="pe-7s-mail"></i> Dashboard</a></li>
-            <li><a href="{{url('dashboard/messages')}}"><i class="pe-7s-mail"></i> Messages <span class="tag">6</span></a></li>
-            <li class="active"><a href="{{url('dashboard/booking/list')}}"><i class="pe-7s-up-arrow"></i>Booking List</a></li>
-            <li><a href="{{url('dashboard/profile')}}"><i class="pe-7s-user"></i>My Profile</a></li>
+            <li><a href="{{url('user/dashboard')}}"><i class="pe-7s-mail"></i> Dashboard</a></li>
+            <li><a href="{{url('user/message')}}"><i class="pe-7s-mail"></i> Messages <span class="tag">6</span></a></li>
+            <li class="active"><a href="{{url('user/booking/list')}}"><i class="pe-7s-up-arrow"></i>Booking List</a></li>
+            <li><a href="{{url('user/profile')}}"><i class="pe-7s-user"></i>My Profile</a></li>
             <li>
-            @guest
                 <a class="dropdown-item" href="{{ route('logout') }}"
                     onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">
@@ -90,7 +87,6 @@
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     @csrf
                 </form>
-            @endguest
             </li>
         </ul>
     </div>

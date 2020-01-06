@@ -45,13 +45,10 @@ class LoginController extends Controller
 
             $this->redirectTo = route('admin.dashboard');
 
-        } elseif ($user->hasRole('Agent')) {
-
-            $this->redirectTo = route('agent.dashboard');
-
         } elseif ($user->hasRole('User')) {
 
             $this->redirectTo = route('user.dashboard');
+
         }
     }
 }

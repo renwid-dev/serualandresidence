@@ -50,7 +50,7 @@
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="ui-item bg-active">
                             <div class="left">
-                                <h4>{{ $commentcount }}</h4>
+                                <h4>1233</h4>
                                 <p>Message</p>
                             </div>
                             <div class="right">
@@ -113,21 +113,5 @@
         </div>
     </div>
 </div>
-
-   
-    <!-- <div class="box-content">
-        @foreach($comments as $key => $comment)
-            <div class="grey lighten-4">
-                <span class="border-bottom display-block p-15  grey-text-d-2">
-                    {{ ++$key }}. {{ $comment->body }}
-                    
-                </span>
-            </div>
-        @endforeach
-    </div>
-    <div>
-        {{ $comments->links() }}
-    </div> -->
-                          
 
 @endsection

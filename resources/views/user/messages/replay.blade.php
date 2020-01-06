@@ -1,7 +1,4 @@
-@extends('frontend.layouts.app')
-
-@section('styles')
-@endsection
+@extends('frontland.layouts.appBooking')
 
 @section('content')
 
@@ -24,7 +21,7 @@
                         @if($message->user_id)
                             <form action="{{route('user.message.send')}}" method="POST">
                                 @csrf
-                                <input type="hidden" name="agent_id" value="{{ $message->user_id }}">
+                                <input type="hidden" name="admin_id" value="{{ $message->user_id }}">
                                 <input type="hidden" name="user_id" value="{{ auth()->id() }}">
                                 <input type="hidden" name="name" value="{{ auth()->user()->name }}">
                                 <input type="hidden" name="email" value="{{ auth()->user()->email }}">

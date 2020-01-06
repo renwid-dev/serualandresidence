@@ -54,24 +54,6 @@ class PagesController extends Controller
         return view('pages.properties.detail', compact('property','rating','relatedproperty','videoembed','cities'));
     }
 
-
-    // AGENT PAGE
-    public function agents()
-    {
-        $agents = User::latest()->where('role_id', 2)->paginate(12);
-
-        return view('pages.agents.index', compact('agents'));
-    }
-
-    public function agentshow($id)
-    {
-        $agent      = User::findOrFail($id);
-        $properties = Property::latest()->where('agent_id', $id)->paginate(10);
-
-        return view('pages.agents.single', compact('agent','properties'));
-    }
-
-
     // BLOG PAGE
     public function blog()
     {
@@ -166,11 +148,11 @@ class PagesController extends Controller
         return view('pages.blog.index', compact('posts'));
     }
 
-    // MESSAGE TO AGENT (SINGLE AGENT PAGE)
-    public function messageAgent(Request $request)
+    // MESSAGE TO USER (SINGLE USER PAGE)
+    public function messageUser(Request $request)
     {
         $request->validate([
-            'agent_id'  => 'required',
+            'user_id'  => 'required',
             'name'      => 'required',
             'email'     => 'required',
             'phone'     => 'required',
@@ -204,7 +186,7 @@ class PagesController extends Controller
         $mailfrom = $request->email;
         
         Message::create([
-            'agent_id'  => 1,
+            'user_id'  => 1,
             'name'      => $request->name,
             'email'     => $mailfrom,
             'phone'     => $request->phone,

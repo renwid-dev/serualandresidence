@@ -8,13 +8,25 @@
                     <div class="text"><span>Welcome</span> to Serua Land Residence - Making Business Better</div>
                 </div>
                 <div class="top-right clearfix">
+                @guest
                     <ul class="clearfix">
                         <li><a href="{{url('login')}}">Login</a></li>
-                        <!-- <li><a href="#">Register</a></li> -->
+                        <li><a href="{{url('register')}}">Register</a></li>
                     </ul>
+                    
+                    @else
                     <div class="btn-box">
-                        <a href="{{url('register')}}" class="theme-btn btn-style-two">Register</a>
+                        @if(Auth::user()->role->id == 1)
+                            <a href="{{ route('admin.dashboard') }}" class="theme-btn btn-style-two">
+                                <i class="material-icons">Profile</i>
+                            </a>
+                        @elseif(Auth::user()->role->id == 2)
+                            <a href="{{ route('user.dashboard') }}" class="theme-btn btn-style-two">
+                                <i class="material-icons">Profile</i>
+                            </a>
+                        @endif
                     </div>
+                @endguest
                 </div>
             </div>
         </div>
@@ -95,7 +107,7 @@
                     <!-- Main Menu End-->
                     <div class="outer-box">
                         <div class="btn-box">
-                            <a href="{{ route('booking') }}" class="theme-btn btn-style-four">Booking Now</a>
+                            <a href="{{ url('user/booking') }}" class="theme-btn btn-style-four">Booking Now</a>
                         </div>
 
                         <!--Search Box-->

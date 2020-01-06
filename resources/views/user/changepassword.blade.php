@@ -1,50 +1,36 @@
+<div class="column col-lg-12 col-md-12">
+    <div class="properties-box">
+        <div class="inner-container">
+            <div class="title"><h3>Change Password</h3></div>
+            <div class="profile-form">
+                <form method="post" action="{{route('user.changepassword.update')}}">
+                    @csrf
+                    <div class="row">
+                        <!-- Form Group -->
+                        <div class="form-group col-lg-12">
+                            <label>Current Password</label>
+                            <input type="text" name="currentpassword" placeholder="Current Password" required>
+                        </div>
 
-    <section class="section">
-        <div class="container">
-            <div class="row">
+                        <!-- Form Group -->
+                        <div class="form-group col-lg-12">
+                            <label>New Password</label>
+                            <input type="text" name="newpassword" placeholder="New Password" required>
+                        </div>
 
-                <div class="col s12 m3">
-                    <div class="agent-sidebar">
-                        @include('user.sidebar')
+                        <!-- Form Group -->
+                        <div class="form-group col-lg-12">
+                            <label>Confirm New Password</label>
+                            <input type="text" name="newpassword_confirmation" placeholder="Confirm New Password" required>
+                        </div>
+
+                        <!-- Form Group -->
+                        <div class="form-group col-lg-12">
+                            <button type="submit" class="theme-btn btn-style-one">Update Password</button>
+                        </div>
                     </div>
-                </div>
-
-                <div class="col s12 m9">
-                    <div class="agent-content">
-                        <h4 class="agent-title">Change Password</h4>
-
-                        <form action="{{route('user.changepassword.update')}}" method="POST" enctype="multipart/form-data">
-                            @csrf
-
-                            <div class="input-field col s12">
-                                <i class="material-icons prefix">lock_open</i>
-                                <input id="currentpassword" name="currentpassword" type="password" class="validate">
-                                <label for="currentpassword">Current Password</label>
-                            </div>
-
-                            <div class="input-field col s12">
-                                <i class="material-icons prefix">lock_outline</i>
-                                <input id="newpassword" name="newpassword" type="password" class="validate">
-                                <label for="newpassword">New Password</label>
-                            </div>
-
-                            <div class="input-field col s12">
-                                <i class="material-icons prefix">lock</i>
-                                <input id="new-password_confirmation" name="newpassword_confirmation" type="password" class="validate">
-                                <label for="new-password_confirmation">Confirm New Password</label>
-                            </div>
-
-                            <button class="btn waves-effect waves-light indigo darken-4 m-l-30" type="submit">
-                                Submit
-                                <i class="material-icons right">send</i>
-                            </button>
-
-                        </form>
-
-
-                    </div>
-                </div> <!-- /.col -->
-
+                </form>
             </div>
         </div>
-    </section>
+    </div>
+</div>

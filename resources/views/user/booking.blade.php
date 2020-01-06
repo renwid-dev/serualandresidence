@@ -1,5 +1,4 @@
 @extends('frontland.layouts.appBooking')
-@include('frontland/userDashboard/partials/header')
 @section('content')
 <style media="screen">
 	.cursor{

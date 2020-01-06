@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Testimonial;
-use App\Property;
-use App\Service;
-use App\Slider;
+use DB;
+use Auth;
 use App\Post;
+use App\Slider;
+use App\Service;
+use App\Property;
+use App\Testimonial;
+use Illuminate\Http\Request;
 
 class FrontpageController extends Controller
 {
@@ -100,11 +102,6 @@ class FrontpageController extends Controller
     public function newsList()
     {
         return view('pages.blog.list');
-    }
-
-    public function booking()
-    {
-        return view('pages.booking');
     }
 
     public function dashboard()

@@ -23,14 +23,9 @@ class RedirectIfAuthenticated
 
         } elseif (Auth::guard($guard)->check() && Auth::user()->role->id == 2) {
 
-            return redirect()->route('agent.dashboard');
-
-        } elseif (Auth::guard($guard)->check() && Auth::user()->role->id == 3) {
-
             return redirect()->route('user.dashboard');
 
-        } 
-        else {
+        } else {
 
             return $next($request);
         }

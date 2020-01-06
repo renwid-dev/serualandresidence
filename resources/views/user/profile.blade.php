@@ -32,7 +32,7 @@
                                             @csrf
                                             <!-- Edit profile photo -->
                                             <div class="edit-profile-photo">
-                                                <img src="{{ asset('frontland/admin/images/resource/avatar.jpg') }}" alt="profile-photo">
+                                                <img src="{{ Storage::url('users/'.$profile->image) }}">
                                                 <div class="change-photo-btn">
                                                     <div class="photoUpload">
                                                         <span><i class="la la-cloud-upload"></i></span>
@@ -48,7 +48,7 @@
                                                     <!-- Form Group -->
                                                     <div class="form-group col-lg-6 col-md-6 col-sm-12">
                                                         <label>Your Name</label>
-                                                        <input type="text" name="name" placeholder="{{ $profile->name }}" required>
+                                                        <input type="text" name="name" placeholder="{{ $profile->name }} " required>
                                                     </div>
 
                                                     <!-- Form Group -->
@@ -60,19 +60,19 @@
                                                     <!-- Form Group -->
                                                     <div class="form-group col-lg-6 col-md-6 col-sm-12">
                                                         <label>Phone Number</label>
-                                                        <input type="text" name="phone" placeholder="Phone" required>
+                                                        <input type="text" name="phone" placeholder="{{ $profile->phone }}" required>
                                                     </div>
 
                                                     <!-- Form Group -->
                                                     <div class="form-group col-lg-6 col-md-6 col-sm-12">
                                                         <label>Your Email</label>
-                                                        <input type="email" name="email" placeholder="{{ $profile->email }}"  disabled>
+                                                        <input type="email" name="email" placeholder="{{ $profile->email }}" required>
                                                     </div>
 
                                                     <!-- Form Group -->
                                                     <div class="form-group col-lg-12 col-md-12 col-sm-12">
                                                         <label>About You</label>
-                                                        <textarea name="about-you" placeholder="Personal Info">{{ $profile->about or null }}</textarea>
+                                                        <textarea name="about" placeholder="Personal Info">{{ $profile->about }}</textarea>
                                                     </div>
 
                                                     <!-- Form Group -->
@@ -88,42 +88,7 @@
                         </div>
                     </div>
 
-                    <div class="column col-lg-12 col-md-12">
-                        <div class="properties-box">
-                            <div class="inner-container">
-                                <div class="title"><h3>Change Password</h3></div>
-                                <div class="profile-form">
-                                    <form method="post" action="{{route('user.changepassword.update')}}">
-                                        @csrf
-                                        <div class="row">
-                                            <!-- Form Group -->
-                                            <div class="form-group col-lg-12">
-                                                <label>Current Password</label>
-                                                <input type="text" name="currentpassword" placeholder="Current Password" required>
-                                            </div>
-
-                                            <!-- Form Group -->
-                                            <div class="form-group col-lg-12">
-                                                <label>New Password</label>
-                                                <input type="text" name="newpassword" placeholder="New Password" required>
-                                            </div>
-
-                                            <!-- Form Group -->
-                                            <div class="form-group col-lg-12">
-                                                <label>Confirm New Password</label>
-                                                <input type="text" name="newpassword_confirmation" placeholder="Confirm New Password" required>
-                                            </div>
-
-                                            <!-- Form Group -->
-                                            <div class="form-group col-lg-12">
-                                                <button type="submit" class="theme-btn btn-style-one">Update Password</button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @include('user/changepassword')
                     
                 </div>
             </div>

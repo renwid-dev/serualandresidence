@@ -3,8 +3,8 @@
 
 <!-- Mirrored from expert-themes.com/html/ourland/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 25 Dec 2019 06:27:30 GMT -->
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-
-<title>Serua Land Residence | @yield('title')</title>
+<meta name="csrf-token" content="{{ csrf_token() }}">
+<title>Serua Land Residence @yield('title')</title>
 <!-- Stylesheets -->
 <link href="{{ asset('frontland/css/bootstrap.css') }}" rel="stylesheet">
 <link href="{{ asset('frontland/plugins/revolution/css/settings.css') }}" rel="stylesheet" type="text/css"><!-- REVOLUTION SETTINGS STYLES -->
