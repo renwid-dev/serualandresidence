@@ -44,7 +44,7 @@
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="{{url('user/dashboard')}}">Dashboard</a>
                         <a class="dropdown-item" href="{{url('user/message')}}">Messages</a>
-                        <a class="dropdown-item" href="{{url('user/booking/list')}}">Bookings</a>
+                        <a class="dropdown-item" href="{{url('dashboard/booking/list')}}">Bookings</a>
                         <a class="dropdown-item" href="{{url('user/profile')}}">My profile</a>
                         <a class="dropdown-item" href="{{ route('logout') }}"
                             onclick="event.preventDefault();
@@ -57,7 +57,7 @@
                     </div>
                 </li>
                 <li class="submit-property">
-                    <a href="{{url('user/booking/list')}}" class="theme-btn btn-style-one">Booking List<i class="pe-7s-up-arrow"></i></a>
+                    <a href="{{url('dashboard/booking/list')}}" class="theme-btn btn-style-one">Booking List<i class="pe-7s-up-arrow"></i></a>
                 </li>
                 <li class="nav-toggler">
                     <button class="toggler-btn nav-btn"><span class="bar bar-one"></span><span class="bar bar-two"></span><span class="bar bar-three"></span></button>
@@ -76,7 +76,7 @@
         <ul class="navigation">
             <li><a href="{{url('user/dashboard')}}"><i class="pe-7s-mail"></i> Dashboard</a></li>
             <li><a href="{{url('user/message')}}"><i class="pe-7s-mail"></i> Messages <span class="tag">6</span></a></li>
-            <li class="active"><a href="{{url('user/booking/list')}}"><i class="pe-7s-up-arrow"></i>Booking List</a></li>
+            <li class="active"><a href="{{url('dashboard/booking/list')}}"><i class="pe-7s-up-arrow"></i>Booking List</a></li>
             <li><a href="{{url('user/profile')}}"><i class="pe-7s-user"></i>My Profile</a></li>
             <li>
                 <a class="dropdown-item" href="{{ route('logout') }}"

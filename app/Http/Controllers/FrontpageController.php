@@ -104,18 +104,6 @@ class FrontpageController extends Controller
         return view('pages.blog.list');
     }
 
-    public function dashboard()
-    {
-        return view('frontland.userDashboard.partials.dashboard');
-    }
-    public function dashboardProfile()
-    {
-        return view('frontland.userDashboard.partials.profile');
-    }
-    public function dashboardMessages()
-    {
-        return view('frontland.userDashboard.partials.messages');
-    }
     public function dashboardBookingList()
     {
         $profile = Auth::user();

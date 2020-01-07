@@ -8,9 +8,9 @@ Route::get('/search', 'FrontpageController@search')->name('search');
 
 Route::get('/property', 'PagesController@properties')->name('property');
 Route::get('/property/{id}', 'PagesController@propertieshow')->name('property.show');
-Route::post('/property/message', 'PagesController@messageAgent')->name('property.message');
-Route::post('/property/comment/{id}', 'PagesController@propertyComments')->name('property.comment');
-Route::post('/property/rating', 'PagesController@propertyRating')->name('property.rating');
+Route::get('/booking/{id}', 'PagesController@propertiesBooking')->name('booking.property');
+// Route::post('/property/comment/{id}', 'PagesController@propertyComments')->name('property.comment');
+// Route::post('/property/rating', 'PagesController@propertyRating')->name('property.rating');
 Route::get('/property/city/{cityslug}', 'PagesController@propertyCities')->name('property.city');
 
 Route::get('/agents', 'PagesController@agents')->name('agents');
@@ -40,9 +40,6 @@ Route::get('/news/detail', 'FrontpageController@news')->name('news');
 Route::get('/news/grid', 'FrontpageController@newsGrid')->name('newsGrid');
 Route::get('/news/list', 'FrontpageController@newsList')->name('newsList');
 
-Route::get('/dashboard/user', 'FrontpageController@dashboard')->name('dashboard');
-Route::get('/dashboard/profile', 'FrontpageController@dashboardProfile')->name('dashboardProfile');
-Route::get('/dashboard/messages', 'FrontpageController@dashboardMessages')->name('dashboardMessages');
 Route::get('/dashboard/booking/list', 'FrontpageController@dashboardBookingList')->name('dashboardBookingList');
 
 Route::post('booking', 'BookingController@booking')->name('booking');
@@ -93,7 +90,7 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin','middleware'=>['auth','admi
 
 });
 
-// Agent Login
+// User Login
 Route::group(['prefix'=>'user','namespace'=>'User','middleware'=>['auth','user'],'as'=>'user.'], function(){
 
     Route::get('dashboard','DashboardController@index')->name('dashboard');

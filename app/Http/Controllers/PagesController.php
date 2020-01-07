@@ -25,7 +25,7 @@ class PagesController extends Controller
     public function properties()
     {
         $cities     = Property::select('city','city_slug')->distinct('city_slug')->get();
-        $properties = Property::latest()->with('rating')->withCount('comments')->paginate(12);
+        $properties = Property::latest()->with('rating')->withCount('comments')->paginate(10);
 
         return view('pages.properties.property', compact('properties','cities'));
     }
@@ -47,11 +47,33 @@ class PagesController extends Controller
                     ->where('id', '!=' , $property->id)
                     ->take(5)->get();
 
-        $videoembed = $this->convertYoutube($property->video, 560, 315);
+        $videoembed = $this->convertYoutube($property->video, 700, 350);
 
         $cities = Property::select('city','city_slug')->distinct('city_slug')->get();
 
         return view('pages.properties.detail', compact('property','rating','relatedproperty','videoembed','cities'));
+    }
+
+    public function propertiesBooking($slug)
+    {
+        $profile     = Auth::user();
+        $property = Property::with('features','gallery','user','comments')
+                            ->withCount('comments')
+                            ->where('slug', $slug)
+                            ->first();
+
+        $relatedproperty = Property::latest()
+                    ->where('purpose', $property->purpose)
+                    ->where('type', $property->type)
+                    ->where('bedroom', $property->bedroom)
+                    ->where('bathroom', $property->bathroom)
+                    ->where('id', '!=' , $property->id)
+                    ->take(5)->get();
+
+
+        $cities = Property::select('city','city_slug')->distinct('city_slug')->get();
+
+        return view('user.booking', compact('property','relatedproperty','cities','profile'));
     }
 
     // BLOG PAGE

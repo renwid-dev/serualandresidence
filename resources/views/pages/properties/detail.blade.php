@@ -135,7 +135,7 @@
                                 <div class="row no-gutters">
                                     <!-- Form Group -->
                                     <div class="form-group">
-                                    <a href="{{url('booking')}}"><button type="submit" class="theme-btn btn-style-one"> Booking Now</button></a> 
+                                    <a href="{{url('booking',$property->slug)}}"><button type="submit" class="theme-btn btn-style-one"> Booking Now</button></a> 
                                     </div>
                                 </div>
                             
