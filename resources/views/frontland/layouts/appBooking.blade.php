@@ -40,7 +40,7 @@
         <div class="upper-right">
             <ul class="clearfix">
                 <li class="dropdown option-box">
-                    <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> <img src="{{ Storage::url('users/'.$profile->image) }}" class="thumb">My Account</a>
+                    <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> <img src="#" class="thumb">My Account</a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="{{url('user/dashboard')}}">Dashboard</a>
                         <a class="dropdown-item" href="{{url('user/message')}}">Messages</a>
@@ -57,7 +57,7 @@
                     </div>
                 </li>
                 <li class="submit-property">
-                    <a href="{{url('dashboard/booking/list')}}" class="theme-btn btn-style-one">Booking List<i class="pe-7s-up-arrow"></i></a>
+                    <a href="{{url('user/booking/list')}}" class="theme-btn btn-style-one">Booking List<i class="pe-7s-up-arrow"></i></a>
                 </li>
                 <li class="nav-toggler">
                     <button class="toggler-btn nav-btn"><span class="bar bar-one"></span><span class="bar bar-two"></span><span class="bar bar-three"></span></button>
