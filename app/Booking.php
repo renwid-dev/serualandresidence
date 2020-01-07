@@ -17,7 +17,8 @@ class Booking extends Model
     'id_card_image',
     'npwp_card_image',
     'family_card_image',
-    'married_card_image'
+    'married_card_image',
+    'user_id'
    ];
 
    // public function bank()

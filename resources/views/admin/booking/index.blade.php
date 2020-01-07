@@ -21,7 +21,6 @@
                                     <th>#</th>
                                     <th>Booking Code</th>
                                     <th>Booking Date</th>
-                                    <th>Product / Property</th>
                                     <th>Status</th>
                                     <th width="100px">Action</th>
                                 </tr>
@@ -33,7 +32,6 @@
                                     <td>{{$no++}}</td>
                                     <td>{{$key['booking_code']}}</td>
                                     <td>{{$key['booking_date']}}</td>
-                                    <td>{{$key['product_id']}}</td>
                                     <td>{{$key['status']}}</td>
                                     <td>
                                         <button type="button" onclick="window.location.href='{{url('/admin/booking/detail/'.$key['id'])}}'" class="btn btn-sm btn-warning waves-effect">
@@ -48,7 +46,6 @@
                                     <th>#</th>
                                     <th>Booking Code</th>
                                     <th>Booking Date</th>
-                                    <th>Product / Property</th>
                                     <th>Status</th>
                                     <th width="100px">Action</th>
                                 </tr>

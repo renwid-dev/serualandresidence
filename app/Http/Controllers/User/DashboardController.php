@@ -23,21 +23,18 @@ class DashboardController extends Controller
         $profile       = Auth::user();
         $messages      = Message::latest()->where('user_id', Auth::id())->take(5)->get();
         $messagetotal  = Message::latest()->where('user_id', Auth::id())->count();
-
         return view('user.dashboard',compact('profile','messages','messagetotal'));
     }
 
     public function booking()
     {
-        $booking = Auth::user();
-
-        return view('user.booking',compact('booking'));
+        $profile = Auth::user();
+        return view('user.booking',compact('profile'));
     }
 
     public function profile()
     {
         $profile = Auth::user();
-
         return view('user.profile',compact('profile'));
     }
 
@@ -52,7 +49,7 @@ class DashboardController extends Controller
             'phone'     => 'max:13'
         ]);
 
-        $user = User::find(Auth::id()); 
+        $user = User::find(Auth::id());
 
         $image = $request->file('image');
         $slug  = str_slug($request->name);
@@ -70,14 +67,14 @@ class DashboardController extends Controller
             $userimage = Image::make($image)->save();
             Storage::disk('public')->put('users/'.$imagename, $userimage);
         }
-        
+
         $user->name = $request->name;
         $user->username = $request->username;
         $user->email = $request->email;
         $user->image = $imagename;
         $user->about = $request->about;
         $user->phone = $request->phone;
-        
+
         // dd($user);
         $user->save();
 
@@ -85,7 +82,7 @@ class DashboardController extends Controller
     }
 
 
-    
+
     public function changePassword()
     {
         return view('user.changepassword');

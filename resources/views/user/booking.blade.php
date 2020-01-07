@@ -38,6 +38,7 @@
 				                                    </div>
 			                                    </div>
                                             </div>
+											<input type="hidden" name="id" value="{{$profile->id}}">
                                             <div class="title"><h3>Upload KARTU KELUARGA</h3></div>
 			                                <div class="row">
 			                                    <div class="form-group col-lg-12">
@@ -60,22 +61,22 @@
 			                                    	<textarea name="address" placeholder="Detail Address" required></textarea>
 			                                    </div>
 												<div class="form-group col-lg-6">
-			                                    	<textarea name="address" placeholder="Replace for Google Map / Open Street Map" required></textarea>
+			                                    	<textarea name="" placeholder="Replace for Google Map / Open Street Map" required></textarea>
 			                                    </div>
 			                                </div>
 			                                <div class="title"><h3>Contact Info</h3></div>
 			                                <div class="row">
 			                                    <div class="form-group col-lg-3 col-md-6 col-sm-12">
 			                                        <label>Name</label>
-			                                        <input type="text" name="full_name" placeholder="Name" required>
+			                                        <input type="text" value="{{$profile->name}}" name="full_name" placeholder="Name" required>
 			                                    </div>
 			                                    <div class="form-group col-lg-3 col-md-6 col-sm-12">
 			                                        <label>Email</label>
-			                                        <input type="email" name="email" placeholder="Email" required>
+			                                        <input type="email" value="{{$profile->email}}" name="email" placeholder="Email" required>
 			                                    </div>
 			                                    <div class="form-group col-lg-3 col-md-6 col-sm-12">
 			                                        <label>Phone</label>
-			                                        <input type="text" name="phone_number" placeholder="Phone" required>
+			                                        <input type="text" name="phone_number" value="{{$profile->phone}}" placeholder="Phone" required>
 			                                    </div>
 			                                    <div class="form-group col-lg-3 col-md-6 col-sm-12">
 			                                    	<button type="submit" class="theme-btn btn-style-one"> Submit Property</button>
