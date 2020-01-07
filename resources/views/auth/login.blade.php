@@ -42,10 +42,8 @@
                                             <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}>&nbsp; <label for="account-option-1">Remember me</label>
                                         </div>
                                     </div>
-                                    <div class="pull-right">
-                                        <div class="form-group no-margin">
-                                            <button class="theme-btn btn-style-one" type="submit">{{ __('Login') }}</button>
-                                        </div>
+                                    <div class="form-group no-margin pull-right">
+                                        <button class="theme-btn btn-style-one" type="submit">{{ __('Login') }}</button>
                                     </div>
                                 </div>
                                 <div class="form-group">

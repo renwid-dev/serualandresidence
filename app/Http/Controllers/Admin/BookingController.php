@@ -12,6 +12,7 @@ class BookingController extends Controller
     {
         $query = Booking::join('booking_details', 'booking_details.booking_id', '=', 'bookings.id')
                         ->where('status', '!=', 'fail')
+                        ->orderBy('bookings.id', 'desc')
                         ->get();
 
         $data['data'] = $query;

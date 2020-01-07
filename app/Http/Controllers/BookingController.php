@@ -34,7 +34,8 @@ class BookingController extends Controller
                 'family_card_image'      => $familyCard,
                 'married_card_image'     => $marriedCard,
                 'booking_code'           => 'MP'.'-'.date('Ymd').'-'.mt_rand(100000, 999999),
-                'status'                 => 'waiting'
+                'status'                 => 'waiting',
+                'user_id'                => $request->id
             ]);
 
             $detail = BookingDetail::create([
@@ -50,18 +51,5 @@ class BookingController extends Controller
             return $e->getMessage();
         }
         return redirect('dashboard/booking/list');
-
-    }
-
-    public function getImage($file = '')
-    {
-        return $file;
-        $image = '';
-        if ($file !== '') {
-            $filename   = time().'.'.$file->getClientOriginalExtension();
-            $image      = file_get_contents($file->getPathName());
-            // Storage::put('booking/'.$filename, $image);
-            return $image;
-        }
     }
 }

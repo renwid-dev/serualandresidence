@@ -19,24 +19,22 @@
 	                        </div>
 	                    </div>
 					</div>
-					
+
 	                <div class="row">
 	                    <div class="column col-lg-12">
 	                    	<div class="my-invoices">
 	                    		<div class="title"><h3>Invoice</h3></div>
 	                    		<div class="inner-container clearfix">
 	                				<div class="logo"><a href="#"><img src="{{asset('frontland/images/logo-1.png')}}" alt=""></a></div>
-	                				<div class="order-num">Booking ID : 12345</div>
+	                				<div class="order-num">Booking ID : {{$booking->booking_code}}</div>
 	                    			<div class="invoice-box">
 	                    				<div class="row">
 	                    					<div  class="column col-lg-3 col-md-6 col-sm-12">
-                    							<h3>Shipped To:</h3>
+                    							<h3>Booking by:</h3>
                     							<ul class="invoice-info">
-                    								<li>Bayu</li>
-                    								<li>Harvest St, North Subract 360</li>
-                    								<li>London. United States Of Amrica.</li>
-                    								<li>Springfield, ST 35436</li>
-                    								<li><a href="#">info@serualandresidence.com</a></li>
+                    								<li>{{$profile->name}}</li>
+                    								<li>{{$booking->address}}</li>
+                    								<li><a href="#">{{$profile->email}}</a></li>
                     							</ul>
                     						</div>
 	                    					<div  class="column col-lg-3 col-md-6 col-sm-12">
@@ -61,7 +59,7 @@
                     						<div  class="column col-lg-3 col-md-6 col-sm-12">
                     							<h3>Booking Expired:</h3>
                     							<ul class="invoice-info">
-                    								<li>59:00:00</li>
+                    								<li id="count-down"></li>
                     							</ul>
                     						</div>
 	                    				</div>
@@ -120,7 +118,7 @@
 				                                    </div>
 			                                    </div>
                                             </div>
-                                            
+
 			                            </form>
 			                        </div>
 	                    		</div>
@@ -135,4 +133,19 @@
 	    </div>
 	</div>
 
+    <script>
+    var currentTime = new Date();
+    var countDownDate = currentTime.setTime(currentTime.getTime() + 2000 * 60);
+    var x = setInterval(function() {
+        var now = new Date();
+        var distance = countDownDate - now;
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        document.getElementById("count-down").innerHTML = minutes + "m " + seconds + "s ";
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("count-down").innerHTML = "EXPIRED";
+        }
+    }, 1000);
+</script>
 @endsection
