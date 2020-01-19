@@ -8,55 +8,25 @@
 
         <div class="row">
             <!-- News Block -->
+            @foreach($posts as $post)
             <div class="news-block col-lg-4 col-md-6 col-sm-12">
                 <div class="inner-box">
                     <div class="image-box">
-                        <figure class="image"><a href="{{route('news')}}"><img src="{{ asset('frontland/images/resource/news-1.jpg') }}" alt=""></a></figure>
+                    @if(Storage::disk('public')->exists('posts/'.$post->image) && $post->image)
+                        <figure class="image"><a href="{{ route('blog.show',$post->slug) }}"><img src="{{Storage::url('posts/'.$post->image)}}" alt=""></a></figure>
                         <div class="icon-box"><span class="icon la la-photo"></span></div>
+                    @endif
                     </div>
                     <div class="lower-content">
                         <ul class="info">
-                            <li>by <span>Admin</span></li>
-                            <li>25 Desember 2019</li>
+                            <li>by <span>{{$post->user->name}}</span></li>
+                            <li>{{$post->created_at->diffForHumans()}}</li>
                         </ul>
-                        <h3><a href="{{route('news')}}">Dazzling retreat resort with the Modern Design</a></h3>
+                        <h3><a href="{{ route('blog.show',$post->slug) }}">{{ $post->title }}</a></h3>
                     </div>
                 </div>
             </div>
-
-            <!-- News Block -->
-            <div class="news-block col-lg-4 col-md-6 col-sm-12">
-                <div class="inner-box">
-                    <div class="image-box">
-                        <figure class="image"><a href="{{route('news')}}" class="lightbox-image" data-fancybox="images"><img src="{{ asset('frontland/images/resource/news-1.jpg') }}" alt=""></a></figure>
-                        <div class="icon-box"><span class="icon la la-photo"></span></div>
-                    </div>
-                    <div class="lower-content">
-                        <ul class="info">
-                            <li>by <span>Admin</span></li>
-                            <li>25 Desember 2019</li>
-                        </ul>
-                        <h3><a href="{{route('news')}}">Independent apartment with modern design</a></h3>
-                    </div>
-                </div>
-            </div>
-
-            <!-- News Block -->
-            <div class="news-block col-lg-4 col-md-6 col-sm-12">
-                <div class="inner-box">
-                    <div class="image-box">
-                        <figure class="image"><a href="{{route('news')}}"><img src="{{ asset('frontland/images/resource/news-1.jpg') }}" alt=""></a></figure>
-                        <div class="icon-box"><span class="icon la la-photo"></span></div>
-                    </div>
-                    <div class="lower-content">
-                        <ul class="info">
-                            <li>by <span>Admin</span></li>
-                            <li>25 Desember 2019</li>
-                        </ul>
-                        <h3><a href="{{url('news/grid')}}">Modron apartment adjacent to CEO park</a></h3>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>

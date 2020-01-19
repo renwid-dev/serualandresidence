@@ -20,10 +20,10 @@
                         @if ($property->featured)
                         <span class="featured">FEATURED</span>
                         @endif
-                        <ul class="info clearfix">
+                        <!-- <ul class="info clearfix">
                             <li><a href="#"><i class="la la-calendar-minus-o"></i>2 Years Ago</a></li>
                             <li><a href="#"><i class="la la-user-secret"></i>Ghaly Morca</a></li>
-                        </ul>
+                        </ul> -->
                     </div>
                     <div class="lower-content">
                         <ul class="tags">

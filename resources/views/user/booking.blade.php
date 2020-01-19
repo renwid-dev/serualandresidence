@@ -38,7 +38,6 @@
 				                                    </div>
 			                                    </div>
                                             </div>
-											<input type="hidden" name="id" value="{{$profile->id}}">
                                             <div class="title"><h3>Upload KARTU KELUARGA</h3></div>
 			                                <div class="row">
 			                                    <div class="form-group col-lg-12">

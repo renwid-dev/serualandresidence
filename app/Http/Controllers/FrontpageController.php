@@ -23,6 +23,7 @@ class FrontpageController extends Controller
         $testimonials   = Testimonial::latest()->get();
         $posts          = Post::latest()->where('status',1)->take(3)->get();
 
+        // dd($posts);
         return view('frontland.index', compact('sliders','properties','services','testimonials','posts'));
     }
 
@@ -78,12 +79,18 @@ class FrontpageController extends Controller
 
     public function propertiesGrid()
     {
-        return view('pages.properties.grid');
+        $cities     = Property::select('city','city_slug')->distinct('city_slug')->get();
+        $properties = Property::latest()->with('rating')->withCount('comments')->paginate(10);
+
+        return view('pages.properties.grid', compact('cities','properties'));
     }
 
     public function propertiesList()
     {
-        return view('pages.properties.list');
+        $cities     = Property::select('city','city_slug')->distinct('city_slug')->get();
+        $properties = Property::latest()->with('rating')->withCount('comments')->paginate(10);
+
+        return view('pages.properties.list', compact('cities','properties'));
     }
 
     public function about()
@@ -110,6 +117,16 @@ class FrontpageController extends Controller
         $booking = Booking::where('user_id', $profile->id)->first();
         // return $booking;
         return view('user.bookingList',compact('profile', 'booking'));
+    }
+ 
+    public function footer()
+    {
+        $properties     = Property::latest()->where('featured',1)->take(2)->get();
+        $posts          = Post::latest()->where('status',1)->take(2)->get();
+
+        // dd($posts);
+        return view('frontland.partials.footer', compact('properties','posts'));
+
     }
 
 }

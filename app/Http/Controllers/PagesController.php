@@ -38,7 +38,7 @@ class PagesController extends Controller
                             ->first();
 
         $rating = Rating::where('property_id',$property->id)->where('type','property')->avg('rating');                   
-
+        $properties     = Property::latest()->where('featured',1)->take(6)->get();
         $relatedproperty = Property::latest()
                     ->where('purpose', $property->purpose)
                     ->where('type', $property->type)
@@ -51,7 +51,7 @@ class PagesController extends Controller
 
         $cities = Property::select('city','city_slug')->distinct('city_slug')->get();
 
-        return view('pages.properties.detail', compact('property','rating','relatedproperty','videoembed','cities'));
+        return view('pages.properties.detail', compact('property','rating','relatedproperty','videoembed','cities','properties'));
     }
 
     public function propertiesBooking($slug)
@@ -97,7 +97,9 @@ class PagesController extends Controller
 
     public function blogshow($slug)
     {
-        $post = Post::with('comments')->withCount('comments')->where('slug', $slug)->first(); 
+        $cities         = Property::select('city','city_slug')->distinct('city_slug')->get();
+        $post           = Post::with('comments')->withCount('comments')->where('slug', $slug)->first(); 
+        $properties     = Property::latest()->where('featured',1)->take(6)->get();
 
         $blogkey = 'blog-' . $post->id;
         if(!Session::has($blogkey)){
@@ -105,7 +107,7 @@ class PagesController extends Controller
             Session::put($blogkey,1);
         }
 
-        return view('pages.blog.single', compact('post'));
+        return view('pages.blog.detail', compact('post','cities','properties'));
     }
 
 
@@ -260,7 +262,7 @@ class PagesController extends Controller
         );
 
         return back();
-    }
+    } 
 
 
     // PROPERTY RATING
@@ -287,10 +289,10 @@ class PagesController extends Controller
     {
         $cities     = Property::select('city','city_slug')->distinct('city_slug')->get();
         $properties = Property::latest()->with('rating')->withCount('comments')
-                        ->where('city_slug', request('cityslug'))
-                        ->paginate(12);
+                              ->where('city_slug', request('cityslug'))
+                              ->paginate(12);
 
-        return view('pages.properties.property', compact('properties','cities'));
+        return view('pages.properties.grid', compact('properties','cities'));
     }
 
 

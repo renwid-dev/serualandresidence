@@ -145,16 +145,11 @@
 
                         <!-- Categories -->
                     <div class="sidebar-widget categories">
-                        <div class="sidebar-title"><h3>Category Properties</h3></div>
+                        <div class="sidebar-title"><h3>Location Properties</h3></div>
                         <ul class="cat-list">
-                            <li><a href="#">Apartments <span>22</span></a></li>
-                            <li><a href="#">Villas <span>45</span></a></li>
-                            <li><a href="#">Open Houses <span>62</span></a></li>
-                            <li><a href="#">Offices <span>70</span></a></li>
-                            <li><a href="#">Residentals <span>90</span></a></li>
-                            <li><a href="#">Co-Working <span>65</span></a></li>
-                            <li><a href="#">Flat <span>48</span></a></li>
-                            <li><a href="#">Cottage <span>24</span></a></li>
+                            @foreach($cities as $city)
+                                <li><a href="{{ route('property.city',$city->city_slug) }}">{{ $city->city }} <span></span></a></li>
+                            @endforeach
                         </ul>
                     </div>
 
@@ -163,56 +158,22 @@
                         <div class="sidebar-title"><h3>Recent Properties</h3></div>
                         <div class="widget-content">
                             <!-- Post -->
+                            @foreach($properties as $property)
                             <article class="post">
                                 <div class="post-thumb">
-                                    <a href="{{route('news')}}">
-                                        <img src="{{ asset('frontland/images/resource/property-thumb-1.jpg') }}" alt="">
-                                        <span class="status">Rent</span>
+                                @if($property->image)
+                                    <a href="{{ route('property.show',$property->slug) }}">
+                                        <img src="{{Storage::url('property/'.$property->image)}}" alt="">
+                                        <span class="status">{{ $property->purpose }}</span>
                                     </a>
+                                @endif
                                 </div>
-                                <span class="location">Lundon, UK</span>
-                                <h3><a href="{{route('news')}}">Laxury Balles Villa</a></h3>
-                                <div class="price">Rp 760,000</div>
+                                <span class="flaticon-bed"> {{ $property->bedroom }} Bedrooms</span>
+                                <h3><a href="{{ route('property.show',$property->slug) }}">{{ str_limit( $property->title, 18 ) }}</a></h3>
+                                <div class="price">Rp {{ number_format($property->price) }}</div>
                             </article>
+                            @endforeach
 
-                            <!-- Post -->
-                            <article class="post">
-                                <div class="post-thumb">
-                                    <a href="{{route('news')}}">
-                                        <img src="{{ asset('frontland/images/resource/property-thumb-2.jpg') }}" alt="">
-                                        <span class="status">Rent</span>
-                                    </a>
-                                </div>
-                                <span class="location">Lundon, UK</span>
-                                <h3><a href="{{route('news')}}">Laxury Balles Villa</a></h3>
-                                <div class="price">Rp 760,000</div>
-                            </article>
-
-                            <!-- Post -->
-                            <article class="post">
-                                <div class="post-thumb">
-                                    <a href="{{route('news')}}">
-                                        <img src="{{ asset('frontland/images/resource/property-thumb-3.jpg') }}" alt="">
-                                        <span class="status hot">hot</span>
-                                    </a>
-                                </div>
-                                <span class="location">Lundon, UK</span>
-                                <h3><a href="{{route('news')}}">Laxury Balles Villa</a></h3>
-                                <div class="price">Rp 760,000</div>
-                            </article>
-
-                            <!-- Post -->
-                            <article class="post">
-                                <div class="post-thumb">
-                                    <a href="{{route('news')}}">
-                                        <img src="{{ asset('frontland/images/resource/property-thumb-4.jpg') }}" alt="">
-                                        <span class="status">Rent</span>
-                                    </a>
-                                </div>
-                                <span class="location">Lundon, UK</span>
-                                <h3><a href="{{route('news')}}">Laxury Balles Villa</a></h3>
-                                <div class="price">Rp 760,000</div>
-                            </article>
                         </div>
                     </div>
                 </aside>
