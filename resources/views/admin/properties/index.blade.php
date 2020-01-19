@@ -48,8 +48,8 @@
                                 <tr>
                                     <td>{{$key+1}}</td>
                                     <td>
-                                        @if(Storage::disk('public')->exists('property/'.$property->image) && $property->image)
-                                            <img src="{{Storage::url('property/'.$property->image)}}" alt="{{$property->title}}" width="60" class="img-responsive img-rounded">
+                                        @if(Storage::disk('public')->exists($property->image) && $property->image)
+                                            <img src="{{Storage::url($property->image)}}" alt="{{$property->title}}" width="60" class="img-responsive img-rounded">
                                         @endif
                                     </td>
                                     <td>
@@ -119,7 +119,7 @@
 
     <script>
         function deletePost(id){
-            
+
             swal({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",

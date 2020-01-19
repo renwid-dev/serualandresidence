@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
-use App\Slider;
+use App\Models\Slider;
 use Carbon\Carbon;
 use Toastr;
 
@@ -15,9 +15,8 @@ class SliderController extends Controller
 {
     public function index()
     {
-        $sliders = Slider::latest()->get();
-
-        return view('admin.sliders.index', compact('sliders'));
+        $data = Slider::latest()->get();
+        return view('admin.sliders.index', compact('data'));
     }
 
     public function create()
@@ -34,16 +33,8 @@ class SliderController extends Controller
 
         $image = $request->file('image');
         $slug  = str_slug($request->title);
-
-        if(isset($image)){
-            $currentDate = Carbon::now()->toDateString();
-            $imagename = $slug.'-'.$currentDate.'-'.uniqid().'.'.$image->getClientOriginalExtension();
-
-            if(!Storage::disk('public')->exists('slider')){
-                Storage::disk('public')->makeDirectory('slider');
-            }
-            $slider = Image::make($image)->resize(1600, 480)->save();
-            Storage::disk('public')->put('slider/'.$imagename, $slider);
+        if($request->file('image')){
+            $imagename = Storage::disk('public')->put('slider', $request->file('image'));
         }else{
             $imagename = 'default.png';
         }
@@ -58,14 +49,11 @@ class SliderController extends Controller
         return redirect()->route('admin.sliders.index');
     }
 
-
     public function edit($id)
     {
         $slider = Slider::find($id);
-
         return view('admin.sliders.edit', compact('slider'));
     }
-
 
     public function update(Request $request, $id)
     {
@@ -74,28 +62,20 @@ class SliderController extends Controller
             'image' => 'mimes:jpeg,jpg,png'
         ]);
 
-        $image = $request->file('image'); 
+        $image = $request->file('image');
         $slug  = str_slug($request->title);
         $slider = Slider::find($id);
 
-        if(isset($image)){
-            $currentDate = Carbon::now()->toDateString();
-            $imagename = $slug.'-'.$currentDate.'-'.uniqid().'.'.$image->getClientOriginalExtension();
-            if(!Storage::disk('public')->exists('slider')){
-                Storage::disk('public')->makeDirectory('slider');
+        if($request->file('image')){
+            if(Storage::disk('public')->exists($slider->image)){
+                Storage::disk('public')->delete($slider->image);
             }
-            if(Storage::disk('public')->exists('slider/'.$slider->image)){
-                Storage::disk('public')->delete('slider/'.$slider->image);
-            }
-            $sliderimg = Image::make($image)->resize(1600, 480)->save();
-            Storage::disk('public')->put('slider/'.$imagename, $sliderimg);
-        }else{
-            $imagename = $slider->image;
+            $imagename = Storage::disk('public')->put('slider', $request->file('image'));
+            $slider->image = $imagename;
         }
 
         $slider->title = $request->title;
         $slider->description = $request->description;
-        $slider->image = $imagename;
         $slider->save();
 
         Toastr::success('message', 'Slider updated successfully.');

@@ -38,12 +38,12 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach( $sliders as $key => $slider )
+                                @foreach( $data as $key => $slider )
                                 <tr>
                                     <td>{{$key+1}}</td>
                                     <td>
-                                        @if(Storage::disk('public')->exists('slider/'.$slider->image))
-                                            <img src="{{Storage::url('slider/'.$slider->image)}}" alt="{{$slider->title}}" width="160" class="img-responsive img-rounded">
+                                        @if(Storage::disk('public')->exists($slider->image))
+                                            <img src="{{ Storage::disk('public')->url($slider->image) }}" alt="{{$slider->title}}" width="160" class="img-responsive img-rounded">
                                         @endif
                                     </td>
                                     <td>{{$slider->title}}</td>
@@ -91,7 +91,7 @@
 
     <script>
         function deleteSlider(id){
-            
+
             swal({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",
