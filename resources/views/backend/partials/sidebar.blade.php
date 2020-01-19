@@ -31,19 +31,19 @@
                     </a>
                 </li>
 
-                <li class="{{ Request::is('admin/services*') ? 'active' : '' }}">
+                <!-- <li class="{{ Request::is('admin/services*') ? 'active' : '' }}">
                     <a href="{{ route('admin.services.index') }}">
                         <i class="material-icons">wb_sunny</i>
                         <span>Services</span>
                     </a>
-                </li>
+                </li> -->
 
-                <li class="{{ Request::is('admin/testimonials*') ? 'active' : '' }}">
+                <!-- <li class="{{ Request::is('admin/testimonials*') ? 'active' : '' }}">
                     <a href="{{ route('admin.testimonials.index') }}">
                         <i class="material-icons">view_carousel</i>
                         <span>Testimonials</span>
                     </a>
-                </li>
+                </li> -->
 
                 <li class="{{ Request::is('admin/booking*') ? 'active' : '' }}">
                     <a href="{{ route('admin.booking.index') }}">
