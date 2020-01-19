@@ -1,19 +1,11 @@
 @extends('backend.layouts.app')
-
 @section('title', 'Create Property')
-
 @push('styles')
-
     <link rel="stylesheet" href="{{asset('backend/plugins/bootstrap-select/css/bootstrap-select.css')}}">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.4.5/css/fileinput.min.css" media="all" rel="stylesheet" type="text/css" />
-
 @endpush
-
-
 @section('content')
-
     <div class="block-header"></div>
-
     <div class="row clearfix">
         <form action="{{route('admin.properties.store')}}" method="POST" enctype="multipart/form-data">
         @csrf
@@ -23,49 +15,42 @@
                     <h2>CREATE PROPERTY</h2>
                 </div>
                 <div class="body">
-
                     <div class="form-group form-float">
                         <div class="form-line">
                             <input type="text" name="title" class="form-control" value="{{old('title')}}">
                             <label class="form-label">Property Title</label>
                         </div>
                     </div>
-
                     <div class="form-group form-float">
                         <div class="form-line">
                             <input type="number" class="form-control" name="price" required>
                             <label class="form-label">Price</label>
                         </div>
                     </div>
-
                     <div class="form-group form-float">
                         <div class="form-line">
                             <input type="number" class="form-control" name="bedroom" required>
                             <label class="form-label">Bedroom</label>
                         </div>
                     </div>
-
                     <div class="form-group form-float">
                         <div class="form-line">
                             <input type="number" class="form-control" name="bathroom" required>
                             <label class="form-label">Bathroom</label>
                         </div>
                     </div>
-
                     <div class="form-group form-float">
                         <div class="form-line">
                             <input type="text" class="form-control" name="city" required>
                             <label class="form-label">City</label>
                         </div>
                     </div>
-
                     <div class="form-group form-float">
                         <div class="form-line">
                             <input type="text" class="form-control" name="address" required>
                             <label class="form-label">Address</label>
                         </div>
                     </div>
-
                     <div class="form-group form-float">
                         <div class="form-line">
                             <input type="number" class="form-control" name="area" required>
@@ -73,24 +58,20 @@
                         </div>
                         <div class="help-info">Square Feet</div>
                     </div>
-
                     <div class="form-group">
                         <input type="checkbox" id="featured" name="featured" class="filled-in" value="1" />
                         <label for="featured">Featured</label>
                     </div>
-
                     <hr>
                     <div class="form-group">
                         <label for="tinymce">Description</label>
                         <textarea name="description" id="tinymce">{{old('description')}}</textarea>
                     </div>
-
                     <hr>
                     <div class="form-group">
                         <label for="tinymce-nearby">Nearby</label>
                         <textarea name="nearby" id="tinymce-nearby">{{old('nearby')}}</textarea>
                     </div>
-
                 </div>
             </div>
             <div class="card">
@@ -119,7 +100,6 @@
                             </select>
                         </div>
                     </div>
-
                     <div class="form-group form-float">
                         <div class="form-line {{$errors->has('type') ? 'focused error' : ''}}">
                             <label>Select type</label>
@@ -130,7 +110,6 @@
                             </select>
                         </div>
                     </div>
-
                     <h5>Features</h5>
                     <div class="form-group demo-checkbox">
                         @foreach($features as $feature)
@@ -138,7 +117,6 @@
                             <label for="features-{{$feature->id}}">{{$feature->name}}</label>
                         @endforeach
                     </div>
-
                     <div class="form-group form-float">
                         <div class="form-line">
                             <input type="text" class="form-control" name="video">
@@ -146,7 +124,6 @@
                         </div>
                         <div class="help-info">Youtube Link</div>
                     </div>
-
                     <div class="clearfix">
                         <h5>Google Map</h5>
                         <div class="form-group">
@@ -162,7 +139,6 @@
                             </div>
                         </div>
                     </div>
-                    
                 </div>
             </div>
             <div class="card">
@@ -183,7 +159,6 @@
                     <div class="form-group">
                         <input type="file" name="image">
                     </div>
-
                     {{-- BUTTON --}}
                     <a href="{{route('admin.properties.index')}}" class="btn btn-danger btn-lg m-t-15 waves-effect">
                         <i class="material-icons left">arrow_back</i>
@@ -199,14 +174,9 @@
         </div>
         </form>
     </div>
-
 @endsection
-
-
 @push('scripts')
-    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.4.5/js/fileinput.min.js"></script>
-
     <script src="{{ asset('backend/plugins/bootstrap-select/js/bootstrap-select.js') }}"></script>
     <script src="{{asset('backend/plugins/tinymce/tinymce.js')}}"></script>
     <script>

@@ -1,13 +1,7 @@
 @extends('backend.layouts.app')
-
 @section('title', 'Edit Slider')
-
 @push('styles')
-
-    
 @endpush
-
-
 @section('content')
 
     <div class="row clearfix">
@@ -34,9 +28,9 @@
                             </div>
                         </div>
 
-                        @if(Storage::disk('public')->exists('slider/'.$slider->image))
+                        @if(Storage::disk('public')->exists($slider->image))
                             <div class="form-group">
-                                <img src="{{Storage::url('slider/'.$slider->image)}}" id="slider-imgsrc-edit" alt="{{$slider->title}}" class="img-responsive img-rounded">
+                                <img src="{{Storage::url($slider->image)}}" id="slider-imgsrc-edit" alt="{{$slider->title}}" class="img-responsive img-rounded">
                             </div>
                         @endif
                         <div class="form-group">

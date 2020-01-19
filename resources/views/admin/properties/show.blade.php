@@ -59,7 +59,7 @@
                     {!!$property->description!!}
                 </div>
 
-            </div> 
+            </div>
             <div class="card">
                 <div class="header">
                     <h2>MAP</h2>
@@ -74,11 +74,9 @@
                 <div class="header">
                     <h2>FLOOR PLAN</h2>
                 </div>
-                @if($property->floor_plan && $property->floor_plan != 'default.png')
                 <div class="body">
-                    <img class="img-responsive" src="{{Storage::url('property/'.$property->floor_plan)}}" alt="{{$property->title}}">
+                    <img class="img-responsive" src="{{Storage::disk('public')->url($property->floor_plan)}}" alt="{{$property->title}}">
                 </div>
-                @endif
             </div>
             @endif
 
@@ -93,7 +91,6 @@
             </div>
             @endif
 
-            @if(!$property->gallery->isEmpty())
             <div class="card">
                 <div class="header bg-red">
                     <h2>GALLERY IMAGE</h2>
@@ -102,13 +99,12 @@
                     <div class="gallery-box">
                         @foreach($property->gallery as $gallery)
                         <div class="gallery-image">
-                            <img class="img-responsive" src="{{Storage::url('property/gallery/'.$gallery->name)}}" alt="{{$property->title}}">
+                            <img class="img-responsive" src="{{Storage::disk('public')->url($gallery->name)}}" alt="{{$property->title}}">
                         </div>
                         @endforeach
                     </div>
                 </div>
             </div>
-            @endif
 
             {{-- COMMENTS --}}
             <div class="card">
@@ -118,7 +114,7 @@
                 <div class="body">
 
                     @foreach($property->comments as $comment)
-                    
+
                         @if($comment->parent_id == NULL)
                             <div class="comment">
                                 <div class="author-image">
@@ -154,7 +150,7 @@
                         @endforeach
 
                     @endforeach
-                    
+
                 </div>
             </div>
 
@@ -185,8 +181,8 @@
                 </div>
                 <div class="body">
 
-                    <img class="img-responsive thumbnail" src="{{Storage::url('property/'.$property->image)}}" alt="{{$property->title}}">
-                    
+                    <img class="img-responsive thumbnail" src="{{Storage::disk('public')->url($property->image)}}" alt="{{$property->title}}">
+
                     <a href="{{route('admin.properties.index')}}" class="btn btn-danger btn-lg waves-effect">
                         <i class="material-icons left">arrow_back</i>
                         <span>BACK</span>
@@ -222,7 +218,7 @@
             lng: '<?php echo $property->location_longitude; ?>',
             title: '<?php echo $property->title; ?>',
         });
-        
+
     </script>
 
 

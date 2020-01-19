@@ -104,7 +104,7 @@
                         @foreach($property->gallery as $gallery)
                         <div class="gallery-image-edit" id="gallery-{{$gallery->id}}">
                             <button type="button" data-id="{{$gallery->id}}" class="btn btn-danger btn-sm"><i class="material-icons">delete_forever</i></button>
-                            <img class="img-responsive" src="{{Storage::url('property/gallery/'.$gallery->name)}}" alt="{{$gallery->name}}">
+                            <img class="img-responsive" src="{{Storage::disk('public')->url($gallery->name)}}" alt="{{$gallery->name}}">
                         </div>
                         @endforeach
                     </div>
@@ -149,7 +149,7 @@
                     <h5>Features</h5>
                     <div class="form-group demo-checkbox">
                         @foreach($features as $feature)
-                            <input type="checkbox" id="features-{{$feature->id}}" name="features[]" class="filled-in chk-col-indigo" value="{{$feature->id}}" 
+                            <input type="checkbox" id="features-{{$feature->id}}" name="features[]" class="filled-in chk-col-indigo" value="{{$feature->id}}"
                             @foreach($property->features as $checked)
                                 {{ ($checked->id == $feature->id) ? 'checked' : '' }}
                             @endforeach
@@ -201,8 +201,8 @@
                 </div>
                 <div class="body">
                     <div class="form-group">
-                        @if(Storage::disk('public')->exists('property/'.$property->floor_plan) && $property->floor_plan )
-                            <img src="{{Storage::url('property/'.$property->floor_plan)}}" alt="{{$property->title}}" class="img-responsive img-rounded"> <br>
+                        @if(Storage::disk('public')->exists($property->floor_plan) && $property->floor_plan )
+                            <img src="{{Storage::disk()->url($property->floor_plan)}}" alt="{{$property->title}}" class="img-responsive img-rounded"> <br>
                         @endif
                         <input type="file" name="floor_plan">
                     </div>
@@ -216,8 +216,8 @@
                 <div class="body">
 
                     <div class="form-group">
-                        @if(Storage::disk('public')->exists('property/'.$property->image))
-                            <img src="{{Storage::url('property/'.$property->image)}}" alt="{{$property->title}}" class="img-responsive img-rounded"> <br>
+                        @if(Storage::disk('public')->exists($property->image))
+                            <img src="{{Storage::disk('public')->url($property->image)}}" alt="{{$property->title}}" class="img-responsive img-rounded"> <br>
                         @endif
                         <input type="file" name="image">
                     </div>
@@ -239,7 +239,7 @@
         </div>
         </form>
     </div>
-    
+
 
 @endsection
 
