@@ -59,7 +59,7 @@ class FeatureController extends Controller
     {
         $feature = Feature::find($id);
         $feature->delete();
-        $feature->features()->detach();
+        $feature->properties()->detach();
         Toastr::success('message', 'Feature deleted successfully.');
         return back();
     }
