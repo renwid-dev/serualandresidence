@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
-use App\Models\Slider;
+use App\Slider;
 use Carbon\Carbon;
 use Toastr;
 
