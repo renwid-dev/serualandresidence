@@ -40,10 +40,10 @@
         <div class="upper-right">
             <ul class="clearfix">
                 <li class="dropdown option-box">
-                    <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> <img src="#" class="thumb">My Account</a>
+                    <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> <img src="{{ Storage::url('users/'.$profile->image) }}" class="thumb">My Account</a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="{{url('user/dashboard')}}">Dashboard</a>
-                        <a class="dropdown-item" href="{{url('user/message')}}">Messages</a>
+                        <!-- <a class="dropdown-item" href="{{url('user/message')}}">Messages</a> -->
                         <a class="dropdown-item" href="{{url('dashboard/booking/list')}}">Bookings</a>
                         <a class="dropdown-item" href="{{url('user/profile')}}">My profile</a>
                         <a class="dropdown-item" href="{{ route('logout') }}"
@@ -68,14 +68,14 @@
     <!--End Header Lower-->
 </header>
 <!--End Main Header -->
- 
+
  <!-- Hidden Bar -->
  <section class="hidden-bar">
     <div class="dashboard-inner">
         <div class="cross-icon"><span class="pe-7s-close-circle"></span></div>
         <ul class="navigation">
             <li><a href="{{url('user/dashboard')}}"><i class="pe-7s-mail"></i> Dashboard</a></li>
-            <li><a href="{{url('user/message')}}"><i class="pe-7s-mail"></i> Messages <span class="tag">6</span></a></li>
+            <!-- <li><a href="{{url('user/message')}}"><i class="pe-7s-mail"></i> Messages <span class="tag">6</span></a></li> -->
             <li class="active"><a href="{{url('dashboard/booking/list')}}"><i class="pe-7s-up-arrow"></i>Booking List</a></li>
             <li><a href="{{url('user/profile')}}"><i class="pe-7s-user"></i>My Profile</a></li>
             <li>
@@ -96,8 +96,8 @@
     @yield('content')
     <!-- End Content -->
 </div>
-    
-<script src="{{ asset('frontland/admin/js/jquery.js') }}"></script> 
+
+<script src="{{ asset('frontland/admin/js/jquery.js') }}"></script>
 <script src="{{ asset('frontland/admin/js/popper.min.js') }}"></script>
 <script src="{{ asset('frontland/admin/js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('frontland/admin/js/jquery-ui.js') }}"></script>

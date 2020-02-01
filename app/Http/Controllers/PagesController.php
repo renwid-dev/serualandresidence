@@ -37,7 +37,7 @@ class PagesController extends Controller
                             ->where('slug', $slug)
                             ->first();
 
-        $rating = Rating::where('property_id',$property->id)->where('type','property')->avg('rating');                   
+        $rating = Rating::where('property_id',$property->id)->where('type','property')->avg('rating');
         $properties     = Property::latest()->where('featured',1)->take(6)->get();
         $relatedproperty = Property::latest()
                     ->where('purpose', $property->purpose)
@@ -56,7 +56,7 @@ class PagesController extends Controller
 
     public function propertiesBooking($slug)
     {
-        $profile     = Auth::user();
+        $profile  = Auth::user();
         $property = Property::with('features','gallery','user','comments')
                             ->withCount('comments')
                             ->where('slug', $slug)
@@ -98,7 +98,7 @@ class PagesController extends Controller
     public function blogshow($slug)
     {
         $cities         = Property::select('city','city_slug')->distinct('city_slug')->get();
-        $post           = Post::with('comments')->withCount('comments')->where('slug', $slug)->first(); 
+        $post           = Post::with('comments')->withCount('comments')->where('slug', $slug)->first();
         $properties     = Property::latest()->where('featured',1)->take(6)->get();
 
         $blogkey = 'blog-' . $post->id;
@@ -190,7 +190,7 @@ class PagesController extends Controller
         }
 
     }
-    
+
     // CONATCT PAGE
     public function contact()
     {
@@ -208,7 +208,7 @@ class PagesController extends Controller
 
         $message  = $request->message;
         $mailfrom = $request->email;
-        
+
         Message::create([
             'user_id'  => 1,
             'name'      => $request->name,
@@ -216,7 +216,7 @@ class PagesController extends Controller
             'phone'     => $request->phone,
             'message'   => $message
         ]);
-            
+
         $adminname  = User::find(1)->name;
         $mailto     = $request->mailto;
 
@@ -262,7 +262,7 @@ class PagesController extends Controller
         );
 
         return back();
-    } 
+    }
 
 
     // PROPERTY RATING
@@ -304,5 +304,5 @@ class PagesController extends Controller
             $youtubelink
         );
     }
-    
+
 }

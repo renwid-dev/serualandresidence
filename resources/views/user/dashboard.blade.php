@@ -18,14 +18,14 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="alert alert-success" role="alert">
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
                     <strong>Your Booking</strong> HAS BEEN APPROVED!
                 </div>
 
                 <div class="row">
-                    <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="col-lg-6 col-md-6 col-sm-6">
                         <div class="ui-item bg-success">
                             <div class="left">
                                 <h4>242</h4>
@@ -36,7 +36,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="col-lg-6 col-md-6 col-sm-6">
                         <div class="ui-item bg-warning">
                             <div class="left">
                                 <h4>1</h4>
@@ -47,7 +47,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6">
+                    <!-- <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="ui-item bg-active">
                             <div class="left">
                                 <h4>1233</h4>
@@ -68,7 +68,7 @@
                                 <i class="la la-heart-o"></i>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
 
                 <div class="row">
@@ -99,7 +99,7 @@
                                                 <td class="text-center">No Payment</td>
                                                 <td class="text-right">Rp. 40.0000.000</td>
                                             </tr>
-                                            
+
                                             </tbody>
                                         </table>
                                     </div>
@@ -109,7 +109,7 @@
                     </div>
                 </div>
             </div>
-            <p class="copyright-text">© 2018 <a href="#">Expert Themes</a> All right reserved.</p>
+            <p class="copyright-text">© 2020 <a href="{{url('/')}}">serualandresidence.com</a> All right reserved.</p>
         </div>
     </div>
 </div>

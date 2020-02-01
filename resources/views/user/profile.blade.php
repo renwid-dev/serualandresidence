@@ -43,7 +43,7 @@
                                         </div>
 
                                         <div class="col-lg-8 col-md-12 col-sm-12">
-                                            
+
                                                 <div class="row">
                                                     <!-- Form Group -->
                                                     <div class="form-group col-lg-6 col-md-6 col-sm-12">
@@ -89,10 +89,10 @@
                     </div>
 
                     @include('user/changepassword')
-                    
+
                 </div>
             </div>
-            <p class="copyright-text">© 2019 <a href="#">surualandresidence.com</a> All right reserved.</p>
+            <p class="copyright-text">© 2020 <a href="#">surualandresidence.com</a> All right reserved.</p>
         </div>
     </div>
 </div>

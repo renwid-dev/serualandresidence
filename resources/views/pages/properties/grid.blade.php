@@ -55,9 +55,9 @@
                                 </div>
                             </div>
                             @endforeach
-                           
+
                         </div>
-                        
+
                         <!-- Pagination -->
                         <div class="styled-pagination">
                             {{ $properties->links() }}
@@ -91,76 +91,41 @@
                             <div class="sidebar-title"><h3>Search properties/detail</h3></div>
                             <!-- Property Search Form -->
                             <div class="property-search-form style-three">
-                                <form method="post" action="#">
+                                <form method="get" action="{{ url('properties/grid') }}">
+                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                     <div class="row no-gutters">
                                         <!-- Form Group -->
                                         <div class="form-group">
-                                            <select class="custom-select-box">
-                                                <option>Location</option>
-                                                <option>New York</option>
-                                                <option>Los Angeles</option>
-                                                <option>Chicago</option>
-                                                <option>Houston</option>
-                                            </select>
+                                            <input type="text" name="location" placeholder="Search location" class="form-control">
                                         </div>
-
-                                        <!-- Form Group -->
                                         <div class="form-group">
-                                            <select class="custom-select-box">
-                                                <option>Property Type</option>
-                                                <option>Residential</option>
-                                                <option>Commercial</option>
-                                                <option>Industrial</option>
-                                                <option>Apartments</option>
+                                            <select class="custom-select-box" name="type">
+                                                <option value="">Property Type</option>
+                                                <option value="house">House</option>
+                                                <option value="apartment">Apartments</option>
                                             </select>
                                         </div>
-
-                                        <!-- Form Group -->
                                         <div class="form-group">
-                                            <select class="custom-select-box">
-                                                <option>Property Status</option>
-                                                <option>For Rent</option>
-                                                <option>For Sale</option>
+                                            <select class="custom-select-box" name="status">
+                                                <option value="">Property Status</option>
+                                                <option value="rent">For Rent</option>
+                                                <option value="sale">For Sale</option>
                                             </select>
                                         </div>
-
-
-                                        <!-- Form Group -->
                                         <div class="form-group">
-                                            <select class="custom-select-box">
-                                                <option>Any Bedrooms</option>
-                                                <option>01 Bedroom</option>
-                                                <option>02 Bedrooms</option>
-                                                <option>03 Bedrooms</option>
-                                                <option>04 Bedrooms</option>
-                                                <option>05 Bedrooms</option>
-                                            </select>
+                                            <input type="numeric" name="bed" placeholder="Search Total Bed" class="form-control">
                                         </div>
-
-                                        <!-- Form Group -->
                                         <div class="form-group">
-                                            <select class="custom-select-box">
-                                                <option>Any Bathrooms</option>
-                                                <option>01 Bathroom</option>
-                                                <option>02 Bathrooms</option>
-                                                <option>03 Bathrooms</option>
-                                                <option>04 Bathrooms</option>
-                                                <option>05 Bathrooms</option>
-                                            </select>
+                                            <input type="numeric" name="bath" placeholder="Search Total Bath" class="form-control">
                                         </div>
-
-                                        <!-- Form Group -->
                                         <div class="form-group">
                                             <div class="range-slider-one clearfix">
                                                 <label>Price Filter</label>
                                                 <div class="price-range-slider"></div>
-                                                <div class="input"><input type="text" class="price-amount" name="field-name" readonly></div>
+                                                <div class="input"><input type="text" class="price-amount" name="price" readonly></div>
                                                 <div class="title">Rp</div>
                                             </div>
                                         </div>
-
-
-                                        <!-- Form Group -->
                                         <div class="form-group">
                                             <button type="submit" class="theme-btn btn-style-one">Search</button>
                                         </div>
@@ -180,8 +145,8 @@
                             </ul>
                         </div>
 
-                        
-                        
+
+
                     </aside>
                 </div>
             </div>

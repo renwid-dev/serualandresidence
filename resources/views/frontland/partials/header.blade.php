@@ -13,7 +13,7 @@
                         <li><a href="{{url('login')}}">Login</a></li>
                         <li><a href="{{url('register')}}">Register</a></li>
                     </ul>
-                    
+
                     @else
                     <div class="btn-box">
                         @if(Auth::user()->role->id == 1)
@@ -37,13 +37,13 @@
     <div class="header-upper">
         <div class="auto-container">
             <div class="clearfix">
-                
+
                 <div class="logo-outer">
                     <div class="logo"><a href="{{url('/')}}"><img src="{{asset('frontland/images/logo-1.png')}}" alt="" title=""></a></div>
                 </div>
-                
+
                 <div class="upper-right clearfix">
-                    
+
                     <!--Info Box-->
                     <div class="upper-column info-box">
                         <div class="icon-box"><span class="la la-envelope-o"></span></div>
@@ -87,12 +87,12 @@
                     <!-- Main Menu -->
                     <nav class="main-menu navbar-expand-md navbar-dark">
                         <div class="navbar-header">
-                            <!-- Toggle Button -->      
+                            <!-- Toggle Button -->
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="icon flaticon-menu"></span>
                             </button>
                         </div>
-                        
+
                         <div class="collapse navbar-collapse clearfix" id="navbarSupportedContent">
                             <ul class="navigation clearfix">
                                 <li class="current dropdown"><a href="{{ url('/') }}">Home</a></li>
@@ -100,10 +100,10 @@
                                 <li class="dropdown"><a href="{{ url('properties/grid') }}">Properties</a></li>
                                 <li class="dropdown"><a href="{{ url('news/grid') }}">Blog</a></li>
                                 <li><a href="{{ url('contact') }}">Contact</a></li>
-                            </ul>              
+                            </ul>
                         </div>
                     </nav><!-- Main Menu End-->
-                        
+
                     <!-- Main Menu End-->
                     <div class="outer-box">
                         <div class="btn-box">
@@ -117,9 +117,9 @@
                                 <ul class="dropdown-menu pull-right search-panel" aria-labelledby="dropdownMenu3">
                                     <li class="panel-outer">
                                         <div class="form-container">
-                                            <form method="post" action="{{ url('properties/grid') }}">
+                                            <form method="get" action="{{ url('properties/grid') }}">
                                                 <div class="form-group">
-                                                    <input type="search" name="field-name" value="" placeholder="Search Here" required>
+                                                    <input type="search" name="keyword" value="" placeholder="Search Here" required>
                                                     <button type="submit" class="search-btn"><span class="la la-search"></span></button>
                                                 </div>
                                             </form>
@@ -154,7 +154,7 @@
                             <li class="dropdown"><a href="{{ url('properties/grid') }}">Properties</a></li>
                             <li class="dropdown"><a href="{{ url('news/grid') }}">Blog</a></li>
                             <li><a href="{{ url('contact') }}">Contact</a></li>
-                        </ul> 
+                        </ul>
                     </div>
                 </nav><!-- Main Menu End-->
             </div>

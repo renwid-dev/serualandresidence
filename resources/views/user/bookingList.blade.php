@@ -120,7 +120,7 @@
                                             </div>
 										<!-- Form Group -->
 										<div class="form-group text-right col-lg-12 col-md-12 col-sm-12">
-											<button type="submit" id='button' class="theme-btn btn-style-one" disabled>Submit Payment</button>
+											<button type="submit" class="theme-btn btn-style-one" disabled>Submit Payment</button>
 										</div>
 			                            </form>
 			                        </div>
@@ -130,7 +130,7 @@
 	                </div>
 
 	            </div>
-				<p class="copyright-text">© 2019 <a href="#">surualandresidence.com</a> All right reserved.</p>
+				<p class="copyright-text">© 2020 <a href="#">surualandresidence.com</a> All right reserved.</p>
 	        </div>
 	    </div>
 	</div>
@@ -147,10 +147,7 @@
         if (distance < 0) {
             clearInterval(x);
             document.getElementById("count-down").innerHTML = "EXPIRED";
-        }if (distance < 0) {
-			$("#button").prop('disabled', true);
-            clearInterval(x);
-		}
+        }
     }, 1000);
 </script>
 @endsection

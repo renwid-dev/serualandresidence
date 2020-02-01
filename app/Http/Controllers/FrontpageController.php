@@ -77,10 +77,46 @@ class FrontpageController extends Controller
     //     return view('pages.search', compact('properties'));
     // }
 
-    public function propertiesGrid()
+    public function propertiesGrid(Request $request)
     {
-        $cities     = Property::select('city','city_slug')->distinct('city_slug')->get();
-        $properties = Property::latest()->with('rating')->withCount('comments')->paginate(10);
+        if (!empty($request->price)) {
+
+        }
+        $cities     = Property::select('city','city_slug')
+                                ->distinct('city_slug')
+                                ->get();
+
+        $properties = Property::latest()
+                                ->when(!empty($request->keyword), function($query) use($request){
+                                    $query->where('title', 'like', '%'.$request->keyword.'%');
+                                })
+                                ->when(!empty($request->location), function($query) use($request){
+                                    $query->where('city', 'like', '%'.$request->city.'%');
+                                })
+                                ->when(!empty($request->type), function($query) use($request){
+                                    $query->where('type', 'like', '%'.$request->type.'%');
+                                })
+                                ->when(!empty($request->status), function($query) use($request){
+                                    $query->where('purpose', 'like', '%'.$request->purpose.'%');
+                                })
+                                ->when(!empty($request->bed), function($query) use($request){
+                                    $query->where('bedroom', 'like', '%'.$request->bedroom.'%');
+                                })
+                                ->when(!empty($request->bath), function($query) use($request){
+                                    $query->where('bathroom', 'like', '%'.$request->bathroom.'%');
+                                })
+                                ->when(!empty($request->bath), function($query) use($request){
+                                    $query->where('bathroom', 'like', '%'.$request->bathroom.'%');
+                                })
+                                ->when(!empty($request->price), function($query) use($request){
+                                    $price = (!empty($request->price)) ? explode(' - ', $request->price) : '';
+                                    $priceFirst = $price[0];
+                                    $priceLast = $price[1];
+                                    $query->whereBetween('price', [$priceFirst,$priceLast]);
+                                })
+                                ->with('rating')
+                                ->withCount('comments')
+                                ->paginate(10);
 
         return view('pages.properties.grid', compact('cities','properties'));
     }
@@ -118,7 +154,7 @@ class FrontpageController extends Controller
         // return $booking;
         return view('user.bookingList',compact('profile', 'booking'));
     }
- 
+
     public function footer()
     {
         $properties     = Property::latest()->where('featured',1)->take(2)->get();

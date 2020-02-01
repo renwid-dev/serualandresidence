@@ -88,7 +88,7 @@
 	                    </div>
 	                </div>
 	            </div>
-	            <p class="copyright-text">© 2019 <a href="{{url('/')}}">surualandresidence.com</a> All right reserved.</p>
+	            <p class="copyright-text">© 2020 <a href="{{url('/')}}">surualandresidence.com</a> All right reserved.</p>
 	        </div>
 	    </div>
 	</div>
