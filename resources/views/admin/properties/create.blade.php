@@ -95,8 +95,8 @@
                             <label>Select Purpose</label>
                             <select name="purpose" class="form-control show-tick">
                                 <option value="">-- Please select --</option>
-                                <option value="sale">SALE</option>
-                                <option value="rent">RENT</option>
+                                <option value="SALE">Sale</option>
+                                <option value="RENT">Rent</option>
                             </select>
                         </div>
                     </div>
