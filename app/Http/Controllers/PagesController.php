@@ -2,22 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\Mail;
-use App\Mail\Contact;
-
-use App\Property;
-use App\Message;
-use App\Gallery;
-use App\Comment;
-use App\Rating;
+use DB;
 use App\Post;
 use App\User;
+use App\Rating;
 
+use App\Comment;
+use App\Gallery;
+use App\Message;
+use App\Property;
 use Carbon\Carbon;
-use Auth;
-use DB;
+use App\Mail\Contact;
+use Illuminate\Http\Request;
+
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Session;
 
 class PagesController extends Controller
 {
@@ -91,8 +91,10 @@ class PagesController extends Controller
                                 })
                                 ->where('status',1)
                                 ->paginate(10);
+        $cities     = Property::select('city','city_slug')->distinct('city_slug')->get();
+        $properties = Property::latest()->with('rating')->withCount('comments')->paginate(10);
 
-        return view('pages.blog.index', compact('posts'));
+        return view('pages.blog.grid', compact('posts','cities','properties'));
     }
 
     public function blogshow($slug)

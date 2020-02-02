@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
@@ -22,7 +23,9 @@ class DatabaseSeeder extends Seeder
                 'image'         => 'default.png',
                 'about'         => 'Bio of admin',
                 'password'      => bcrypt('123456'),
-                'created_at'    => date("Y-m-d H:i:s")
+                'created_at'    => date("Y-m-d H:i:s"),
+                'phone'         => '0838xxxxxxxx'
+
             ],
             [
                 'role_id'       => 2,
@@ -32,7 +35,8 @@ class DatabaseSeeder extends Seeder
                 'image'         => 'default.png',
                 'about'         => '',
                 'password'      => bcrypt('123456'),
-                'created_at'    => date("Y-m-d H:i:s")
+                'created_at'    => date("Y-m-d H:i:s"),
+                'phone'         => '0838xxxxxxxx'
             ],
             [
                 'role_id'       => 3,
@@ -42,7 +46,8 @@ class DatabaseSeeder extends Seeder
                 'image'         => 'default.png',
                 'about'         => null,
                 'password'      => bcrypt('123456'),
-                'created_at'    => date("Y-m-d H:i:s")
+                'created_at'    => date("Y-m-d H:i:s"),
+                'phone'         => '0838xxxxxxxx'
             ],
         ]);
 

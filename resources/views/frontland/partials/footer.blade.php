@@ -136,12 +136,11 @@
             <div class="inner-container clearfix">
                 <div class="footer-nav">
                     <ul class="clearfix">
-                        <li><a href="#">Home</a></li> 
-                        <li><a href="#">Properties</a></li> 
-                        <li><a href="#">Agencies</a></li> 
-                        <li><a href="#">Agent</a></li> 
-                        <li><a href="#">Blogs</a></li> 
-                        <li><a href="#">Contact</a></li> 
+                        <li><a href="{{ url('/') }}">Home</a></li> 
+                        <li><a href="{{ url('/') }}">About</a></li> 
+                        <li><a href="{{ url('properties/grid') }}">Properties</a></li> 
+                        <li><a href="{{ url('blog') }}">Blogs</a></li> 
+                        <li><a href="{{ url('contact') }}">Contact</a></li> 
                     </ul>
                 </div>
                                                                     

@@ -98,7 +98,7 @@
                                 <li class="current dropdown"><a href="{{ url('/') }}">Home</a></li>
                                 <li class="dropdown"><a href="{{ url('/') }}">About</a></li>
                                 <li class="dropdown"><a href="{{ url('properties/grid') }}">Properties</a></li>
-                                <li class="dropdown"><a href="{{ url('news/grid') }}">Blog</a></li>
+                                <li class="dropdown"><a href="{{ url('blog') }}">Blog</a></li>
                                 <li><a href="{{ url('contact') }}">Contact</a></li>
                             </ul>
                         </div>
@@ -152,7 +152,7 @@
                             <li class="current dropdown"><a href="{{ url('/') }}">Home</a></li>
                             <li class="dropdown"><a href="{{ url('/') }}">About</a></li>
                             <li class="dropdown"><a href="{{ url('properties/grid') }}">Properties</a></li>
-                            <li class="dropdown"><a href="{{ url('news/grid') }}">Blog</a></li>
+                            <li class="dropdown"><a href="{{ url('blog') }}">Blog</a></li>
                             <li><a href="{{ url('contact') }}">Contact</a></li>
                         </ul>
                     </div>

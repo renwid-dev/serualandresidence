@@ -13,9 +13,6 @@ Route::get('/booking/{id}', 'PagesController@propertiesBooking')->name('booking.
 // Route::post('/property/rating', 'PagesController@propertyRating')->name('property.rating');
 Route::get('/property/city/{cityslug}', 'PagesController@propertyCities')->name('property.city');
 
-Route::get('/agents', 'PagesController@agents')->name('agents');
-Route::get('/agents/{id}', 'PagesController@agentshow')->name('agents.show');
-
 Route::get('/gallery', 'PagesController@gallery')->name('gallery');
 
 Route::get('/blog', 'PagesController@blog')->name('blog');
@@ -29,16 +26,15 @@ Route::get('/blog/author/{username}', 'PagesController@blogAuthor')->name('blog.
 Route::get('/contact', 'PagesController@contact')->name('contact');
 Route::post('/contact', 'PagesController@messageContact')->name('contact.message');
 
+Route::get('/footer', 'FrontpageController@footer')->name('footer');
+
+
 // xample halaman review demo
 Route::get('/about', 'FrontpageController@about')->name('about');
 
 Route::get('/properties/detail', 'FrontpageController@properties')->name('properties');
 Route::get('/properties/grid', 'FrontpageController@propertiesGrid')->name('propertiesGrid');
 Route::get('/properties/list', 'FrontpageController@propertiesList')->name('propertiesList');
-
-Route::get('/news/detail', 'FrontpageController@news')->name('news');
-Route::get('/news/grid', 'FrontpageController@newsGrid')->name('newsGrid');
-Route::get('/news/list', 'FrontpageController@newsList')->name('newsList');
 
 Route::get('/dashboard/booking/list', 'FrontpageController@dashboardBookingList')->name('dashboardBookingList');
 
