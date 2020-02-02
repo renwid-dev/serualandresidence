@@ -13,10 +13,8 @@
             <div class="property-block col-lg-4 col-md-6 col-sm-12">
                 <div class="inner-box">
                     <div class="image-box">
-                        @if(Storage::disk('public')->exists('property/'.$property->image) && $property->image)
                         <figure class="image"><img src="{{ Storage::url('property/'.$property->image) }}" alt=""></figure>
-                        @endif
-                        <span class="for">for {{ $property->purpose }}</span>
+                        <span class="for">FOR {{ $property->purpose }}</span>
                         @if ($property->featured)
                         <span class="featured">FEATURED</span>
                         @endif

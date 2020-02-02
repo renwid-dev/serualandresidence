@@ -129,8 +129,8 @@
                             <label>Select Purpose</label>
                             <select name="purpose" class="form-control show-tick">
                                 <option value="">-- Please select --</option>
-                                <option value="sale" {{ $property->purpose=='sale' ? 'selected' : '' }}>Sale</option>
-                                <option value="rent" {{ $property->purpose=='rent' ? 'selected' : '' }}>Rent</option>
+                                <option value="SALE" {{ $property->purpose=='SALE' ? 'selected' : '' }}>Sale</option>
+                                <option value="RENT" {{ $property->purpose=='RENT' ? 'selected' : '' }}>Rent</option>
                             </select>
                         </div>
                     </div>
